@@ -16,184 +16,184 @@ if (typeof window.wrapCenterImage !== 'function') {
 // ==========================================
 const getSmartModule4Data = {
   "Reading": [
-    // --- PETIKAN 1 (Soalan 1 - 5: National Day in Malaysia) ---
+    // --- PETIKAN 1 (Soalan 1 - 5: National Day Celebrations) ---
     {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE4_1.png"),
-      "q": "1. When is Malaysia's National Day celebrated?",
-      "options": ["A) On the 31st of August", "B) On the 16th of September", "C) On the 1st of January"],
-      "ans": "A) On the 31st of August"
+      "q": "1. When is National Day celebrated in Malaysia?",
+      "options": ["A) 31st August", "B) 25th December", "C) 1st January"],
+      "ans": "A) 31st August"
     },
     {
       "type": "mcq",
-      "q": "2. What do people wave during the National Day parade?",
-      "options": ["A) National flags (Jalur Gemilang)", "B) Paper lanterns", "C) Colorful balloons"],
-      "ans": "A) National flags (Jalur Gemilang)"
+      "q": "2. What do people usually watch during National Day?",
+      "options": ["A) A football match", "B) A grand parade", "C) A movie at the cinema"],
+      "ans": "B) A grand parade"
     },
     {
       "type": "mcq",
-      "q": "3. What special event happens in the morning on National Day?",
-      "options": ["A) A grand parade", "B) A fireworks display", "C) A costume contest"],
-      "ans": "A) A grand parade"
+      "q": "3. What do children proudly wave while watching the parade?",
+      "options": ["A) National flags", "B) Colourful balloons", "C) Paper flowers"],
+      "ans": "A) National flags"
     },
     {
       "type": "mcq",
-      "q": "4. How do people decorate their houses and cars?",
-      "options": ["A) With Malaysian flags", "B) With flowers and lights", "C) With painted pictures"],
-      "ans": "A) With Malaysian flags"
+      "q": "4. What do many people wear to celebrate this special holiday?",
+      "options": ["A) School uniforms", "B) Traditional costumes", "C) Raincoats"],
+      "ans": "B) Traditional costumes"
     },
     {
       "type": "mcq",
-      "q": "5. Why do Malaysians celebrate National Day?",
-      "options": ["A) To commemorate the nation's independence", "B) To welcome the New Year", "C) To celebrate the harvest season"],
-      "ans": "A) To commemorate the nation's independence"
+      "q": "5. What is the main purpose of celebrating National Day?",
+      "options": ["A) To commemorate independence and show love for the country", "B) To buy new furniture", "C) To stay indoors and sleep all day"],
+      "ans": "A) To commemorate independence and show love for the country"
     },
 
-    // --- PETIKAN 2 (Soalan 6 - 10: Lunar New Year & Costumes) ---
+    // --- PETIKAN 2 (Soalan 6 - 10: Mei Ling's Birthday Party) ---
     {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE4_6.png"),
-      "q": "6. What color symbolises good luck during Chinese New Year?",
-      "options": ["A) Red", "B) Blue", "C) Green"],
-      "ans": "A) Red"
+      "q": "6. When is Mei Ling's birthday?",
+      "options": ["A) 1st October", "B) 3rd November", "C) 12th December"],
+      "ans": "B) 3rd November"
     },
     {
       "type": "mcq",
-      "q": "7. What do elders give to children during this celebration?",
-      "options": ["A) Red packets (angpow)", "B) Wrapped gift boxes", "C) Birthday cakes"],
-      "ans": "A) Red packets (angpow)"
+      "q": "7. What special theme did Mei Ling choose for her party?",
+      "options": ["A) A costume party", "B) A pyjama party", "C) A sports day theme"],
+      "ans": "A) A costume party"
     },
     {
       "type": "mcq",
-      "q": "8. What special dance performance can be seen on the streets?",
-      "options": ["A) Lion and dragon dances", "B) Ballet dance", "C) Tap dance"],
-      "ans": "A) Lion and dragon dances"
+      "q": "8. How old is Mei Ling turning on her birthday?",
+      "options": ["A) Nine years old", "B) Ten years old", "C) Eleven years old"],
+      "ans": "B) Ten years old"
     },
     {
       "type": "mcq",
-      "q": "9. What are people going to dress up as for the festival party?",
-      "options": ["A) Traditional costumes", "B) Superhero suits", "C) Sports jerseys"],
-      "ans": "A) Traditional costumes"
+      "q": "9. What do guests bring to celebrate with Mei Ling?",
+      "options": ["A) School textbooks", "B) Presents and bright balloons", "C) Laptops and chargers"],
+      "ans": "B) Presents and bright balloons"
     },
     {
       "type": "mcq",
-      "q": "10. When do family members gather for a reunion dinner?",
-      "options": ["A) On New Year's Eve", "B) On New Year's Day night", "C) Two days after New Year"],
-      "ans": "A) On New Year's Eve"
+      "q": "10. Which sentence about Mei Ling's party is true?",
+      "options": ["A) It is celebrated in December", "B) Everyone must wear school uniforms", "C) Guests dress up in fun costumes"],
+      "ans": "C) Guests dress up in fun costumes"
     }
   ],
 
   "Vocabulary": [
     {
       "type": "mcq",
-      "q": "11. The ordinal number after 'second' is ______.",
-      "options": ["A) third", "B) first", "C) fourth"],
-      "ans": "A) third"
+      "q": "11. The month that comes right after October is ______.",
+      "options": ["A) September", "B) November", "C) December"],
+      "ans": "B) November"
     },
     {
       "type": "mcq",
-      "q": "12. Special clothes worn to look like a character or for a festival are called ______.",
-      "options": ["A) costumes", "B) uniforms", "C) pyjamas"],
+      "q": "12. A public procession including marching bands and floats on special holidays is a ______.",
+      "options": ["A) parade", "B) concert", "C) competition"],
+      "ans": "A) parade"
+    },
+    {
+      "type": "mcq",
+      "q": "13. The ordinal number after 'fourth' is ______.",
+      "options": ["A) third", "B) fifth", "C) sixth"],
+      "ans": "B) fifth"
+    },
+    {
+      "type": "mcq",
+      "q": "14. Special clothes worn to look like a specific character or animal during a festival are ______.",
+      "options": ["A) costumes", "B) aprons", "C) pyjamas"],
       "ans": "A) costumes"
     },
     {
       "type": "mcq",
-      "q": "13. Bright explosions of lights and noise in the night sky are ______.",
-      "options": ["A) fireworks", "B) lanterns", "C) candles"],
-      "ans": "A) fireworks"
-    },
-    {
-      "type": "mcq",
-      "q": "14. The tenth month of the year is ______.",
-      "options": ["A) October", "B) November", "C) September"],
-      "ans": "A) October"
-    },
-    {
-      "type": "mcq",
-      "q": "15. Decorative paper containers with a light inside are called ______.",
-      "options": ["A) lanterns", "B) balloons", "C) ribbons"],
-      "ans": "A) lanterns"
+      "q": "15. A joyful event organized to mark a special day or holiday is a ______.",
+      "options": ["A) celebration", "B) chore", "C) timetable"],
+      "ans": "A) celebration"
     }
   ],
 
   "Grammar": [
     {
       "type": "mcq",
-      "q": "16. When is your birthday? It is ______ the 12th of May.",
-      "options": ["A) on", "B) in", "C) at"],
-      "ans": "A) on"
+      "q": "16. National Day is ______ August 31st.",
+      "options": ["A) in", "B) at", "C) on"],
+      "ans": "C) on"
     },
     {
       "type": "mcq",
-      "q": "17. What are you going to ______ for the party?",
-      "options": ["A) wear", "B) wearing", "C) wore"],
-      "ans": "A) wear"
+      "q": "17. My sister was born on the ______ of May.",
+      "options": ["A) three", "B) third", "C) thirdly"],
+      "ans": "B) third"
     },
     {
       "type": "mcq",
-      "q": "18. He is going to dress ______ as a soldier.",
-      "options": ["A) up", "B) down", "C) on"],
-      "ans": "A) up"
+      "q": "18. When is ______ birthday? She was born in July.",
+      "options": ["A) her", "B) his", "C) your"],
+      "ans": "A) her"
     },
     {
       "type": "mcq",
-      "q": "19. Whose costume is this? It's ______.",
-      "options": ["A) hers", "B) her", "C) she"],
-      "ans": "A) hers"
+      "q": "19. Monday is the ______ day of the school week.",
+      "options": ["A) first", "B) second", "C) third"],
+      "ans": "A) first"
     },
     {
       "type": "mcq",
-      "q": "20. They are going to ______ fireworks tonight.",
-      "options": ["A) watch", "B) watched", "C) watching"],
-      "ans": "A) watch"
+      "q": "20. We are going to ______ up in traditional clothes for the parade tomorrow.",
+      "options": ["A) dress", "B) dressed", "C) dressing"],
+      "ans": "A) dress"
     }
   ],
 
   "Writing": [
     {
       "type": "mcq",
-      "q": "21. Choose the sentence with the correct capitalization and punctuation.",
-      "options": ["A) National Day is on the 31st of August.", "B) national day is on the 31st of august.", "C) National Day is on the 31st of August"],
-      "ans": "A) National Day is on the 31st of August."
+      "q": "21. Choose the sentence with correct capitalization and punctuation.",
+      "options": ["A) My birthday is on 5th may.", "B) My birthday is on 5th May.", "C) my birthday is on 5th May"],
+      "ans": "B) My birthday is on 5th May."
     },
     {
       "type": "mcq",
-      "q": "22. Rearrange the words to form a correct sentence: [ going to / dress up / I am / as a pirate ]",
-      "options": ["A) I am going to dress up as a pirate.", "B) As a pirate I am dress up going to.", "C) Dress up I am going to as a pirate."],
-      "ans": "A) I am going to dress up as a pirate."
+      "q": "22. Rearrange the words: [ is / When / birthday / your / ? ]",
+      "options": ["A) When your birthday is?", "B) When is your birthday?", "C) Birthday your is when?"],
+      "ans": "B) When is your birthday?"
     },
     {
       "type": "mcq",
-      "q": "23. Rearrange the words to form a correct sentence: [ going to / We are / watch fireworks / tonight ]",
-      "options": ["A) We are going to watch fireworks tonight.", "B) Watch fireworks tonight we are going to.", "C) We are watch fireworks going to tonight."],
-      "ans": "A) We are going to watch fireworks tonight."
+      "q": "23. Rearrange the words: [ celebrate / National Day / We / in August / . ]",
+      "options": ["A) We celebrate National Day in August.", "B) National Day we celebrate in August.", "C) In August National Day celebrate we."],
+      "ans": "A) We celebrate National Day in August."
     },
     {
       "type": "mcq",
       "q": "24. Choose the word with the correct spelling.",
-      "options": ["A) August", "B) Ogust", "C) August"],
-      "ans": "A) August"
+      "options": ["A) November", "B) November", "C) Novermber"],
+      "ans": "A) November"
     }
   ],
 
   "Speaking": [
     {
       "type": "mcq",
-      "q": "25. Someone asks: 'When is National Day?' How do you answer?",
-      "options": ["A) It is on the 31st of August.", "B) It is at 5 o'clock.", "C) It is in the classroom."],
-      "ans": "A) It is on the 31st of August."
+      "q": "25. Someone asks: 'When is your birthday?' How do you answer?",
+      "options": ["A) I am ten years old.", "B) It is on the 12th of October.", "C) I like chocolate cake."],
+      "ans": "B) It is on the 12th of October."
     },
     {
       "type": "mcq",
-      "q": "26. Someone asks: 'What are you going to do tonight?' How do you answer?",
-      "options": ["A) I am going to watch the fireworks.", "B) I went to the shop.", "C) I like apples."],
-      "ans": "A) I am going to watch the fireworks."
+      "q": "26. Your friend asks: 'What are you doing for National Day?' How do you reply?",
+      "options": ["A) We are watching the grand parade.", "B) Yes, I do every day.", "C) I am ten years old."],
+      "ans": "A) We are watching the grand parade."
     },
     {
       "type": "mcq",
-      "q": "27. How do you ask someone about their birthday date?",
-      "options": ["A) When is your birthday?", "B) What is your name?", "C) How old are you going?"],
-      "ans": "A) When is your birthday?"
+      "q": "27. Someone asks: 'Is New Year's Day on 1st January?' How do you reply if it's true?",
+      "options": ["A) No, it isn't.", "B) Yes, it is.", "C) Yes, it does."],
+      "ans": "B) Yes, it is."
     }
   ],
 
@@ -201,23 +201,23 @@ const getSmartModule4Data = {
     {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE4_28.png"),
-      "q": "28. Read the invitation card. What date is the costume party?",
-      "options": ["A) 15th of November", "B) 1st of December", "C) 20th of October"],
-      "ans": "A) 15th of November"
+      "q": "28. Look at the calendar image. Which date is highlighted for Independence Day?",
+      "options": ["A) 31st August", "B) 25th December", "C) 1st January"],
+      "ans": "A) 31st August"
     },
     {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE4_29.png"),
-      "q": "29. Read the event poster. Where will the fireworks display take place?",
-      "options": ["A) At the city park", "B) At the school hall", "C) At the beach"],
-      "ans": "A) At the city park"
+      "q": "29. Read the party invitation. What time does the birthday celebration start?",
+      "options": ["A) 4:00 PM", "B) 8:00 AM", "C) 10:00 PM"],
+      "ans": "A) 4:00 PM"
     },
     {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE4_30.png"),
-      "q": "30. Read the schedule. What time is the parade starting?",
-      "options": ["A) 8.00 AM", "B) 10.30 AM", "C) 2.00 PM"],
-      "ans": "A) 8.00 AM"
+      "q": "30. Look at the costume image. What character is the boy dressed up as?",
+      "options": ["A) A pirate", "B) A doctor", "C) A firefighter"],
+      "ans": "A) A pirate"
     }
   ]
 };
@@ -232,136 +232,136 @@ window.quizBank["GET SMART SET"]["Module 4 - Celebrations"] = getSmartModule4Dat
 // ==========================================
 const remedialModule4Data = {
   "Reading": [
-    // --- PETIKAN 1 (Soalan 1 - 5: Birthday Party) ---
+    // --- PETIKAN 1 (Soalan 1 - 5: Dan's Birthday) ---
     {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE4_1.png"),
-      "q": "1. Today is Adam's ____.",
-      "options": ["A) birthday", "B) holiday", "C) school day"],
+      "q": "1. Dan's birthday is in ____.",
+      "options": ["A) June", "B) May", "C) July"],
+      "ans": "A) June"
+    },
+    {
+      "type": "mcq",
+      "q": "2. How old is Dan today?",
+      "options": ["A) 10", "B) 8", "C) 5"],
+      "ans": "A) 10"
+    },
+    {
+      "type": "mcq",
+      "q": "3. Dan blows out candles on his ____.",
+      "options": ["A) cake", "B) book", "C) table"],
+      "ans": "A) cake"
+    },
+    {
+      "type": "mcq",
+      "q": "4. Dan's friends sing a happy ____ song.",
+      "options": ["A) birthday", "B) school", "C) morning"],
       "ans": "A) birthday"
     },
     {
       "type": "mcq",
-      "q": "2. Adam's birthday is on the ____ of June.",
-      "options": ["A) 5th", "B) 1st", "C) 10th"],
-      "ans": "A) 5th"
-    },
-    {
-      "type": "mcq",
-      "q": "3. What is Adam going to wear?",
-      "options": ["A) A costume", "B) A school uniform", "C) A raincoat"],
-      "ans": "A) A costume"
-    },
-    {
-      "type": "mcq",
-      "q": "4. What is on the table?",
-      "options": ["A) A big cake", "B) Books", "C) Toys"],
-      "ans": "A) A big cake"
-    },
-    {
-      "type": "mcq",
-      "q": "5. Is Adam happy?",
-      "options": ["A) Yes, he is.", "B) No, he isn't.", "C) He is angry."],
-      "ans": "A) Yes, he is."
+      "q": "5. Dan feels very ____.",
+      "options": ["A) happy", "B) sad", "C) angry"],
+      "ans": "A) happy"
     },
 
-    // --- PETIKAN 2 (Soalan 6 - 10: National Day) ---
+    // --- PETIKAN 2 (Soalan 6 - 10: National Day Flags) ---
     {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE4_6.png"),
-      "q": "6. National Day is on 31st ____.",
-      "options": ["A) August", "B) July", "C) May"],
+      "q": "6. National Day is in ____.",
+      "options": ["A) August", "B) December", "C) March"],
       "ans": "A) August"
     },
     {
       "type": "mcq",
-      "q": "7. People wave the ____.",
-      "options": ["A) flag", "B) hat", "C) book"],
-      "ans": "A) flag"
+      "q": "7. People wave Malaysian ____.",
+      "options": ["A) flags", "B) toys", "C) shoes"],
+      "ans": "A) flags"
     },
     {
       "type": "mcq",
-      "q": "8. There is a grand ____ in the street.",
-      "options": ["A) parade", "B) game", "C) class"],
+      "q": "8. The flag has red, white, blue, and ____ colors.",
+      "options": ["A) yellow", "B) green", "C) pink"],
+      "ans": "A) yellow"
+    },
+    {
+      "type": "mcq",
+      "q": "9. Children watch a big ____.",
+      "options": ["A) parade", "B) game", "C) test"],
       "ans": "A) parade"
     },
     {
       "type": "mcq",
-      "q": "9. People watch ____ at night.",
-      "options": ["A) fireworks", "B) TV", "C) birds"],
-      "ans": "A) fireworks"
-    },
-    {
-      "type": "mcq",
-      "q": "10. Which country celebrates National Day on 31st August?",
-      "options": ["A) Malaysia", "B) China", "C) UK"],
-      "ans": "A) Malaysia"
+      "q": "10. Everyone loves their ____.",
+      "options": ["A) country", "B) desk", "C) eraser"],
+      "ans": "A) country"
     }
   ],
 
   "Vocabulary": [
     {
       "type": "mcq",
-      "q": "11. Number 1st is called ______.",
+      "q": "11. 1st means ______.",
       "options": ["A) first", "B) second", "C) third"],
       "ans": "A) first"
     },
     {
       "type": "mcq",
-      "q": "12. Number 2nd is called ______.",
-      "options": ["A) second", "B) first", "C) fourth"],
+      "q": "12. 2nd means ______.",
+      "options": ["A) second", "B) first", "C) fifth"],
       "ans": "A) second"
     },
     {
       "type": "mcq",
-      "q": "13. Bright lights in the sky: ______.",
-      "options": ["A) fireworks", "B) paper", "C) flag"],
-      "ans": "A) fireworks"
+      "q": "13. 3rd means ______.",
+      "options": ["A) third", "B) fourth", "C) tenth"],
+      "ans": "A) third"
     },
     {
       "type": "mcq",
-      "q": "14. Special party clothes: ______.",
-      "options": ["A) costume", "B) bag", "C) shoes"],
-      "ans": "A) costume"
+      "q": "14. Month of National Day in Malaysia: ______.",
+      "options": ["A) August", "B) April", "C) May"],
+      "ans": "A) August"
     },
     {
       "type": "mcq",
-      "q": "15. Jalur Gemilang is a ______.",
-      "options": ["A) flag", "B) balloon", "C) cake"],
-      "ans": "A) flag"
+      "q": "15. Wearing fun clothes for a party is dressing ______.",
+      "options": ["A) up", "B) down", "C) in"],
+      "ans": "A) up"
     }
   ],
 
   "Grammar": [
     {
       "type": "mcq",
-      "q": "16. My birthday is ______ August.",
+      "q": "16. My birthday is ______ July.",
       "options": ["A) in", "B) on", "C) at"],
       "ans": "A) in"
     },
     {
       "type": "mcq",
-      "q": "17. My birthday is ______ 31st August.",
-      "options": ["A) on", "B) in", "C) at"],
+      "q": "17. The party is ______ 5th October.",
+      "options": ["A) on", "B) in", "C) under"],
       "ans": "A) on"
     },
     {
       "type": "mcq",
-      "q": "18. I am going ______ dress up.",
-      "options": ["A) to", "B) for", "C) at"],
-      "ans": "A) to"
+      "q": "18. Today is the ______ (1st) day of May.",
+      "options": ["A) first", "B) one", "C) single"],
+      "ans": "A) first"
     },
     {
       "type": "mcq",
-      "q": "19. She is going to ______ a cake.",
-      "options": ["A) make", "B) making", "C) made"],
-      "ans": "A) make"
+      "q": "19. When ______ your birthday?",
+      "options": ["A) is", "B) are", "C) am"],
+      "ans": "A) is"
     },
     {
       "type": "mcq",
-      "q": "20. They are going to ______ the parade.",
-      "options": ["A) watch", "B) watching", "C) watched"],
-      "ans": "A) watch"
+      "q": "20. We ______ happy today.",
+      "options": ["A) are", "B) is", "C) am"],
+      "ans": "A) are"
     }
   ],
 
@@ -369,47 +369,47 @@ const remedialModule4Data = {
     {
       "type": "mcq",
       "q": "21. Choose the correct spelling:",
-      "options": ["A) Party", "B) Parti", "C) Partey"],
-      "ans": "A) Party"
+      "options": ["A) August", "B) Ogust", "C) Awgust"],
+      "ans": "A) August"
     },
     {
       "type": "mcq",
-      "q": "22. Rearrange: [ going to / I am / play ]",
-      "options": ["A) I am going to play.", "B) Play going to I am.", "C) I am play going to."],
-      "ans": "A) I am going to play."
+      "q": "22. Rearrange: [ Happy / Birthday! ]",
+      "options": ["A) Birthday Happy!", "B) Happy Birthday!", "C) Birthday Happy"],
+      "ans": "B) Happy Birthday!"
     },
     {
       "type": "mcq",
       "q": "23. Choose the correct spelling:",
-      "options": ["A) Flag", "B) Flagg", "C) Phlag"],
-      "ans": "A) Flag"
+      "options": ["A) Party", "B) Parti", "C) Partee"],
+      "ans": "A) Party"
     },
     {
       "type": "mcq",
-      "q": "24. Rearrange: [ is / My birthday / in May ]",
-      "options": ["A) My birthday is in May.", "B) In May my birthday is.", "C) Is my birthday in May."],
-      "ans": "A) My birthday is in May."
+      "q": "24. Rearrange: [ It is / on 1st May. ]",
+      "options": ["A) On 1st May it is.", "B) It is on 1st May.", "C) May 1st on it is."],
+      "ans": "B) It is on 1st May."
     }
   ],
 
   "Speaking": [
     {
       "type": "mcq",
-      "q": "25. When is your birthday?",
-      "options": ["A) It is in July.", "B) It is red.", "C) I am 10."],
-      "ans": "A) It is in July."
-    },
-    {
-      "type": "mcq",
-      "q": "26. Are you going to wear a costume?",
-      "options": ["A) Yes, I am.", "B) Yes, I do.", "C) Yes, I have."],
-      "ans": "A) Yes, I am."
-    },
-    {
-      "type": "mcq",
-      "q": "27. Happy Birthday to you!",
-      "options": ["A) Thank you!", "B) Goodbye!", "C) You're welcome!"],
+      "q": "25. Happy Birthday to you!",
+      "options": ["A) Thank you!", "B) Good morning.", "C) I am fine."],
       "ans": "A) Thank you!"
+    },
+    {
+      "type": "mcq",
+      "q": "26. When is your birthday?",
+      "options": ["A) It is on 4th July.", "B) I am ten.", "C) Yes, it is."],
+      "ans": "A) It is on 4th July."
+    },
+    {
+      "type": "mcq",
+      "q": "27. Do you like birthday parties?",
+      "options": ["A) Yes, I do.", "B) Yes, I am.", "C) Yes, I can."],
+      "ans": "A) Yes, I do."
     }
   ],
 
@@ -417,23 +417,23 @@ const remedialModule4Data = {
     {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE4_28.png"),
-      "q": "28. Look at the card. When is the party?",
-      "options": ["A) Sunday", "B) Monday", "C) Friday"],
-      "ans": "A) Sunday"
+      "q": "28. Look at the flag picture. Which country does this flag belong to?",
+      "options": ["A) Malaysia", "B) UK", "C) Mexico"],
+      "ans": "A) Malaysia"
     },
     {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE4_29.png"),
-      "q": "29. Look at the picture. What are they watching?",
-      "options": ["A) Fireworks", "B) TV", "C) Birds"],
-      "ans": "A) Fireworks"
+      "q": "29. Look at the cake picture. What is on top of the cake?",
+      "options": ["A) Candles", "B) Books", "C) Flowers"],
+      "ans": "A) Candles"
     },
     {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE4_30.png"),
-      "q": "30. Read the poster. What flag is shown?",
-      "options": ["A) Malaysia", "B) UK", "C) USA"],
-      "ans": "A) Malaysia"
+      "q": "30. Look at the gift box picture. What is this?",
+      "options": ["A) Present", "B) Table", "C) Chair"],
+      "ans": "A) Present"
     }
   ]
 };
