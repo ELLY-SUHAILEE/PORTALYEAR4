@@ -848,49 +848,52 @@
             loadModule(skripModul, currentModuleName, currentCategory);
         }
 
-        function loadModule(skripModul, moduleName, categoryName) {
-            currentCategory = categoryName; 
-            currentModuleName = moduleName;
-            window.quizQuestions = null;
+       function loadModule(skripModul, moduleName, categoryName) {
+    currentCategory = categoryName; 
+    currentModuleName = moduleName;
+    window.quizQuestions = null;
 
-            const oldScript = document.getElementById('dynamicQuizScript');
-            if (oldScript) oldScript.remove();
+    const oldScript = document.getElementById('dynamicQuizScript');
+    if (oldScript) oldScript.remove();
 
-            const script = document.createElement('script');
-            script.id = 'dynamicQuizScript';
-            script.src = skripModul + "?v=" + new Date().getTime();
+    const script = document.createElement('script');
+    script.id = 'dynamicQuizScript';
+    script.src = skripModul + "?v=" + new Date().getTime();
 
-            script.onload = () => {
-                let rawData = null;
+    script.onload = () => {
+        let rawData = null;
 
-                if (window.quizBank && window.quizBank[currentCategory]) {
-                    const cat = window.quizBank[currentCategory];
-                    if (cat[currentModuleName]) {
-                        rawData = cat[currentModuleName];
-                    } else {
-                        const keys = Object.keys(cat);
-                        const matchedKey = keys.find(k => k.toLowerCase().includes(currentModuleName.toLowerCase())) || keys[0];
-                        if (matchedKey) rawData = cat[matchedKey];
-                    }
-                } 
+        if (window.quizBank && window.quizBank[currentCategory]) {
+            const cat = window.quizBank[currentCategory];
+            const keys = Object.keys(cat);
 
-                if (!rawData && Array.isArray(window.quizQuestions) && window.quizQuestions.length > 0) {
-                    rawData = window.quizQuestions;
-                }
+            // 1. Cari nama padanan tepat
+            if (cat[currentModuleName]) {
+                rawData = cat[currentModuleName];
+            } 
+            // 2. Jika tidak jumpa, ambil senarai soalan pertama yang ada dalam fail tersebut
+            else if (keys.length > 0) {
+                rawData = cat[keys[0]];
+            }
+        } 
 
-                if (rawData && rawData.length > 0) {
-                    activeQuestions = rawData;
-                    paparSoalan();
-                    document.getElementById('submitBtn').style.display = 'block';
-                } else {
-                    alert("Soalan tidak dijumpai dalam fail skrip ini.");
-                }
-            };
-
-            script.onerror = () => alert("Gagal memuatkan fail skrip: " + skripModul);
-            document.head.appendChild(script);
+        // 3. Fallback jika guna format window.quizQuestions
+        if (!rawData && Array.isArray(window.quizQuestions) && window.quizQuestions.length > 0) {
+            rawData = window.quizQuestions;
         }
 
+        if (rawData && rawData.length > 0) {
+            activeQuestions = rawData;
+            paparSoalan();
+            document.getElementById('submitBtn').style.display = 'block';
+        } else {
+            alert("Soalan tidak dijumpai dalam fail skrip ini.");
+        }
+    };
+
+    script.onerror = () => alert("Gagal memuatkan fail skrip: " + skripModul);
+    document.head.appendChild(script);
+}
         /* PAPAR SOALAN - CENTURY GOTHIC SAIS 16 UNTUK TEKS DAN BUTANG */
         function paparSoalan() {
             const container = document.getElementById('questionsContainer');
