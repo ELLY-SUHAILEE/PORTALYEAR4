@@ -917,30 +917,27 @@
             }
         }
 
-        function dapatkanIndeksJawapanBetul(q) {
-            if (!q) return 0;
-            let val = (q.answer !== undefined) ? q.answer : q.ans;
-            if (val === undefined || val === null) return 0;
+        function dapatkanIndeksJawapanBetul(soalanObj) {
+    const jawapan = soalanObj.ans !== undefined ? soalanObj.ans : soalanObj.answer;
 
-            if (typeof val === 'number') return val;
+    if (typeof jawapan === 'number') {
+        return jawapan;
+    }
 
-            const bersihkan = (s) => String(s || '').replace(/[\u00A0\s]+/g, ' ').trim().toLowerCase();
-            const valStr = bersihkan(val);
+    if (typeof jawapan === 'string') {
+        // Padankan string jawapan penuh dengan pilihan yang ada
+        const idx = soalanObj.options.findIndex(opt => opt.trim() === jawapan.trim());
+        if (idx !== -1) return idx;
 
-            if (/^\d+$/.test(valStr)) return parseInt(valStr, 10);
-
-            if (q.options && Array.isArray(q.options)) {
-                let idx = q.options.findIndex(opt => bersihkan(opt) === valStr);
-                if (idx !== -1) return idx;
-
-                let padananHuruf = valStr.match(/^([a-d])[\)\.\s]?/);
-                if (padananHuruf) {
-                    let idxHuruf = padananHuruf[1].charCodeAt(0) - 97;
-                    if (idxHuruf >= 0 && idxHuruf < q.options.length) return idxHuruf;
-                }
-            }
-            return 0;
+        // Jika jawapan bermula dengan format huruf (A, B, C)
+        const letterMatch = jawapan.match(/^([A-D])\)/i);
+        if (letterMatch) {
+            return letterMatch[1].toUpperCase().charCodeAt(0) - 65;
         }
+    }
+
+    return 0;
+}
 
         function hantarJawapan() {
             if (Object.keys(userAnswers).length < activeQuestions.length) {
