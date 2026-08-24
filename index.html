@@ -727,125 +727,142 @@
         let activeQuestions = [];
 
         const getSmartTopics = [
-            { name: "Module 1: Where are you from? (30 Soalan)", val: "Module 1 - Where are you from?|module1.js|getsmart" },
-            { name: "Module 2: My week (30 Soalan)", val: "Module 2 - My week|module2.js|getsmart" },
-            { name: "Module 3: In the past (30 Soalan)", val: "Module 3 - In the past|module3.js|getsmart" },
-            { name: "Module 4: Celebrations (30 Soalan)", val: "Module 4 - Celebrations|module4.js|getsmart" },
-            { name: "Module 5: Eating right (30 Soalan)", val: "Module 5 - Eating right|module5.js|getsmart" },
-            { name: "Module 6: Getting around (30 Soalan)", val: "Module 6 - Getting around|module6.js|getsmart" },
-            { name: "Module 7: Helping out (30 Soalan)", val: "Module 7 - Helping out|module7.js|getsmart" },
-            { name: "Module 8: Amazing animals (30 Soalan)", val: "Module 8 - Amazing animals|module8.js|getsmart" },
-            { name: "Module 9: Get active! (30 Soalan)", val: "Module 9 - Get active!|module9.js|getsmart" },
-            { name: "Module 10: What's the matter? (30 Soalan)", val: "Module 10 - What's the matter?|module10.js|getsmart" }
-        ];
+    { name: "Module 1: Where are you from? (30 Soalan)", val: "Module 1 - Where are you from?|module1.js|getsmart" },
+    { name: "Module 2: My week (30 Soalan)", val: "Module 2 - My week|module2.js|getsmart" },
+    { name: "Module 3: In the past (30 Soalan)", val: "Module 3 - In the past|module3.js|getsmart" },
+    { name: "Module 4: Celebrations (30 Soalan)", val: "Module 4 - Celebrations|module4.js|getsmart" },
+    { name: "Module 5: Eating right (30 Soalan)", val: "Module 5 - Eating right|module5.js|getsmart" },
+    { name: "Module 6: Getting around (30 Soalan)", val: "Module 6 - Getting around|module6.js|getsmart" },
+    { name: "Module 7: Helping out (30 Soalan)", val: "Module 7 - Helping out|module7.js|getsmart" },
+    { name: "Module 8: Amazing animals (30 Soalan)", val: "Module 8 - Amazing animals|module8.js|getsmart" },
+    { name: "Module 9: Get active! (30 Soalan)", val: "Module 9 - Get active!|module9.js|getsmart" },
+    { name: "Module 10: What's the matter? (30 Soalan)", val: "Module 10 - What's the matter?|module10.js|getsmart" }
+];
 
-        const remedialTopics = [
-            { name: "Remedial 1: Where are you from? (30 Soalan)", val: "Remedial 1 - Where are you from?|module1.js|remedial" },
-            { name: "Remedial 2: My week (30 Soalan)", val: "Remedial 2 - My week|module2.js|remedial" },
-            { name: "Remedial 3: In the past (30 Soalan)", val: "Remedial 3 - In the past|module3.js|remedial" },
-            { name: "Remedial 4: Celebrations (30 Soalan)", val: "Remedial 4 - Celebrations|module4.js|remedial" },
-            { name: "Remedial 5: Eating right (30 Soalan)", val: "Remedial 5 - Eating right|module5.js|remedial" },
-            { name: "Remedial 6: Getting around (30 Soalan)", val: "Remedial 6 - Getting around|module6.js|remedial" },
-            { name: "Remedial 7: Helping out (30 Soalan)", val: "Remedial 7 - Helping out|module7.js|remedial" },
-            { name: "Remedial 8: Amazing animals (30 Soalan)", val: "Remedial 8 - Amazing animals|module8.js|remedial" },
-            { name: "Remedial 9: Get active! (30 Soalan)", val: "Remedial 9 - Get active!|module9.js|remedial" },
-            { name: "Remedial 10: What's the matter? (30 Soalan)", val: "Remedial 10 - What's the matter?|module10.js|remedial" }
-        ];
+const remedialTopics = [
+    { name: "Remedial 1: Where are you from? (30 Soalan)", val: "Remedial 1 - Where are you from?|module1.js|remedial" },
+    { name: "Remedial 2: My week (30 Soalan)", val: "Remedial 2 - My week|module2.js|remedial" },
+    { name: "Remedial 3: In the past (30 Soalan)", val: "Remedial 3 - In the past|module3.js|remedial" },
+    { name: "Remedial 4: Celebrations (30 Soalan)", val: "Remedial 4 - Celebrations|module4.js|remedial" },
+    { name: "Remedial 5: Eating right (30 Soalan)", val: "Remedial 5 - Eating right|module5.js|remedial" },
+    { name: "Remedial 6: Getting around (30 Soalan)", val: "Remedial 6 - Getting around|module6.js|remedial" },
+    { name: "Remedial 7: Helping out (30 Soalan)", val: "Remedial 7 - Helping out|module7.js|remedial" },
+    { name: "Remedial 8: Amazing animals (30 Soalan)", val: "Remedial 8 - Amazing animals|module8.js|remedial" },
+    { name: "Remedial 9: Get active! (30 Soalan)", val: "Remedial 9 - Get active!|module9.js|remedial" },
+    { name: "Remedial 10: What's the matter? (30 Soalan)", val: "Remedial 10 - What's the matter?|module10.js|remedial" }
+];
 
-        function semakMaklumatMurid() {
-            const elNama = document.getElementById('namaMurid');
-            const elKelas = document.getElementById('kelasMurid');
-            
-            const nama = elNama ? elNama.value.trim() : (localStorage.getItem('studentName') || '');
-            const kelas = elKelas ? elKelas.value : (localStorage.getItem('studentClass') || '');
+let currentCategory = "GET SMART SET";
+let currentModuleName = "";
+let activeQuestions = [];
+let userAnswers = {};
+let activeMode = "getsmart";
 
-            if (!nama) {
-                alert("⚠️ SILA MASUKKAN NAMA MURID TERLEBIH DAHULU!");
-                if (elNama) elNama.focus();
-                return false;
-            }
+function semakMaklumatMurid() {
+    const elNama = document.getElementById('namaMurid');
+    const elKelas = document.getElementById('kelasMurid');
+    
+    const nama = elNama ? elNama.value.trim() : (localStorage.getItem('studentName') || '');
+    const kelas = elKelas ? elKelas.value : (localStorage.getItem('studentClass') || '');
 
-            if (!kelas) {
-                alert("⚠️ SILA PILIH KELAS MURID TERLEBIH DAHULU!");
-                if (elKelas) elKelas.focus();
-                return false;
-            }
+    if (!nama) {
+        alert("⚠️ SILA MASUKKAN NAMA MURID TERLEBIH DAHULU!");
+        if (elNama) elNama.focus();
+        return false;
+    }
 
-            localStorage.setItem('studentName', nama);
-            localStorage.setItem('studentClass', kelas);
-            return { nama, kelas };
-        }
+    if (!kelas) {
+        alert("⚠️ SILA PILIH KELAS MURID TERLEBIH DAHULU!");
+        if (elKelas) elKelas.focus();
+        return false;
+    }
 
-        function bukaAktiviti(url) {
-            if (!semakMaklumatMurid()) return;
-            window.location.href = url;
-        }
+    localStorage.setItem('studentName', nama);
+    localStorage.setItem('studentClass', kelas);
+    return { nama, kelas };
+}
 
-        function bukaModalTopik(mode) {
-            if (!semakMaklumatMurid()) return;
+function bukaAktiviti(url) {
+    if (!semakMaklumatMurid()) return;
+    window.location.href = url;
+}
 
-            activeMode = mode;
-            const modal = document.getElementById('topicModal');
-            const modalTitle = document.getElementById('modalTitle');
-            const topicSelect = document.getElementById('topicSelect');
+function bukaModalTopik(mode) {
+    if (!semakMaklumatMurid()) return;
 
-            topicSelect.innerHTML = '';
-            const list = (mode === 'getsmart') ? getSmartTopics : remedialTopics;
-            
-            if (modalTitle) {
-                modalTitle.textContent = (mode === 'getsmart') ? 'Select Get Smart Module' : 'Select Remedial Set';
-            }
+    activeMode = mode;
+    const modal = document.getElementById('topicModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const topicSelect = document.getElementById('topicSelect');
 
-            list.forEach(item => {
-                const opt = document.createElement('option');
-                opt.value = item.val;
-                opt.textContent = item.name;
-                topicSelect.appendChild(opt);
-            });
+    topicSelect.innerHTML = '';
+    const list = (mode === 'getsmart') ? getSmartTopics : remedialTopics;
+    
+    if (modalTitle) {
+        modalTitle.textContent = (mode === 'getsmart') ? 'Select Get Smart Module' : 'Select Remedial Set';
+    }
 
-            modal.style.display = 'flex';
-        }
+    list.forEach(item => {
+        const opt = document.createElement('option');
+        opt.value = item.val;
+        opt.textContent = item.name;
+        topicSelect.appendChild(opt);
+    });
 
-        function tutupModal() {
-            document.getElementById('topicModal').style.display = 'none';
-        }
+    modal.style.display = 'flex';
+}
 
-        function mulaDariModal() {
-            const topicVal = document.getElementById('topicSelect').value;
-            tutupModal();
-            if (topicVal) prosesMulaKuiz(topicVal);
-        }
+function tutupModal() {
+    const modal = document.getElementById('topicModal');
+    if (modal) modal.style.display = 'none';
+}
 
-        function prosesMulaKuiz(val) {
-            const info = semakMaklumatMurid();
-            if (!info) return;
+function mulaDariModal() {
+    const topicVal = document.getElementById('topicSelect').value;
+    tutupModal();
+    if (topicVal) prosesMulaKuiz(topicVal);
+}
 
-            const parts = val.split('|');
-            currentModuleName = parts[0];
-            const skripModul = parts[1];
-            const mode = parts[2] || "getsmart";
+function prosesMulaKuiz(val) {
+    const info = semakMaklumatMurid();
+    if (!info) return;
 
-            currentCategory = (mode === 'remedial') ? "REMEDIAL SET" : "GET SMART SET";
+    const parts = val.split('|');
+    currentModuleName = parts[0];
+    const skripModul = parts[1];
+    const mode = parts[2] || "getsmart";
 
-            document.getElementById('menuSection').style.display = 'none';
-            document.getElementById('quizSection').style.display = 'block';
+    currentCategory = (mode === 'remedial') ? "REMEDIAL SET" : "GET SMART SET";
 
-            document.getElementById('displayStudentInfo').textContent = `${info.nama} (${info.kelas})`;
-            document.getElementById('displayModuleName').textContent = currentModuleName;
+    const menuSec = document.getElementById('menuSection');
+    const quizSec = document.getElementById('quizSection');
+    if (menuSec) menuSec.style.display = 'none';
+    if (quizSec) quizSec.style.display = 'block';
 
-            document.getElementById('questionsContainer').innerHTML = `<p style="padding: 20px; text-align: center; font-size: 16pt;">Memuatkan soalan...</p>`;
-            document.getElementById('scoreBanner').style.display = 'none';
-            document.getElementById('submitBtn').style.display = 'none';
+    const elStudent = document.getElementById('displayStudentInfo');
+    const elModule = document.getElementById('displayModuleName');
+    if (elStudent) elStudent.textContent = `${info.nama} (${info.kelas})`;
+    if (elModule) elModule.textContent = currentModuleName;
 
-            userAnswers = {};
-            activeQuestions = [];
+    const qContainer = document.getElementById('questionsContainer');
+    if (qContainer) {
+        qContainer.innerHTML = `<p style="padding: 20px; text-align: center; font-size: 16pt;">Memuatkan soalan...</p>`;
+    }
+    
+    const scoreBanner = document.getElementById('scoreBanner');
+    if (scoreBanner) scoreBanner.style.display = 'none';
+    
+    const submitBtn = document.getElementById('submitBtn');
+    if (submitBtn) submitBtn.style.display = 'none';
 
-            window.quizBank = window.quizBank || {};
-            window.quizBank["GET SMART SET"] = window.quizBank["GET SMART SET"] || {};
-            window.quizBank["REMEDIAL SET"] = window.quizBank["REMEDIAL SET"] || {};
-            window.quizQuestions = null;
+    userAnswers = {};
+    activeQuestions = [];
 
-         function loadModule(skripModul, moduleName, categoryName) {
+    // Memanggil fungsi loadModule
+    loadModule(skripModul, currentModuleName, currentCategory);
+}
+
+function loadModule(skripModul, moduleName, categoryName) {
     currentCategory = categoryName; 
     currentModuleName = moduleName;
     window.quizQuestions = null;
@@ -860,14 +877,12 @@
     script.onload = () => {
         let rawData = null;
 
-        // 1. Cari data modul dalam quizBank
         if (window.quizBank && window.quizBank[currentCategory]) {
             const catData = window.quizBank[currentCategory];
             
             if (catData[currentModuleName]) {
                 rawData = catData[currentModuleName];
             } else {
-                // Cari mana-mana kunci mengikut nombor modul (cth: mengesan Module 2)
                 const keys = Object.keys(catData);
                 const moduleNum = currentModuleName.replace(/[^0-9]/g, '');
                 const matchedKey = keys.find(k => k.includes(moduleNum));
@@ -877,6 +892,36 @@
             }
         }
 
+        if (!rawData && Array.isArray(window.quizQuestions)) {
+            rawData = window.quizQuestions;
+        }
+
+        let finalQuestions = [];
+        if (rawData && !Array.isArray(rawData) && typeof rawData === 'object') {
+            Object.keys(rawData).forEach(skill => {
+                if (Array.isArray(rawData[skill])) {
+                    finalQuestions = finalQuestions.concat(rawData[skill]);
+                }
+            });
+        } else if (Array.isArray(rawData)) {
+            finalQuestions = rawData;
+        }
+
+        if (finalQuestions.length > 0) {
+            activeQuestions = finalQuestions;
+            if (typeof paparSoalan === 'function') {
+                paparSoalan();
+            }
+            const submitBtn = document.getElementById('submitBtn');
+            if (submitBtn) submitBtn.style.display = 'block';
+        } else {
+            alert("Soalan tidak dijumpai dalam fail " + skripModul);
+        }
+    };
+
+    script.onerror = () => alert("Gagal memuatkan fail skrip: " + skripModul);
+    document.head.appendChild(script);
+}
         // 2. Gabungkan soalan daripada semua kemahiran (Reading, Vocabulary, Grammar, dll)
         let finalQuestions = [];
         if (rawData && !Array.isArray(rawData) && typeof rawData === 'object') {
