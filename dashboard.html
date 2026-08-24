@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Guru - Analisis Pembelajaran Year 4 🌲</title>
+    
+    <!-- Google Fonts & Chart.js -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Fredoka', 'Poppins', sans-serif;
+            user-select: none;
+        }
+
+        th, td, .summary-item {
+            user-select: text;
+        }
+
+        body {
+            background-color: #047857;
+            margin: 0;
+            padding: 25px 15px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            color: #064e3b;
+        }
+
+        .card {
+            background: rgba(245, 253, 248, 0.98);
+            backdrop-filter: blur(12px);
+            width: 100%;
+            max-width: 1300px;
+            border-radius: 28px;
+            border: 4px solid #fed7aa;
+            box-shadow: 0 20px 45px rgba(5, 46, 22, 0.4);
+            padding: 25px 30px;
+        }
+
+        .nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .btn-home {
+            background: linear-gradient(135deg, #86efac 0%, #4ade80 100%);
+            color: #052e16;
+            padding: 10px 18px;
+            border: 2px solid #fed7aa;
+            border-radius: 14px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 4px 0px #16a34a;
+            transition: transform 0.1s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-home:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0px #16a34a;
+        }
+
+        h1 {
+            color: #065f46;
+            margin: 0;
+            font-size: 24px;
+            text-shadow: 1px 1px 0px #a7f3d0;
+        }
+
+        /* TETAPAN URL APPS SCRIPT */
+        .config-box {
+            background: #ffffff;
+            border: 2px dashed #34d399;
+            border-radius: 16px;
+            padding: 12px 18px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .config-box input {
+            flex: 1;
+            min-width: 250px;
+            padding: 8px 14px;
+            border: 2px solid #a7f3d0;
+            border-radius: 10px;
+            font-size: 13px;
+            outline: none;
+        }
+
+        .config-box button {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 9px 16px;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+        /* KAD STATISTIK */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .stat-card {
+            background: #ffffff;
+            border: 2px solid #a7f3d0;
+            border-radius: 18px;
+            padding: 16px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+
+        .stat-card .number {
+            font-size: 28px;
+            font-weight: 700;
+            color: #047857;
+            margin-top: 5px;
+        }
+
+        .stat-card .label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        .stat-card.cemerlang .number { color: #16a34a; }
+        .stat-card.intervensi .number { color: #dc2626; }
+
+        /* CARTA MODUL */
+        .chart-section {
+            background: #ffffff;
+            border: 2px solid #a7f3d0;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 850px;
+            height: 420px;
+        }
+
+        .chart-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #065f46;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        /* PANEL RINGKASAN NAMA & KELAS */
+        .summary-lists-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .summary-box {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 18px;
+            border: 2px solid #a7f3d0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            max-height: 250px;
+            overflow-y: auto;
+        }
+
+        .summary-box.excel { border-color: #86efac; background: #f0fdf4; }
+        .summary-box.remedial { border-color: #fca5a5; background: #fef2f2; }
+
+        .summary-box h3 {
+            margin-top: 0;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .summary-box.excel h3 { color: #15803d; }
+        .summary-box.remedial h3 { color: #b91c1c; }
+
+        .summary-item {
+            font-size: 13px;
+            padding: 6px 10px;
+            margin-bottom: 6px;
+            background: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* PANEL PENAPIS */
+        .controls-section {
+            background: #ecfdf5;
+            border: 2px solid #34d399;
+            border-radius: 18px;
+            padding: 18px;
+            margin-bottom: 25px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+            flex: 1;
+        }
+
+        select, input[type="text"] {
+            padding: 10px 14px;
+            border: 2px solid #a7f3d0;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            outline: none;
+            background: #ffffff;
+            color: #064e3b;
+        }
+
+        select:focus, input[type="text"]:focus {
+            border-color: #059669;
+        }
+
+        .btn-action {
+            padding: 10px 16px;
+            font-size: 13px;
+            font-weight: 700;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            color: white;
+            transition: transform 0.1s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-action:active { transform: translateY(2px); }
+        .btn-export { background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); box-shadow: 0 4px 0px #075985; }
+        .btn-print { background: linear-gradient(135deg, #d97706 0%, #b45309 100%); box-shadow: 0 4px 0px #78350f; }
+        .btn-refresh { background: linear-gradient(135deg, #059669 0%, #047857 100%); box-shadow: 0 4px 0px #064e3b; }
+        .btn-lock { background: linear-gradient(135deg, #475569 0%, #334155 100%); box-shadow: 0 4px 0px #1e293b; }
+
+        /* JADUAL DATA */
+        .table-container {
+            overflow-x: auto;
+            background: #ffffff;
+            border: 2px solid #a7f3d0;
+            border-radius: 18px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+        }
+
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th, td { padding: 12px 16px; border-bottom: 1px solid #f1f5f9; }
+        th { background: #f0fdf4; color: #047857; font-weight: 700; font-size: 13px; }
+        td { font-size: 13px; color: #334155; font-weight: 600; }
+
+        .cat-badge {
+            padding: 4px 8px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 11px;
+            display: inline-block;
+            color: white;
+            background-color: #047857;
+        }
+
+        .status-badge {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+        }
+        .status-cemerlang { background-color: #dcfce7; color: #15803d; }
+        .status-sederhana { background-color: #fef9c3; color: #a16207; }
+        .status-intervensi { background-color: #fee2e2; color: #b91c1c; }
+
+        .intervention-text {
+            font-size: 12px;
+            color: #0f766e;
+            background: #ccfbf1;
+            padding: 5px 8px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .progress-bar-bg {
+            background: #e2e8f0;
+            border-radius: 10px;
+            height: 8px;
+            width: 60px;
+            display: inline-block;
+            overflow: hidden;
+            vertical-align: middle;
+            margin-right: 6px;
+        }
+
+        .progress-bar-fill {
+            background: linear-gradient(90deg, #10b981, #059669);
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        /* MEDIA CETAK (PRINT-FRIENDLY) */
+        @media print {
+            body { background: white; padding: 0; color: black; }
+            .card { border: none; box-shadow: none; max-width: 100%; padding: 0; }
+            .config-box, .btn-action, .btn-home, select, input { display: none !important; }
+            .chart-section { page-break-inside: avoid; }
+            table { border: 1px solid #ccc; }
+            th, td { border: 1px solid #ddd; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="nav-header">
+        <div class="header-left">
+            <a href="index.html" class="btn-home"><i class="fa-solid fa-house"></i> Modul Murid</a>
+            <h1>📊 Dashboard Analisis & Intervensi Year 4</h1>
+        </div>
+        <div>
+            <button class="btn-action btn-refresh" onclick="fetchSheetData()"><i class="fa-solid fa-rotate" id="refresh-icon"></i> Kemaskini Data</button>
+            <button class="btn-action btn-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Cetak Laporan</button>
+            <button class="btn-action btn-export" onclick="exportCSV()"><i class="fa-solid fa-file-csv"></i> Export CSV</button>
+            <button class="btn-action btn-lock" onclick="logoutGuru()"><i class="fa-solid fa-lock"></i> Kunci</button>
+        </div>
+    </div>
+
+    <!-- TETAPAN URL GOOGLE APPS SCRIPT YEAR 4 -->
+    <div class="config-box">
+        <i class="fa-solid fa-link" style="color: #047857;"></i>
+        <span style="font-size: 12px; font-weight: bold;">URL Apps Script Year 4:</span>
+        <input type="text" id="customScriptUrl" placeholder="https://script.google.com/macros/s/.../exec">
+        <button onclick="simpanScriptUrl()"><i class="fa-solid fa-floppy-disk"></i> Simpan URL</button>
+        <span id="lastUpdated" style="font-size: 11px; color: #64748b; margin-left: auto;"></span>
+    </div>
+
+    <!-- KAD STATISTIK -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="label">Jumlah Rekod Murid</div>
+            <div class="number" id="stat-total">0</div>
+        </div>
+        <div class="stat-card cemerlang">
+            <div class="label">Pencapaian Cemerlang (≥90%)</div>
+            <div class="number" id="stat-cemerlang">0</div>
+        </div>
+        <div class="stat-card">
+            <div class="label">Memuaskan / Sederhana (51-89%)</div>
+            <div class="number" id="stat-sederhana">0</div>
+        </div>
+        <div class="stat-card intervensi">
+            <div class="label">Perlu Intervensi (≤50%)</div>
+            <div class="number" id="stat-intervensi">0</div>
+        </div>
+        <div class="stat-card">
+            <div class="label">Purata Skor Keseluruhan</div>
+            <div class="number" id="stat-purata">0%</div>
+        </div>
+    </div>
+
+    <!-- CARTA MODUL -->
+    <div class="chart-section">
+        <div class="chart-title">📊 Analisis Purata Skor Mengikut Modul (Year 4 CEFR)</div>
+        <div class="chart-container">
+            <canvas id="moduleChart"></canvas>
+        </div>
+    </div>
+
+    <!-- PANEL RINGKASAN NAMA & KELAS -->
+    <div class="summary-lists-grid">
+        <div class="summary-box excel">
+            <h3><i class="fa-solid fa-award"></i> Murid Cemerlang (≥90%)</h3>
+            <div id="list-cemerlang">
+                <div style="font-size: 12px; color: #94a3b8;">Tiada data...</div>
+            </div>
+        </div>
+        <div class="summary-box remedial">
+            <h3><i class="fa-solid fa-triangle-exclamation"></i> Murid Perlu Intervensi (≤50%)</h3>
+            <div id="list-intervensi">
+                <div style="font-size: 12px; color: #94a3b8;">Tiada data...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PANEL PENAPIS DATA -->
+    <div class="controls-section">
+        <div class="filter-group">
+            <input type="text" id="filter-search" placeholder="🔍 Cari nama murid..." onkeyup="updateDashboard()">
+            
+            <select id="filter-class" onchange="updateDashboard()">
+                <option value="all">🏫 Semua Kelas</option>
+                <option value="4 arif">4 Arif</option>
+                <option value="4 bestari">4 Bestari</option>
+                <option value="4 cerdik">4 Cerdik</option>
+                <option value="4 dedikasi">4 Dedikasi</option>
+                <option value="4 elit">4 Elit</option>
+                <option value="4 firdaus">4 Firdaus</option>
+                <option value="4 gigih">4 Gigih</option>
+                <option value="4 harmoni">4 Harmoni</option>
+                <option value="4 inovatif">4 Inovatif</option>
+                <option value="4 jujur">4 Jujur</option>
+                <option value="4 kreatif">4 Kreatif</option>
+            </select>
+
+            <select id="filter-module" onchange="updateDashboard()">
+                <option value="all">📚 Semua Modul</option>
+                <option value="Module 1">Module 1: Where are you from?</option>
+                <option value="Module 2">Module 2: My week</option>
+                <option value="Module 3">Module 3: In the past</option>
+                <option value="Module 4">Module 4: Celebrations</option>
+                <option value="Module 5">Module 5: Eating right</option>
+                <option value="Module 6">Module 6: Getting around</option>
+                <option value="Module 7">Module 7: Helping out</option>
+                <option value="Module 8">Module 8: Amazing animals</option>
+                <option value="Module 9">Module 9: Get active!</option>
+                <option value="Module 10">Module 10: What's the matter?</option>
+            </select>
+
+            <select id="filter-category" onchange="updateDashboard()">
+                <option value="all">🎯 Semua Set / Kategori</option>
+                <option value="GET SMART">GET SMART</option>
+                <option value="REMEDIAL SET">REMEDIAL SET</option>
+                <option value="WORD POWER">WORD POWER</option>
+                <option value="WORD REPEAT">WORD REPEAT</option>
+                <option value="READING">READING</option>
+                <option value="GRAMMAR">GRAMMAR</option>
+                <option value="SENTENCE">SENTENCE</option>
+                <option value="BUILD SENTENCE">BUILD SENTENCE</option>
+            </select>
+
+            <select id="filter-status" onchange="updateDashboard()">
+                <option value="all">⚡ Semua Tahap</option>
+                <option value="cemerlang">Cemerlang (≥90%)</option>
+                <option value="sederhana">Sederhana (51-89%)</option>
+                <option value="intervensi">Intervensi (≤50%)</option>
+            </select>
+        </div>
+
+        <div>
+            <select id="sort-by" onchange="updateDashboard()">
+                <option value="newest">⏱️ Terkini Dahulu</option>
+                <option value="score-desc">📈 Skor: Tinggi ke Rendah</option>
+                <option value="score-asc">📉 Skor: Rendah ke Tinggi</option>
+                <option value="name">🔤 Nama (A-Z)</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- JADUAL UTAMA -->
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Tarikh / Masa</th>
+                    <th>Nama Murid</th>
+                    <th>Kelas</th>
+                    <th>Modul</th>
+                    <th>Set / Kategori</th>
+                    <th>Skor Peratus</th>
+                    <th>Tahap</th>
+                    <th>Cadangan Intervensi / Pengukuhan</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <tr>
+                    <td colspan="8" style="text-align: center; color: #64748b; padding: 30px;">
+                        <i class="fa-solid fa-spinner fa-spin" style="font-size: 24px;"></i><br><br>Memuat turun data Google Sheet Year 4...
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    const DASHBOARD_PASSWORD = "guru123";
+    const defaultUrl = "https://script.google.com/macros/s/AKfycbyMSnlwreTDF193zw4E6IRg9nxuc55aJ4xS4AWpQcwmk8fMjQ54Gznf8Wsn5ufdlfiHog/exec";
+
+    let rawData = [];
+    let moduleChartInstance = null;
+
+    // KESELAMATAN SEKATAN MASUK GURU
+    window.onload = function() {
+        const auth = sessionStorage.getItem('guruAuthenticatedYear4');
+        if (!auth) {
+            const pwd = prompt("Sila masukkan Kata Laluan Portal Guru (Year 4):");
+            if (pwd === DASHBOARD_PASSWORD) {
+                sessionStorage.setItem('guruAuthenticatedYear4', 'true');
+                initDashboard();
+            } else {
+                alert("Kata laluan tidak sah!");
+                window.location.href = "index.html";
+            }
+        } else {
+            initDashboard();
+        }
+    };
+
+    function logoutGuru() {
+        sessionStorage.removeItem('guruAuthenticatedYear4');
+        window.location.reload();
+    }
+
+    function initDashboard() {
+        const savedUrl = localStorage.getItem('year4DashboardUrl') || defaultUrl;
+        document.getElementById('customScriptUrl').value = savedUrl;
+        fetchSheetData();
+    }
+
+    function simpanScriptUrl() {
+        const inputUrl = document.getElementById('customScriptUrl').value.trim();
+        if (inputUrl) {
+            localStorage.setItem('year4DashboardUrl', inputUrl);
+            alert("URL Apps Script Year 4 berjaya disimpan!");
+            fetchSheetData();
+        }
+    }
+
+    function getActiveUrl() {
+        return localStorage.getItem('year4DashboardUrl') || defaultUrl;
+    }
+
+    function fetchSheetData() {
+        const url = getActiveUrl();
+        const refreshIcon = document.getElementById('refresh-icon');
+        
+        if (!url) {
+            document.getElementById('table-body').innerHTML = `
+                <tr><td colspan="8" style="text-align:center; color:#e11d48; padding: 25px;">
+                    ⚠️ Sila masukkan URL Google Apps Script Year 4 di ruangan tetapan atas dan tekan "Simpan URL".
+                </td></tr>`;
+            return;
+        }
+
+        refreshIcon.classList.add('fa-spin');
+
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                refreshIcon.classList.remove('fa-spin');
+                if (Array.isArray(data)) {
+                    rawData = data;
+                    document.getElementById('lastUpdated').innerText = `Dikemaskini: ${new Date().toLocaleTimeString('ms-MY')}`;
+                    updateDashboard();
+                } else {
+                    alert("Format data tidak sah diterima dari Google Sheet!");
+                }
+            })
+            .catch(err => {
+                refreshIcon.classList.remove('fa-spin');
+                console.error(err);
+                document.getElementById('table-body').innerHTML = `
+                    <tr><td colspan="8" style="text-align:center; color:#b91c1c; padding: 25px;">
+                        ❌ Gagal memuat turun data! Pastikan URL Google Apps Script sah & mod Web App di-deploy dengan kebenaran "Anyone".
+                    </td></tr>`;
+            });
+    }
+
+    function getInterventionText(percent, category) {
+        if (percent >= 90) {
+            return "🌟 Cemerlang: Diberikan latihan pengukuhan bertahap tinggi & modul cabaran murid.";
+        } else if (percent >= 51) {
+            return "👍 Sederhana: Diberikan bimbingan terpandu & perbincangan jawapan secara berkumpulan.";
+        } else {
+            if (category === "REMEDIAL SET") {
+                return "🚨 Intervensi: Latihan khas Phonics & pengecaman perbendaharaan kata berasaskan kad bergambar.";
+            } else if (category === "WORD POWER" || category === "WORD REPEAT") {
+                return "🚨 Intervensi: Ejaan terpandu & pengukuhan makna kosa kata asas modul.";
+            } else if (category === "READING") {
+                return "🚨 Intervensi: Bimbingan bacaan ayat pendek berulang & pemahaman ayat asas.";
+            } else if (category === "GRAMMAR") {
+                return "🚨 Intervensi: Ulang kaji tatabahasa asas (Grammar focus) berasaskan nota grafik mudah.";
+            } else if (category === "BUILD SENTENCE" || category === "SENTENCE") {
+                return "🚨 Intervensi: Latihan menyusun semula perkataan (Sentence Framing) & penulisan ayat asas.";
+            }
+            return "🚨 Intervensi Utama: Sesi bimbingan peribadi 1-ke-1 (PULIH).";
+        }
+    }
+
+    function updateDashboard() {
+        const searchTerm = document.getElementById('filter-search').value.toLowerCase();
+        const selectedClass = document.getElementById('filter-class').value;
+        const selectedModule = document.getElementById('filter-module').value;
+        const selectedCategory = document.getElementById('filter-category').value;
+        const selectedStatus = document.getElementById('filter-status').value;
+        const sortBy = document.getElementById('sort-by').value;
+
+        // Tapis Data
+        let filtered = rawData.filter(item => {
+            const nameMatch = (item.Nama || "").toLowerCase().includes(searchTerm);
+            const classMatch = (selectedClass === "all") || ((item.Kelas || "").toLowerCase() === selectedClass.toLowerCase());
+            const moduleMatch = (selectedModule === "all") || ((item.Modul || "").toLowerCase().includes(selectedModule.toLowerCase()));
+            const catMatch = (selectedCategory === "all") || ((item.Kategori || "").toUpperCase() === selectedCategory.toUpperCase());
+            
+            const score = parseFloat(item.Skor) || 0;
+            let status = "sederhana";
+            if (score >= 90) status = "cemerlang";
+            else if (score <= 50) status = "intervensi";
+
+            const statusMatch = (selectedStatus === "all") || (status === selectedStatus);
+
+            return nameMatch && classMatch && moduleMatch && catMatch && statusMatch;
+        });
+
+        // Susun Data
+        filtered.sort((a, b) => {
+            if (sortBy === "score-desc") return (parseFloat(b.Skor) || 0) - (parseFloat(a.Skor) || 0);
+            if (sortBy === "score-asc") return (parseFloat(a.Skor) || 0) - (parseFloat(b.Skor) || 0);
+            if (sortBy === "name") return (a.Nama || "").localeCompare(b.Nama || "");
+            return new Date(b.Timestamp || 0) - new Date(a.Timestamp || 0);
+        });
+
+        // Kemaskini Statistik
+        const total = filtered.length;
+        let cemerlangCount = 0;
+        let sederhanaCount = 0;
+        let intervensiCount = 0;
+        let totalScoreSum = 0;
+
+        const cemerlangListHtml = [];
+        const intervensiListHtml = [];
+
+        filtered.forEach(item => {
+            const score = parseFloat(item.Skor) || 0;
+            totalScoreSum += score;
+
+            if (score >= 90) {
+                cemerlangCount++;
+                cemerlangListHtml.push(`<div class="summary-item"><span><b>${item.Nama || 'N/A'}</b> (${item.Kelas || '-'})</span><span class="status-badge status-cemerlang">${score}%</span></div>`);
+            } else if (score <= 50) {
+                intervensiCount++;
+                intervensiListHtml.push(`<div class="summary-item"><span><b>${item.Nama || 'N/A'}</b> (${item.Kelas || '-'})</span><span class="status-badge status-intervensi">${score}%</span></div>`);
+            } else {
+                sederhanaCount++;
+            }
+        });
+
+        document.getElementById('stat-total').innerText = total;
+        document.getElementById('stat-cemerlang').innerText = cemerlangCount;
+        document.getElementById('stat-sederhana').innerText = sederhanaCount;
+        document.getElementById('stat-intervensi').innerText = intervensiCount;
+        document.getElementById('stat-purata').innerText = total > 0 ? (totalScoreSum / total).toFixed(1) + '%' : '0%';
+
+        document.getElementById('list-cemerlang').innerHTML = cemerlangListHtml.length > 0 ? cemerlangListHtml.slice(0, 15).join('') : '<div style="font-size:12px; color:#94a3b8;">Tiada rekod.</div>';
+        document.getElementById('list-intervensi').innerHTML = intervensiListHtml.length > 0 ? intervensiListHtml.slice(0, 15).join('') : '<div style="font-size:12px; color:#94a3b8;">Tiada rekod.</div>';
+
+        // Kemaskini Jadual
+        const tbody = document.getElementById('table-body');
+        if (filtered.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="8" style="text-align:center; color:#64748b; padding:20px;">Tiada data murid ditemui bagi carian/penapis ini.</td></tr>`;
+        } else {
+            tbody.innerHTML = filtered.map(item => {
+                const score = parseFloat(item.Skor) || 0;
+                let badgeClass = "status-sederhana";
+                let statusLabel = "Memuaskan";
+                
+                if (score >= 90) {
+                    badgeClass = "status-cemerlang";
+                    statusLabel = "Cemerlang";
+                } else if (score <= 50) {
+                    badgeClass = "status-intervensi";
+                    statusLabel = "Intervensi";
+                }
+
+                const intervention = getInterventionText(score, item.Kategori);
+
+                return `
+                    <tr>
+                        <td style="font-size:11px; color:#64748b;">${item.Timestamp || '-'}</td>
+                        <td><b>${item.Nama || '-'}</b></td>
+                        <td>${item.Kelas || '-'}</td>
+                        <td><span style="color:#047857; font-weight:700;">${item.Modul || '-'}</span></td>
+                        <td><span class="cat-badge">${item.Kategori || '-'}</span></td>
+                        <td>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: ${Math.min(score, 100)}%;"></div>
+                            </div>
+                            <b>${score}%</b>
+                        </td>
+                        <td><span class="status-badge ${badgeClass}">${statusLabel}</span></td>
+                        <td><span class="intervention-text">${intervention}</span></td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        renderChart(filtered);
+    }
+
+    // LUKIS CARTA CEFR YEAR 4
+    function renderChart(data) {
+        const modules = [
+            "Module 1", "Module 2", "Module 3", "Module 4", "Module 5",
+            "Module 6", "Module 7", "Module 8", "Module 9", "Module 10"
+        ];
+        
+        const moduleScores = {};
+        const moduleCounts = {};
+
+        modules.forEach(m => {
+            moduleScores[m] = 0;
+            moduleCounts[m] = 0;
+        });
+
+        data.forEach(item => {
+            const modText = item.Modul || "";
+            modules.forEach(m => {
+                if (modText.toLowerCase().includes(m.toLowerCase())) {
+                    moduleScores[m] += parseFloat(item.Skor) || 0;
+                    moduleCounts[m]++;
+                }
+            });
+        });
+
+        const averages = modules.map(m => moduleCounts[m] > 0 ? (moduleScores[m] / moduleCounts[m]).toFixed(1) : 0);
+
+        const ctx = document.getElementById('moduleChart').getContext('2d');
+        
+        if (moduleChartInstance) {
+            moduleChartInstance.destroy();
+        }
+
+        moduleChartInstance = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [
+                    "Modul 1: From?", 
+                    "Modul 2: My Week", 
+                    "Modul 3: In Past", 
+                    "Modul 4: Celebrate", 
+                    "Modul 5: Eat Right", 
+                    "Modul 6: Get Around", 
+                    "Modul 7: Helping Out", 
+                    "Modul 8: Animals", 
+                    "Modul 9: Get Active!", 
+                    "Modul 10: Matter?"
+                ],
+                datasets: [{
+                    label: 'Purata Skor (%)',
+                    data: averages,
+                    backgroundColor: 'rgba(16, 185, 129, 0.75)',
+                    borderColor: '#047857',
+                    borderWidth: 2,
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: { font: { family: 'Fredoka', size: 12 } }
+                    },
+                    x: {
+                        ticks: { font: { family: 'Fredoka', size: 11 } }
+                    }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+    }
+
+    // EXPORT KE EXCEL / CSV
+    function exportCSV() {
+        if (rawData.length === 0) {
+            alert("Tiada data untuk dieksport!");
+            return;
+        }
+
+        let csvContent = "\uFEFF"; // BOM UTF-8
+        csvContent += "Timestamp,Nama,Kelas,Modul,Kategori,Skor,Tahap,Cadangan Intervensi\n";
+
+        rawData.forEach(row => {
+            const score = parseFloat(row.Skor) || 0;
+            let status = "Sederhana";
+            if (score >= 90) status = "Cemerlang";
+            else if (score <= 50) status = "Intervensi";
+
+            const intervention = getInterventionText(score, row.Kategori).replace(/,/g, ';');
+            const cleanName = `"${(row.Nama || '').replace(/"/g, '""')}"`;
+            const cleanModule = `"${(row.Modul || '').replace(/"/g, '""')}"`;
+
+            csvContent += `"${row.Timestamp || ''}",${cleanName},"${row.Kelas || ''}",${cleanModule},"${row.Kategori || ''}",${score},"${status}","${intervention}"\n`;
+        });
+
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement("a");
+        const url = URL.createObjectURL(blob);
+        link.setAttribute("href", url);
+        link.setAttribute("download", `Analisis_Murid_Year4_${new Date().toISOString().slice(0,10)}.csv`);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+</script>
+</body>
+</html>
