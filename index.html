@@ -789,7 +789,7 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT LOGIK KAWALAN -->
+  <!-- JAVASCRIPT LOGIK KAWALAN -->
 <script>
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxHX4PNriq3p4DoicXnryv27u_TxOyx7HXO7IN0G2emgiGmVoU5kOVo_YY1MBsv5hR90A/exec";
     let userAnswers = {};
@@ -797,29 +797,29 @@
     let currentModuleName = "";
 
         const getSmartTopics = [
-            { name: "Module 1: Welcome! (30 Soalan)", val: "Module 1 - Welcome!|module1.js|getsmart" },
-            { name: "Module 2: Every Day (30 Soalan)", val: "Module 2 - Every Day|module2.js|getsmart" },
-            { name: "Module 3: Right Now (30 Soalan)", val: "Module 3 - Right Now|module3.js|getsmart" },
-            { name: "Module 4: Year In, Year Out (30 Soalan)", val: "Module 4 - Year In, Year Out|module4.js|getsmart" },
-            { name: "Module 5: My New House (30 Soalan)", val: "Module 5 - My New House|module5.js|getsmart" },
-            { name: "Module 6: Food, Food! (30 Soalan)", val: "Module 6 - Food, Food!|module6.js|getsmart" },
-            { name: "Module 7: Out and About (30 Soalan)", val: "Module 7 - Out and About|module7.js|getsmart" },
-            { name: "Module 8: Where Were You Yesterday? (30 Soalan)", val: "Module 8 - Where Were You Yesterday?|module8.js|getsmart" },
-            { name: "Module 9: On Holiday (30 Soalan)", val: "Module 9 - On Holiday|module9.js|getsmart" },
-            { name: "Module 10: The World Around Us (30 Soalan)", val: "Module 10 - The World Around Us|module10.js|getsmart" }
+            { name: "Module 1: Where are you from? (30 Soalan)", val: "Module 1 - Where are you from?|module1.js|getsmart" },
+            { name: "Module 2: My week (30 Soalan)", val: "Module 2 - My week|module2.js|getsmart" },
+            { name: "Module 3: In the past (30 Soalan)", val: "Module 3 - In the past|module3.js|getsmart" },
+            { name: "Module 4: Celebrations (30 Soalan)", val: "Module 4 - Celebrations|module4.js|getsmart" },
+            { name: "Module 5: Eating right (30 Soalan)", val: "Module 5 - Eating right|module5.js|getsmart" },
+            { name: "Module 6: Getting around (30 Soalan)", val: "Module 6 - Getting around|module6.js|getsmart" },
+            { name: "Module 7: Helping out (30 Soalan)", val: "Module 7 - Helping out|module7.js|getsmart" },
+            { name: "Module 8: Amazing animals (30 Soalan)", val: "Module 8 - Amazing animals|module8.js|getsmart" },
+            { name: "Module 9: Get active! (30 Soalan)", val: "Module 9 - Get active!|module9.js|getsmart" },
+            { name: "Module 10: What's the matter? (30 Soalan)", val: "Module 10 - What's the matter?|module10.js|getsmart" }
         ];
 
         const remedialTopics = [
-            { name: "Remedial 1: Welcome! (30 Soalan)", val: "Remedial 1 - Welcome!|module1.js|remedial" },
-            { name: "Remedial 2: Every Day (30 Soalan)", val: "Remedial 2 - Every Day|module2.js|remedial" },
-            { name: "Remedial 3: Right Now (30 Soalan)", val: "Remedial 3 - Right Now|module3.js|remedial" },
-            { name: "Remedial 4: Year In, Year Out (30 Soalan)", val: "Remedial 4 - Year In, Year Out|module4.js|remedial" },
-            { name: "Remedial 5: My New House (30 Soalan)", val: "Remedial 5 - My New House|module5.js|remedial" },
-            { name: "Remedial 6: Food, Food! (30 Soalan)", val: "Remedial 6 - Food, Food!|module6.js|remedial" },
-            { name: "Remedial 7: Out and About (30 Soalan)", val: "Remedial 7 - Out and About|module7.js|remedial" },
-            { name: "Remedial 8: Where Were You Yesterday? (30 Soalan)", val: "Remedial 8 - Where Were You Yesterday?|module8.js|remedial" },
-            { name: "Remedial 9: On Holiday (30 Soalan)", val: "Remedial 9 - On Holiday|module9.js|remedial" },
-            { name: "Remedial 10: The World Around Us (30 Soalan)", val: "Remedial 10 - The World Around Us|module10.js|remedial" }
+            { name: "Remedial 1: Where are you from? (30 Soalan)", val: "Remedial 1 - Where are you from?|module1.js|remedial" },
+            { name: "Remedial 2: My week (30 Soalan)", val: "Remedial 2 - My week|module2.js|remedial" },
+            { name: "Remedial 3: In the past (30 Soalan)", val: "Remedial 3 - In the past|module3.js|remedial" },
+            { name: "Remedial 4: Celebrations (30 Soalan)", val: "Remedial 4 - Celebrations|module4.js|remedial" },
+            { name: "Remedial 5: Eating right (30 Soalan)", val: "Remedial 5 - Eating right|module5.js|remedial" },
+            { name: "Remedial 6: Getting around (30 Soalan)", val: "Remedial 6 - Getting around|module6.js|remedial" },
+            { name: "Remedial 7: Helping out (30 Soalan)", val: "Remedial 7 - Helping out|module7.js|remedial" },
+            { name: "Remedial 8: Amazing animals (30 Soalan)", val: "Remedial 8 - Amazing animals|module8.js|remedial" },
+            { name: "Remedial 9: Get active! (30 Soalan)", val: "Remedial 9 - Get active!|module9.js|remedial" },
+            { name: "Remedial 10: What's the matter? (30 Soalan)", val: "Remedial 10 - What's the matter?|module10.js|remedial" }
         ];
 
         function semakMaklumatMurid() {
