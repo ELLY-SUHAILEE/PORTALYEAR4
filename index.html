@@ -845,7 +845,7 @@
             window.quizBank["REMEDIAL SET"] = window.quizBank["REMEDIAL SET"] || {};
             window.quizQuestions = null;
 
-          function loadModule(skripModul, moduleName, categoryName) {
+         function loadModule(skripModul, moduleName, categoryName) {
     currentCategory = categoryName; 
     currentModuleName = moduleName;
     window.quizQuestions = null;
@@ -860,84 +860,48 @@
     script.onload = () => {
         let rawData = null;
 
-        // 1. Semak padanan tepat category & moduleName
-        if (window.quizBank && window.quizBank[currentCategory] && window.quizBank[currentCategory][currentModuleName]) {
-            rawData = window.quizBank[currentCategory][currentModuleName];
-        }
-
-        // 2. Semak mana-mana kunci dalam window.quizBank secara automatik
-        if (!rawData && window.quizBank) {
-            for (let cat in window.quizBank) {
-                if (window.quizBank[cat] && typeof window.quizBank[cat] === 'object') {
-                    for (let mod in window.quizBank[cat]) {
-                        if (Array.isArray(window.quizBank[cat][mod]) && window.quizBank[cat][mod].length > 0) {
-                            rawData = window.quizBank[cat][mod];
-                            break;
-                        }
-                    }
-                }
-                if (rawData) break;
+        // 1. Cari data modul dalam quizBank
+        if (window.quizBank && window.quizBank[currentCategory]) {
+            const catData = window.quizBank[currentCategory];
+            
+            if (catData[currentModuleName]) {
+                rawData = catData[currentModuleName];
+            } else {
+                // Cari mana-mana kunci mengikut nombor modul (cth: mengesan Module 2)
+                const keys = Object.keys(catData);
+                const moduleNum = currentModuleName.replace(/[^0-9]/g, '');
+                const matchedKey = keys.find(k => k.includes(moduleNum));
+                
+                if (matchedKey) rawData = catData[matchedKey];
+                else if (keys.length > 0) rawData = catData[keys[0]];
             }
         }
 
-        // 3. Semak jika guna pembolehubah standard window.quizQuestions
-        if (!rawData && Array.isArray(window.quizQuestions) && window.quizQuestions.length > 0) {
-            rawData = window.quizQuestions;
+        // 2. Gabungkan soalan daripada semua kemahiran (Reading, Vocabulary, Grammar, dll)
+        let finalQuestions = [];
+        if (rawData && !Array.isArray(rawData) && typeof rawData === 'object') {
+            Object.keys(rawData).forEach(skill => {
+                if (Array.isArray(rawData[skill])) {
+                    finalQuestions = finalQuestions.concat(rawData[skill]);
+                }
+            });
+        } else if (Array.isArray(rawData)) {
+            finalQuestions = rawData;
         }
 
-        // 4. Paparkan soalan jika dijumpai
-        if (rawData && rawData.length > 0) {
-            activeQuestions = rawData;
+        // 3. Paparkan soalan
+        if (finalQuestions.length > 0) {
+            activeQuestions = finalQuestions;
             paparSoalan();
             document.getElementById('submitBtn').style.display = 'block';
         } else {
-            alert("Soalan tidak dijumpai dalam " + skripModul + ". Sila semak kandungan fail JS tersebut.");
+            alert("Soalan tidak dijumpai dalam " + skripModul);
         }
     };
 
     script.onerror = () => alert("Gagal memuatkan fail skrip: " + skripModul);
     document.head.appendChild(script);
 }
-        /* PAPAR SOALAN - CENTURY GOTHIC SAIS 16 UNTUK TEKS DAN BUTANG */
-        function paparSoalan() {
-            const container = document.getElementById('questionsContainer');
-            container.innerHTML = '';
-
-            activeQuestions.forEach((qObj, idx) => {
-                const qCard = document.createElement('div');
-                qCard.className = 'q-card';
-
-                const textSoalan = qObj.q || qObj.question || `Soalan ${idx + 1}`;
-
-                let imageHTML = '';
-                const imgVal = qObj.image || qObj.img;
-                if (imgVal) {
-                    if (typeof imgVal === 'string' && imgVal.includes('<img')) {
-                        imageHTML = imgVal;
-                    } else {
-                        imageHTML = `<div style="text-align:center; margin: 10px 0;"><img src="${imgVal}" style="max-width: 100%; max-height: 250px; border-radius:10px;" onerror="this.style.display='none'"></div>`;
-                    }
-                }
-
-                let optionsHTML = '';
-                if (qObj.options && Array.isArray(qObj.options)) {
-                    qObj.options.forEach((opt, optIdx) => {
-                        optionsHTML += `
-                            <button class="opt-btn" id="opt_${idx}_${optIdx}" onclick="pilihJawapan(${idx}, ${optIdx})">
-                                ${opt}
-                            </button>`;
-                    });
-                }
-
-                qCard.innerHTML = `
-                    <div style="font-size: 16pt; color: #64748b; font-weight: 800;">Question ${idx + 1} / ${activeQuestions.length}</div>
-                    <div style="font-size: 16pt; font-weight: 700; color:#1e293b; margin: 10px 0;">${textSoalan}</div>
-                    ${imageHTML}
-                    <div>${optionsHTML}</div>
-                `;
-                container.appendChild(qCard);
-            });
-        }
 
         function pilihJawapan(qIdx, optIdx) {
             userAnswers[qIdx] = optIdx;
