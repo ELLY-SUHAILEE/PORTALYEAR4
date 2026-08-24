@@ -518,7 +518,7 @@
 </head>
 <body>
 
-    <div class="portal-card">
+<div class="portal-card">
         
         <!-- MENU UTAMA -->
         <div id="menuSection">
@@ -723,230 +723,234 @@
         let userAnswers = {};
         let activeMode = "getsmart";
         let currentModuleName = "";
-        let currentCategory = "";
+        let currentCategory = "GET SMART SET";
         let activeQuestions = [];
 
         const getSmartTopics = [
-    { name: "Module 1: Where are you from? (30 Soalan)", val: "Module 1 - Where are you from?|module1.js|getsmart" },
-    { name: "Module 2: My week (30 Soalan)", val: "Module 2 - My week|module2.js|getsmart" },
-    { name: "Module 3: In the past (30 Soalan)", val: "Module 3 - In the past|module3.js|getsmart" },
-    { name: "Module 4: Celebrations (30 Soalan)", val: "Module 4 - Celebrations|module4.js|getsmart" },
-    { name: "Module 5: Eating right (30 Soalan)", val: "Module 5 - Eating right|module5.js|getsmart" },
-    { name: "Module 6: Getting around (30 Soalan)", val: "Module 6 - Getting around|module6.js|getsmart" },
-    { name: "Module 7: Helping out (30 Soalan)", val: "Module 7 - Helping out|module7.js|getsmart" },
-    { name: "Module 8: Amazing animals (30 Soalan)", val: "Module 8 - Amazing animals|module8.js|getsmart" },
-    { name: "Module 9: Get active! (30 Soalan)", val: "Module 9 - Get active!|module9.js|getsmart" },
-    { name: "Module 10: What's the matter? (30 Soalan)", val: "Module 10 - What's the matter?|module10.js|getsmart" }
-];
+            { name: "Module 1: Where are you from? (30 Soalan)", val: "Module 1 - Where are you from?|module1.js|getsmart" },
+            { name: "Module 2: My week (30 Soalan)", val: "Module 2 - My week|module2.js|getsmart" },
+            { name: "Module 3: In the past (30 Soalan)", val: "Module 3 - In the past|module3.js|getsmart" },
+            { name: "Module 4: Celebrations (30 Soalan)", val: "Module 4 - Celebrations|module4.js|getsmart" },
+            { name: "Module 5: Eating right (30 Soalan)", val: "Module 5 - Eating right|module5.js|getsmart" },
+            { name: "Module 6: Getting around (30 Soalan)", val: "Module 6 - Getting around|module6.js|getsmart" },
+            { name: "Module 7: Helping out (30 Soalan)", val: "Module 7 - Helping out|module7.js|getsmart" },
+            { name: "Module 8: Amazing animals (30 Soalan)", val: "Module 8 - Amazing animals|module8.js|getsmart" },
+            { name: "Module 9: Get active! (30 Soalan)", val: "Module 9 - Get active!|module9.js|getsmart" },
+            { name: "Module 10: What's the matter? (30 Soalan)", val: "Module 10 - What's the matter?|module10.js|getsmart" }
+        ];
 
-const remedialTopics = [
-    { name: "Remedial 1: Where are you from? (30 Soalan)", val: "Remedial 1 - Where are you from?|module1.js|remedial" },
-    { name: "Remedial 2: My week (30 Soalan)", val: "Remedial 2 - My week|module2.js|remedial" },
-    { name: "Remedial 3: In the past (30 Soalan)", val: "Remedial 3 - In the past|module3.js|remedial" },
-    { name: "Remedial 4: Celebrations (30 Soalan)", val: "Remedial 4 - Celebrations|module4.js|remedial" },
-    { name: "Remedial 5: Eating right (30 Soalan)", val: "Remedial 5 - Eating right|module5.js|remedial" },
-    { name: "Remedial 6: Getting around (30 Soalan)", val: "Remedial 6 - Getting around|module6.js|remedial" },
-    { name: "Remedial 7: Helping out (30 Soalan)", val: "Remedial 7 - Helping out|module7.js|remedial" },
-    { name: "Remedial 8: Amazing animals (30 Soalan)", val: "Remedial 8 - Amazing animals|module8.js|remedial" },
-    { name: "Remedial 9: Get active! (30 Soalan)", val: "Remedial 9 - Get active!|module9.js|remedial" },
-    { name: "Remedial 10: What's the matter? (30 Soalan)", val: "Remedial 10 - What's the matter?|module10.js|remedial" }
-];
+        const remedialTopics = [
+            { name: "Remedial 1: Where are you from? (30 Soalan)", val: "Remedial 1 - Where are you from?|module1.js|remedial" },
+            { name: "Remedial 2: My week (30 Soalan)", val: "Remedial 2 - My week|module2.js|remedial" },
+            { name: "Remedial 3: In the past (30 Soalan)", val: "Remedial 3 - In the past|module3.js|remedial" },
+            { name: "Remedial 4: Celebrations (30 Soalan)", val: "Remedial 4 - Celebrations|module4.js|remedial" },
+            { name: "Remedial 5: Eating right (30 Soalan)", val: "Remedial 5 - Eating right|module5.js|remedial" },
+            { name: "Remedial 6: Getting around (30 Soalan)", val: "Remedial 6 - Getting around|module6.js|remedial" },
+            { name: "Remedial 7: Helping out (30 Soalan)", val: "Remedial 7 - Helping out|module7.js|remedial" },
+            { name: "Remedial 8: Amazing animals (30 Soalan)", val: "Remedial 8 - Amazing animals|module8.js|remedial" },
+            { name: "Remedial 9: Get active! (30 Soalan)", val: "Remedial 9 - Get active!|module9.js|remedial" },
+            { name: "Remedial 10: What's the matter? (30 Soalan)", val: "Remedial 10 - What's the matter?|module10.js|remedial" }
+        ];
 
-let currentCategory = "GET SMART SET";
-let currentModuleName = "";
-let activeQuestions = [];
-let userAnswers = {};
-let activeMode = "getsmart";
-
-function semakMaklumatMurid() {
-    const elNama = document.getElementById('namaMurid');
-    const elKelas = document.getElementById('kelasMurid');
-    
-    const nama = elNama ? elNama.value.trim() : (localStorage.getItem('studentName') || '');
-    const kelas = elKelas ? elKelas.value : (localStorage.getItem('studentClass') || '');
-
-    if (!nama) {
-        alert("⚠️ SILA MASUKKAN NAMA MURID TERLEBIH DAHULU!");
-        if (elNama) elNama.focus();
-        return false;
-    }
-
-    if (!kelas) {
-        alert("⚠️ SILA PILIH KELAS MURID TERLEBIH DAHULU!");
-        if (elKelas) elKelas.focus();
-        return false;
-    }
-
-    localStorage.setItem('studentName', nama);
-    localStorage.setItem('studentClass', kelas);
-    return { nama, kelas };
-}
-
-function bukaAktiviti(url) {
-    if (!semakMaklumatMurid()) return;
-    window.location.href = url;
-}
-
-function bukaModalTopik(mode) {
-    if (!semakMaklumatMurid()) return;
-
-    activeMode = mode;
-    const modal = document.getElementById('topicModal');
-    const modalTitle = document.getElementById('modalTitle');
-    const topicSelect = document.getElementById('topicSelect');
-
-    topicSelect.innerHTML = '';
-    const list = (mode === 'getsmart') ? getSmartTopics : remedialTopics;
-    
-    if (modalTitle) {
-        modalTitle.textContent = (mode === 'getsmart') ? 'Select Get Smart Module' : 'Select Remedial Set';
-    }
-
-    list.forEach(item => {
-        const opt = document.createElement('option');
-        opt.value = item.val;
-        opt.textContent = item.name;
-        topicSelect.appendChild(opt);
-    });
-
-    modal.style.display = 'flex';
-}
-
-function tutupModal() {
-    const modal = document.getElementById('topicModal');
-    if (modal) modal.style.display = 'none';
-}
-
-function mulaDariModal() {
-    const topicVal = document.getElementById('topicSelect').value;
-    tutupModal();
-    if (topicVal) prosesMulaKuiz(topicVal);
-}
-
-function prosesMulaKuiz(val) {
-    const info = semakMaklumatMurid();
-    if (!info) return;
-
-    const parts = val.split('|');
-    currentModuleName = parts[0];
-    const skripModul = parts[1];
-    const mode = parts[2] || "getsmart";
-
-    currentCategory = (mode === 'remedial') ? "REMEDIAL SET" : "GET SMART SET";
-
-    const menuSec = document.getElementById('menuSection');
-    const quizSec = document.getElementById('quizSection');
-    if (menuSec) menuSec.style.display = 'none';
-    if (quizSec) quizSec.style.display = 'block';
-
-    const elStudent = document.getElementById('displayStudentInfo');
-    const elModule = document.getElementById('displayModuleName');
-    if (elStudent) elStudent.textContent = `${info.nama} (${info.kelas})`;
-    if (elModule) elModule.textContent = currentModuleName;
-
-    const qContainer = document.getElementById('questionsContainer');
-    if (qContainer) {
-        qContainer.innerHTML = `<p style="padding: 20px; text-align: center; font-size: 16pt;">Memuatkan soalan...</p>`;
-    }
-    
-    const scoreBanner = document.getElementById('scoreBanner');
-    if (scoreBanner) scoreBanner.style.display = 'none';
-    
-    const submitBtn = document.getElementById('submitBtn');
-    if (submitBtn) submitBtn.style.display = 'none';
-
-    userAnswers = {};
-    activeQuestions = [];
-
-    // Memanggil fungsi loadModule
-    loadModule(skripModul, currentModuleName, currentCategory);
-}
-
-function loadModule(skripModul, moduleName, categoryName) {
-    currentCategory = categoryName; 
-    currentModuleName = moduleName;
-    window.quizQuestions = null;
-
-    const oldScript = document.getElementById('dynamicQuizScript');
-    if (oldScript) oldScript.remove();
-
-    const script = document.createElement('script');
-    script.id = 'dynamicQuizScript';
-    script.src = skripModul + "?v=" + new Date().getTime();
-
-    script.onload = () => {
-        let rawData = null;
-
-        if (window.quizBank && window.quizBank[currentCategory]) {
-            const catData = window.quizBank[currentCategory];
+        function semakMaklumatMurid() {
+            const elNama = document.getElementById('namaMurid');
+            const elKelas = document.getElementById('kelasMurid');
             
-            if (catData[currentModuleName]) {
-                rawData = catData[currentModuleName];
-            } else {
-                const keys = Object.keys(catData);
-                const moduleNum = currentModuleName.replace(/[^0-9]/g, '');
-                const matchedKey = keys.find(k => k.includes(moduleNum));
-                
-                if (matchedKey) rawData = catData[matchedKey];
-                else if (keys.length > 0) rawData = catData[keys[0]];
+            const nama = elNama && elNama.value.trim() !== '' ? elNama.value.trim() : (localStorage.getItem('studentName') || '');
+            const kelas = elKelas && elKelas.value !== '' ? elKelas.value : (localStorage.getItem('studentClass') || '');
+
+            if (!nama) {
+                alert("⚠️ SILA MASUKKAN NAMA MURID TERLEBIH DAHULU!");
+                if (elNama) elNama.focus();
+                return false;
             }
+
+            if (!kelas) {
+                alert("⚠️ SILA PILIH KELAS MURID TERLEBIH DAHULU!");
+                if (elKelas) elKelas.focus();
+                return false;
+            }
+
+            localStorage.setItem('studentName', nama);
+            localStorage.setItem('studentClass', kelas);
+            return { nama, kelas };
         }
 
-        if (!rawData && Array.isArray(window.quizQuestions)) {
-            rawData = window.quizQuestions;
+        function bukaAktiviti(url) {
+            if (!semakMaklumatMurid()) return;
+            window.location.href = url;
         }
 
-        let finalQuestions = [];
-        if (rawData && !Array.isArray(rawData) && typeof rawData === 'object') {
-            Object.keys(rawData).forEach(skill => {
-                if (Array.isArray(rawData[skill])) {
-                    finalQuestions = finalQuestions.concat(rawData[skill]);
-                }
+        function bukaModalTopik(mode) {
+            if (!semakMaklumatMurid()) return;
+
+            activeMode = mode;
+            const modal = document.getElementById('topicModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const topicSelect = document.getElementById('topicSelect');
+
+            topicSelect.innerHTML = '';
+            const list = (mode === 'getsmart') ? getSmartTopics : remedialTopics;
+            
+            if (modalTitle) {
+                modalTitle.textContent = (mode === 'getsmart') ? 'Select Get Smart Module' : 'Select Remedial Set';
+            }
+
+            list.forEach(item => {
+                const opt = document.createElement('option');
+                opt.value = item.val;
+                opt.textContent = item.name;
+                topicSelect.appendChild(opt);
             });
-        } else if (Array.isArray(rawData)) {
-            finalQuestions = rawData;
+
+            modal.style.display = 'flex';
         }
 
-        if (finalQuestions.length > 0) {
-            activeQuestions = finalQuestions;
-            if (typeof paparSoalan === 'function') {
-                paparSoalan();
+        function tutupModal() {
+            const modal = document.getElementById('topicModal');
+            if (modal) modal.style.display = 'none';
+        }
+
+        function mulaDariModal() {
+            const topicVal = document.getElementById('topicSelect').value;
+            tutupModal();
+            if (topicVal) prosesMulaKuiz(topicVal);
+        }
+
+        function prosesMulaKuiz(val) {
+            const info = semakMaklumatMurid();
+            if (!info) return;
+
+            const parts = val.split('|');
+            currentModuleName = parts[0];
+            const skripModul = parts[1];
+            const mode = parts[2] || "getsmart";
+
+            currentCategory = (mode === 'remedial') ? "REMEDIAL SET" : "GET SMART SET";
+
+            const menuSec = document.getElementById('menuSection');
+            const quizSec = document.getElementById('quizSection');
+            if (menuSec) menuSec.style.display = 'none';
+            if (quizSec) quizSec.style.display = 'block';
+
+            const elStudent = document.getElementById('displayStudentInfo');
+            const elModule = document.getElementById('displayModuleName');
+            if (elStudent) elStudent.textContent = `${info.nama} (${info.kelas})`;
+            if (elModule) elModule.textContent = currentModuleName;
+
+            const qContainer = document.getElementById('questionsContainer');
+            if (qContainer) {
+                qContainer.innerHTML = `<p style="padding: 20px; text-align: center; font-size: 16pt;">Memuatkan soalan...</p>`;
             }
+            
+            const scoreBanner = document.getElementById('scoreBanner');
+            if (scoreBanner) scoreBanner.style.display = 'none';
+            
             const submitBtn = document.getElementById('submitBtn');
-            if (submitBtn) submitBtn.style.display = 'block';
-        } else {
-            alert("Soalan tidak dijumpai dalam fail " + skripModul);
-        }
-    };
+            if (submitBtn) submitBtn.style.display = 'none';
 
-    script.onerror = () => alert("Gagal memuatkan fail skrip: " + skripModul);
-    document.head.appendChild(script);
-}
-        // 2. Gabungkan soalan daripada semua kemahiran (Reading, Vocabulary, Grammar, dll)
-        let finalQuestions = [];
-        if (rawData && !Array.isArray(rawData) && typeof rawData === 'object') {
-            Object.keys(rawData).forEach(skill => {
-                if (Array.isArray(rawData[skill])) {
-                    finalQuestions = finalQuestions.concat(rawData[skill]);
+            userAnswers = {};
+            activeQuestions = [];
+
+            loadModule(skripModul, currentModuleName, currentCategory);
+        }
+
+        function loadModule(skripModul, moduleName, categoryName) {
+            currentCategory = categoryName; 
+            currentModuleName = moduleName;
+            window.quizQuestions = null;
+
+            const oldScript = document.getElementById('dynamicQuizScript');
+            if (oldScript) oldScript.remove();
+
+            const script = document.createElement('script');
+            script.id = 'dynamicQuizScript';
+            script.src = skripModul + "?v=" + new Date().getTime();
+
+            script.onload = () => {
+                let rawData = null;
+
+                if (window.quizBank && window.quizBank[currentCategory]) {
+                    const catData = window.quizBank[currentCategory];
+                    
+                    if (catData[currentModuleName]) {
+                        rawData = catData[currentModuleName];
+                    } else {
+                        const keys = Object.keys(catData);
+                        const moduleNum = currentModuleName.replace(/[^0-9]/g, '');
+                        const matchedKey = keys.find(k => k.includes(moduleNum));
+                        
+                        if (matchedKey) rawData = catData[matchedKey];
+                        else if (keys.length > 0) rawData = catData[keys[0]];
+                    }
                 }
+
+                if (!rawData && Array.isArray(window.quizQuestions)) {
+                    rawData = window.quizQuestions;
+                }
+
+                let finalQuestions = [];
+                if (rawData && !Array.isArray(rawData) && typeof rawData === 'object') {
+                    Object.keys(rawData).forEach(skill => {
+                        if (Array.isArray(rawData[skill])) {
+                            finalQuestions = finalQuestions.concat(rawData[skill]);
+                        }
+                    });
+                } else if (Array.isArray(rawData)) {
+                    finalQuestions = rawData;
+                }
+
+                if (finalQuestions.length > 0) {
+                    activeQuestions = finalQuestions;
+                    paparSoalan();
+                    const submitBtn = document.getElementById('submitBtn');
+                    if (submitBtn) submitBtn.style.display = 'block';
+                } else {
+                    alert("Soalan tidak dijumpai dalam fail " + skripModul);
+                }
+            };
+
+            script.onerror = () => alert("Gagal memuatkan fail skrip: " + skripModul);
+            document.head.appendChild(script);
+        }
+
+        function paparSoalan() {
+            const container = document.getElementById('questionsContainer');
+            if (!container) return;
+            container.innerHTML = '';
+
+            activeQuestions.forEach((q, idx) => {
+                const qCard = document.createElement('div');
+                qCard.className = 'question-card';
+                qCard.style.cssText = "background: white; padding: 20px; margin-bottom: 20px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);";
+
+                let html = `<h4 style="margin-top:0; color:#475569; font-size:14pt;">Question ${idx + 1}</h4>`;
+                
+                const soalanTeks = q.question || q.text || q.stem || "";
+                if (soalanTeks) {
+                    html += `<p style="font-size:16pt; font-weight:700; color:#1e293b; margin-bottom:15px;">${soalanTeks}</p>`;
+                }
+
+                if (q.image) {
+                    html += `<img src="${q.image}" style="max-width:100%; max-height:250px; border-radius:8px; margin-bottom:15px; display:block;">`;
+                }
+
+                if (q.options && Array.isArray(q.options)) {
+                    html += `<div style="display:flex; flex-direction:column; gap:10px;">`;
+                    q.options.forEach((opt, optIdx) => {
+                        html += `
+                            <button type="button" class="opt-btn" id="opt_${idx}_${optIdx}" onclick="pilihJawapan(${idx}, ${optIdx})" style="padding: 12px 16px; border: 2px solid #e2e8f0; border-radius: 8px; background: #f8fafc; text-align: left; font-size: 14pt; cursor: pointer; transition: all 0.2s;">
+                                ${opt}
+                            </button>
+                        `;
+                    });
+                    html += `</div>`;
+                }
+
+                qCard.innerHTML = html;
+                container.appendChild(qCard);
             });
-        } else if (Array.isArray(rawData)) {
-            finalQuestions = rawData;
         }
-
-        // 3. Paparkan soalan
-        if (finalQuestions.length > 0) {
-            activeQuestions = finalQuestions;
-            paparSoalan();
-            document.getElementById('submitBtn').style.display = 'block';
-        } else {
-            alert("Soalan tidak dijumpai dalam " + skripModul);
-        }
-    };
-
-    script.onerror = () => alert("Gagal memuatkan fail skrip: " + skripModul);
-    document.head.appendChild(script);
-}
 
         function pilihJawapan(qIdx, optIdx) {
             userAnswers[qIdx] = optIdx;
@@ -963,26 +967,24 @@ function loadModule(skripModul, moduleName, categoryName) {
         }
 
         function dapatkanIndeksJawapanBetul(soalanObj) {
-    const jawapan = soalanObj.ans !== undefined ? soalanObj.ans : soalanObj.answer;
+            const jawapan = soalanObj.ans !== undefined ? soalanObj.ans : soalanObj.answer;
 
-    if (typeof jawapan === 'number') {
-        return jawapan;
-    }
+            if (typeof jawapan === 'number') {
+                return jawapan;
+            }
 
-    if (typeof jawapan === 'string') {
-        // Padankan string jawapan penuh dengan pilihan yang ada
-        const idx = soalanObj.options.findIndex(opt => opt.trim() === jawapan.trim());
-        if (idx !== -1) return idx;
+            if (typeof jawapan === 'string') {
+                const idx = soalanObj.options.findIndex(opt => opt.trim() === jawapan.trim());
+                if (idx !== -1) return idx;
 
-        // Jika jawapan bermula dengan format huruf (A, B, C)
-        const letterMatch = jawapan.match(/^([A-D])\)/i);
-        if (letterMatch) {
-            return letterMatch[1].toUpperCase().charCodeAt(0) - 65;
+                const letterMatch = jawapan.match(/^([A-D])\)/i);
+                if (letterMatch) {
+                    return letterMatch[1].toUpperCase().charCodeAt(0) - 65;
+                }
+            }
+
+            return 0;
         }
-    }
-
-    return 0;
-}
 
         function hantarJawapan() {
             if (Object.keys(userAnswers).length < activeQuestions.length) {
