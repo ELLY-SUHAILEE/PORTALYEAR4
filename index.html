@@ -16,8 +16,8 @@
         }
 
         body {
-            /* TUKAR 'poster.png' KEPADA NAMA FAIL POSTER ANDA */
-            background: url('poster.png') no-repeat center center fixed;
+            /* TUKAR 'poster.jpg' KEPADA NAMA FAIL POSTER ANDA JIKA BERBEZA */
+            background: url('poster.jpg') no-repeat center center fixed;
             background-size: cover;
             min-height: 100vh;
             display: flex;
@@ -26,65 +26,68 @@
             padding: 20px;
         }
 
-        /* Bekas utama lutsinar supaya poster nampak di belakang */
+        /* BEKAS UTAMA TANPA KOTAK PUTIH (LUTSING SEPENUHNYA) */
         .portal-card {
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(8px);
-            border-radius: 24px;
-            padding: 30px;
+            background: transparent;
+            border-radius: 0;
+            padding: 10px;
             width: 100%;
             max-width: 850px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-            border: 3px solid #ffffff;
+            box-shadow: none;
+            border: none;
         }
 
+        /* TAJUK MENARIK BER-OUTLINE */
         .main-title {
             text-align: center;
-            font-size: 2.2rem;
+            font-size: 2.8rem;
             font-weight: 900;
-            color: #2c3e50;
-            letter-spacing: 1px;
+            color: #ffe600; /* Warna kuning emas cerah */
+            letter-spacing: 2px;
             margin-bottom: 5px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            text-transform: uppercase;
+            /* Outline tebal & bayang 3D */
+            -webkit-text-stroke: 2.5px #0f172a;
+            text-shadow: 3px 4px 0px #0f172a, 0 8px 15px rgba(0,0,0,0.6);
         }
 
         .sub-title {
             text-align: center;
-            font-size: 1rem;
-            color: #555;
+            font-size: 1.1rem;
+            color: #ffffff;
             margin-bottom: 25px;
-            font-weight: 600;
+            font-weight: 800;
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 4px 10px rgba(0,0,0,0.7);
         }
 
-        /* BORANG INPUT NAMA & KELAS */
+        /* BORANG INPUT NAMA & KELAS - MEMANJANG & BERWARNA KUNING */
         .info-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            background: #f0f4f8;
-            padding: 15px;
-            border-radius: 16px;
-            margin-bottom: 25px;
-            border: 2px solid #d9e2ec;
-        }
-
-        @media (max-width: 600px) {
-            .info-container { grid-template-columns: 1fr; }
+            display: flex;
+            flex-direction: column; /* Kotak disusun memanjang ke bawah */
+            gap: 14px;
+            margin-bottom: 30px;
         }
 
         .info-field {
             display: flex;
             align-items: center;
-            background: #ffffff;
-            padding: 10px 15px;
-            border-radius: 12px;
-            border: 2px solid #cbd5e1;
+            background: #facc15; /* WARNA KUNING TERANG */
+            padding: 12px 20px;
+            border-radius: 16px;
+            border: 3.5px solid #0f172a; /* Border outline tegas */
+            box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+            width: 100%;
+            transition: transform 0.2s;
+        }
+
+        .info-field:hover {
+            transform: scale(1.01);
         }
 
         .info-field i {
-            font-size: 1.4rem;
-            color: #3b82f6;
-            margin-right: 12px;
+            font-size: 1.6rem;
+            color: #0f172a;
+            margin-right: 15px;
         }
 
         .info-box {
@@ -94,37 +97,45 @@
         }
 
         .info-box label {
-            font-size: 0.75rem;
-            font-weight: 800;
-            color: #64748b;
+            font-size: 0.8rem;
+            font-weight: 900;
+            color: #1e293b;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .info-box input, .info-box select {
             border: none;
             outline: none;
             background: transparent;
-            font-size: 1rem;
-            font-weight: 700;
-            color: #1e293b;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #0f172a;
             width: 100%;
+            cursor: pointer;
         }
 
-        /* TAJUK SEKSYEN */
+        .info-box input::placeholder {
+            color: #475569;
+            font-weight: 700;
+        }
+
+        /* TAJUK SEKSYEN (JELAS ATAS POSTER) */
         .section-header {
             text-align: center;
-            font-weight: 800;
-            font-size: 1.2rem;
+            font-weight: 900;
+            font-size: 1.4rem;
             margin: 30px 0 15px 0;
-            color: #1e293b;
-            letter-spacing: 1px;
+            color: #ffffff;
+            letter-spacing: 1.5px;
+            text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000, 0 5px 10px rgba(0,0,0,0.7);
         }
 
         .section-header i {
-            color: #f59e0b;
+            color: #facc15;
         }
 
-        /* MODUL UTAMA (WARNA-WARNI) */
+        /* MODUL UTAMA */
         .main-modules-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -136,27 +147,27 @@
         }
 
         .mod-card {
-            border-radius: 18px;
+            border-radius: 20px;
             padding: 22px;
             color: white;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border: 3px solid #0f172a;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .mod-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.4);
         }
 
-        /* WARNA MODUL 1: GET SMART (BIRU & KUNING) */
+        /* WARNA MODUL UTAMA */
         .card-getsmart {
             background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
         }
 
-        /* WARNA MODUL 2: REMEDIAL SET (ORANJE & MERAH) */
         .card-remedial {
             background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
         }
@@ -181,8 +192,8 @@
         }
 
         .mod-info h2 {
-            font-size: 1.3rem;
-            font-weight: 800;
+            font-size: 1.35rem;
+            font-weight: 900;
         }
 
         .badge-count {
@@ -197,7 +208,7 @@
         }
 
         .mod-info p {
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             opacity: 0.95;
             line-height: 1.3;
         }
@@ -205,18 +216,18 @@
         .btn-start {
             width: 100%;
             padding: 12px;
-            border: none;
-            border-radius: 10px;
+            border: 2px solid #0f172a;
+            border-radius: 12px;
             background: #facc15;
-            color: #713f12;
-            font-weight: 800;
+            color: #0f172a;
+            font-weight: 900;
             font-size: 0.95rem;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
             transition: background 0.2s;
         }
 
@@ -236,14 +247,15 @@
         }
 
         .act-card {
-            border-radius: 14px;
-            padding: 15px;
+            border-radius: 16px;
+            padding: 16px;
             color: white;
             display: flex;
             align-items: center;
             justify-content: space-between;
             cursor: pointer;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            border: 2.5px solid #0f172a;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.25);
             transition: transform 0.2s;
         }
 
@@ -260,8 +272,8 @@
         .act-icon {
             font-size: 1.4rem;
             background: rgba(255, 255, 255, 0.2);
-            width: 40px;
-            height: 40px;
+            width: 42px;
+            height: 42px;
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -270,7 +282,7 @@
 
         .act-text h3 {
             font-size: 0.95rem;
-            font-weight: 800;
+            font-weight: 900;
         }
 
         .act-text p {
@@ -278,7 +290,7 @@
             opacity: 0.9;
         }
 
-        /* SKIM WARNA BUTANG/KAD AKTIVITI */
+        /* SKIM WARNA AKTIVITI */
         .bg-green  { background: linear-gradient(135deg, #10b981, #047857); }
         .bg-purple { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
         .bg-pink   { background: linear-gradient(135deg, #ec4899, #be185d); }
@@ -288,31 +300,41 @@
 
         /* FOOTER */
         .footer-bar {
-            margin-top: 30px;
+            margin-top: 35px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding-top: 15px;
-            border-top: 2px dashed #cbd5e1;
+            border-top: 2px dashed rgba(255, 255, 255, 0.5);
+        }
+
+        .footer-text {
+            font-size: 0.9rem;
+            color: #ffffff;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
         }
 
         .link-guru {
-            color: #1e293b;
+            color: #0f172a;
             text-decoration: none;
             font-size: 0.85rem;
-            font-weight: 700;
-            background: #e2e8f0;
-            padding: 6px 12px;
-            border-radius: 8px;
+            font-weight: 800;
+            background: #facc15;
+            padding: 8px 14px;
+            border-radius: 10px;
+            border: 2px solid #0f172a;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
-        .link-guru:hover { background: #cbd5e1; }
+        .link-guru:hover { background: #fde047; }
 
         /* MODAL POPUP */
         .modal-overlay {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -322,26 +344,28 @@
         .modal-card {
             background: white;
             padding: 25px;
-            border-radius: 18px;
+            border-radius: 20px;
             width: 90%;
             max-width: 420px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 3px solid #0f172a;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
         }
 
         .modal-card h3 {
             margin-bottom: 15px;
             color: #1e293b;
             font-size: 1.2rem;
+            font-weight: 900;
         }
 
         .modal-card select {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             border-radius: 10px;
             border: 2px solid #cbd5e1;
             margin-bottom: 20px;
             font-size: 0.95rem;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .modal-actions {
@@ -357,7 +381,7 @@
             padding: 10px 18px;
             border-radius: 8px;
             cursor: pointer;
-            font-weight: 700;
+            font-weight: 800;
         }
 
         .btn-modal-close {
@@ -367,17 +391,25 @@
             padding: 10px 18px;
             border-radius: 8px;
             cursor: pointer;
-            font-weight: 700;
+            font-weight: 800;
         }
 
-        /* PAPARAN KUIZ */
+        /* PAPARAN KUIZ (BEKAS SEPARUH LUTSINAR AGAR BOLEH DIBACA) */
+        #quizSection {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 24px;
+            border: 3px solid #0f172a;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
         .quiz-topbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
             background: #e2e8f0;
-            padding: 10px 15px;
+            padding: 12px 16px;
             border-radius: 12px;
         }
 
@@ -389,6 +421,7 @@
             text-align: center;
             margin-bottom: 20px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border: 2px solid #cbd5e1;
         }
 
         .q-card {
@@ -397,6 +430,7 @@
             border-radius: 16px;
             margin-bottom: 15px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            border: 2px solid #e2e8f0;
         }
 
         .opt-btn {
@@ -410,7 +444,7 @@
             background: #f8fafc;
             cursor: pointer;
             font-size: 0.95rem;
-            font-weight: 600;
+            font-weight: 700;
             transition: all 0.2s;
         }
 
@@ -426,9 +460,10 @@
             border: none;
             border-radius: 12px;
             font-size: 1.1rem;
-            font-weight: 800;
+            font-weight: 900;
             cursor: pointer;
             margin-top: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
     </style>
 </head>
@@ -441,12 +476,12 @@
             <h1 class="main-title">PORTAL YEAR 4 ENGLISH</h1>
             <p class="sub-title">Enter your details and choose a learning module to begin.</p>
 
-            <!-- BARIS NAMA & KELAS -->
+            <!-- BARIS NAMA & KELAS (KOTAK MEMANJANG BERWARNA KUNING) -->
             <div class="info-container">
                 <div class="info-field">
                     <i class="fa-solid fa-user"></i>
                     <div class="info-box">
-                        <label for="namaMurid">Student Name</label>
+                        <label for="namaMurid">STUDENT NAME</label>
                         <input type="text" id="namaMurid" placeholder="Type your name..." required>
                     </div>
                 </div>
@@ -454,7 +489,7 @@
                 <div class="info-field">
                     <i class="fa-solid fa-graduation-cap"></i>
                     <div class="info-box">
-                        <label for="kelasMurid">Class</label>
+                        <label for="kelasMurid">CLASS</label>
                         <select id="kelasMurid" required>
                             <option value="">Select Class</option>
                             <option value="4 ARIF">4 ARIF</option>
@@ -591,7 +626,7 @@
             </div>
 
             <div class="footer-bar">
-                <span style="font-size: 0.85rem; color: #64748b;">© Portal Bahasa Inggeris Tahun 4</span>
+                <span class="footer-text">© Portal Bahasa Inggeris Tahun 4</span>
                 <a href="dashboard.html" class="link-guru">
                     <i class="fa-solid fa-lock"></i> Dashboard / Rekod Guru
                 </a>
