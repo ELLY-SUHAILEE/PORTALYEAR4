@@ -21,14 +21,14 @@ const getSmartModule10Data = {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE10_1.png"),
       "q": "1. What is wrong with Imran today?",
-      "options": ["A) He has got a severe stomach-ache", "B) He has a broken arm", "C) He has an earache"],
-      "ans": "A) He has got a severe stomach-ache"
+      "options": ["A) He has a broken arm", "B) He has got a severe stomach-ache", "C) He has an earache"],
+      "ans": "B) He has got a severe stomach-ache"
     },
     {
       "type": "mcq",
       "q": "2. Why did Imran get a stomach-ache after the party?",
-      "options": ["A) He ate too many sweets, chocolates, and junk food", "B) He drank cold water", "C) He ran too fast"],
-      "ans": "A) He ate too many sweets, chocolates, and junk food"
+      "options": ["A) He drank cold water", "B) He ran too fast", "C) He ate too many sweets, chocolates, and junk food"],
+      "ans": "C) He ate too many sweets, chocolates, and junk food"
     },
     {
       "type": "mcq",
@@ -39,8 +39,8 @@ const getSmartModule10Data = {
     {
       "type": "mcq",
       "q": "4. What shouldn't you do if you have a fever?",
-      "options": ["A) Play outside in the hot sun", "B) Drink warm water", "C) Take a rest in bed"],
-      "ans": "A) Play outside in the hot sun"
+      "options": ["A) Take a rest in bed", "B) Play outside in the hot sun", "C) Drink warm water"],
+      "ans": "B) Play outside in the hot sun"
     },
     {
       "type": "mcq",
@@ -54,8 +54,8 @@ const getSmartModule10Data = {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE10_6.png"),
       "q": "6. What happened to Sarah while she was playing netball?",
-      "options": ["A) She fell down and broke her arm", "B) She cut her finger with paper", "C) She got a toothache"],
-      "ans": "A) She fell down and broke her arm"
+      "options": ["A) She cut her finger with paper", "B) She got a toothache", "C) She fell down and broke her arm"],
+      "ans": "C) She fell down and broke her arm"
     },
     {
       "type": "mcq",
@@ -66,8 +66,8 @@ const getSmartModule10Data = {
     {
       "type": "mcq",
       "q": "8. What should you do if you have a bad toothache?",
-      "options": ["A) Visit the dentist immediately", "B) Eat ice cream", "C) Chew hard sweets"],
-      "ans": "A) Visit the dentist immediately"
+      "options": ["A) Eat ice cream", "B) Visit the dentist immediately", "C) Chew hard sweets"],
+      "ans": "B) Visit the dentist immediately"
     },
     {
       "type": "mcq",
@@ -78,8 +78,8 @@ const getSmartModule10Data = {
     {
       "type": "mcq",
       "q": "10. What safety measure prevents accidents at home?",
-      "options": ["A) Never play with matches or sharp knives", "B) Run fast on wet kitchen floors", "C) Touch hot irons"],
-      "ans": "A) Never play with matches or sharp knives"
+      "options": ["A) Run fast on wet kitchen floors", "B) Touch hot irons", "C) Never play with matches or sharp knives"],
+      "ans": "C) Never play with matches or sharp knives"
     }
   ],
 
@@ -87,14 +87,14 @@ const getSmartModule10Data = {
     {
       "type": "mcq",
       "q": "11. Continuous pain in the head is called a ______.",
-      "options": ["A) headache", "B) toothache", "C) stomach-ache"],
-      "ans": "A) headache"
+      "options": ["A) toothache", "B) headache", "C) stomach-ache"],
+      "ans": "B) headache"
     },
     {
       "type": "mcq",
       "q": "12. Pain caused by a bad tooth or cavity is a ______.",
-      "options": ["A) toothache", "B) sore throat", "C) cough"],
-      "ans": "A) toothache"
+      "options": ["A) sore throat", "B) cough", "C) toothache"],
+      "ans": "C) toothache"
     },
     {
       "type": "mcq",
@@ -105,8 +105,8 @@ const getSmartModule10Data = {
     {
       "type": "mcq",
       "q": "14. A small sticky strip used to cover a minor cut on the finger is a ______.",
-      "options": ["A) plaster", "B) blanket", "C) tissue"],
-      "ans": "A) plaster"
+      "options": ["A) blanket", "B) plaster", "C) tissue"],
+      "ans": "B) plaster"
     },
     {
       "type": "mcq",
@@ -120,14 +120,14 @@ const getSmartModule10Data = {
     {
       "type": "mcq",
       "q": "16. You have a fever. You ______ go to bed and rest.",
-      "options": ["A) should", "B) shouldn't", "C) mustn't"],
-      "ans": "A) should"
+      "options": ["A) shouldn't", "B) should", "C) mustn't"],
+      "ans": "B) should"
     },
     {
       "type": "mcq",
       "q": "17. He has a toothache. He ______ eat sweets.",
-      "options": ["A) shouldn't", "B) should", "C) can"],
-      "ans": "A) shouldn't"
+      "options": ["A) should", "B) can", "C) shouldn't"],
+      "ans": "C) shouldn't"
     },
     {
       "type": "mcq",
@@ -138,14 +138,14 @@ const getSmartModule10Data = {
     {
       "type": "mcq",
       "q": "19. She ______ got a sore throat today.",
-      "options": ["A) has", "B) have", "C) is"],
-      "ans": "A) has"
+      "options": ["A) have", "B) has", "C) is"],
+      "ans": "B) has"
     },
     {
       "type": "mcq",
       "q": "20. You ______ touch the hot stove; you will burn your hand.",
-      "options": ["A) shouldn't", "B) should", "C) must"],
-      "ans": "A) shouldn't"
+      "options": ["A) should", "B) must", "C) shouldn't"],
+      "ans": "C) shouldn't"
     }
   ],
 
@@ -159,14 +159,14 @@ const getSmartModule10Data = {
     {
       "type": "mcq",
       "q": "22. Rearrange the words to form a correct sentence: [ should / You / visit / dentist / the / . ]",
-      "options": ["A) You should visit the dentist.", "B) You visit should the dentist.", "C) Dentist should visit you."],
-      "ans": "A) You should visit the dentist."
+      "options": ["A) You visit should the dentist.", "B) You should visit the dentist.", "C) Dentist should visit you."],
+      "ans": "B) You should visit the dentist."
     },
     {
       "type": "mcq",
       "q": "23. Rearrange the words to form a correct sentence: [ What's / matter / the / with / him / ? ]",
-      "options": ["A) What's the matter with him?", "B) What's with him the matter?", "C) The matter what's with him?"],
-      "ans": "A) What's the matter with him?"
+      "options": ["A) What's with him the matter?", "B) The matter what's with him?", "C) What's the matter with him?"],
+      "ans": "C) What's the matter with him?"
     },
     {
       "type": "mcq",
@@ -180,8 +180,8 @@ const getSmartModule10Data = {
     {
       "type": "mcq",
       "q": "25. Someone asks: 'What's the matter?' How do you answer?",
-      "options": ["A) I've got a stomach-ache.", "B) I am going home.", "C) It is three o'clock."],
-      "ans": "A) I've got a stomach-ache."
+      "options": ["A) I am going home.", "B) I've got a stomach-ache.", "C) It is three o'clock."],
+      "ans": "B) I've got a stomach-ache."
     },
     {
       "type": "mcq",
@@ -192,8 +192,8 @@ const getSmartModule10Data = {
     {
       "type": "mcq",
       "q": "27. Someone asks: 'Should I drink cold water with a cough?' How do you reply?",
-      "options": ["A) No, you shouldn't. Drink warm water.", "B) Yes, drink lots of ice water.", "C) Ice cream is good for a cough."],
-      "ans": "A) No, you shouldn't. Drink warm water."
+      "options": ["A) Yes, drink lots of ice water.", "B) Ice cream is good for a cough.", "C) No, you shouldn't. Drink warm water."],
+      "ans": "C) No, you shouldn't. Drink warm water."
     }
   ],
 
@@ -202,8 +202,8 @@ const getSmartModule10Data = {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE10_28.png"),
       "q": "28. Read the medicine label. How many spoons of syrup should a child take daily?",
-      "options": ["A) One spoon, twice a day after meals", "B) Five spoons before bed", "C) The whole bottle at once"],
-      "ans": "A) One spoon, twice a day after meals"
+      "options": ["A) Five spoons before bed", "B) The whole bottle at once", "C) One spoon, twice a day after meals"],
+      "ans": "C) One spoon, twice a day after meals"
     },
     {
       "type": "mcq",
@@ -216,8 +216,8 @@ const getSmartModule10Data = {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE10_30.png"),
       "q": "30. Read the first-aid guide. What is the first thing to do for a minor burn?",
-      "options": ["A) Run cool tap water over it", "B) Put hot water on it", "C) Cover it with sugar"],
-      "ans": "A) Run cool tap water over it"
+      "options": ["A) Put hot water on it", "B) Run cool tap water over it", "C) Cover it with sugar"],
+      "ans": "B) Run cool tap water over it"
     }
   ]
 };
@@ -237,8 +237,8 @@ const remedialModule10Data = {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE10_1.png"),
       "q": "1. Tom has a ____.",
-      "options": ["A) headache", "B) kite", "C) ball"],
-      "ans": "A) headache"
+      "options": ["A) kite", "B) headache", "C) ball"],
+      "ans": "B) headache"
     },
     {
       "type": "mcq",
@@ -249,8 +249,8 @@ const remedialModule10Data = {
     {
       "type": "mcq",
       "q": "3. He takes ____ to feel better.",
-      "options": ["A) medicine", "B) sweets", "C) ice cream"],
-      "ans": "A) medicine"
+      "options": ["A) sweets", "B) ice cream", "C) medicine"],
+      "ans": "C) medicine"
     },
     {
       "type": "mcq",
@@ -261,8 +261,8 @@ const remedialModule10Data = {
     {
       "type": "mcq",
       "q": "5. Tom feels ____ after resting.",
-      "options": ["A) better", "B) worse", "C) angry"],
-      "ans": "A) better"
+      "options": ["A) worse", "B) better", "C) angry"],
+      "ans": "B) better"
     },
 
     // --- PETIKAN 2 (Soalan 6 - 10: At the Dentist) ---
@@ -270,8 +270,8 @@ const remedialModule10Data = {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE10_6.png"),
       "q": "6. May has a ____.",
-      "options": ["A) toothache", "B) fever", "C) cut"],
-      "ans": "A) toothache"
+      "options": ["A) fever", "B) cut", "C) toothache"],
+      "ans": "C) toothache"
     },
     {
       "type": "mcq",
@@ -282,8 +282,8 @@ const remedialModule10Data = {
     {
       "type": "mcq",
       "q": "8. May shouldn't eat many ____.",
-      "options": ["A) sweets", "B) apples", "C) carrots"],
-      "ans": "A) sweets"
+      "options": ["A) apples", "B) sweets", "C) carrots"],
+      "ans": "B) sweets"
     },
     {
       "type": "mcq",
@@ -294,8 +294,8 @@ const remedialModule10Data = {
     {
       "type": "mcq",
       "q": "10. Teeth should be ____.",
-      "options": ["A) clean", "B) dirty", "C) black"],
-      "ans": "A) clean"
+      "options": ["A) dirty", "B) black", "C) clean"],
+      "ans": "C) clean"
     }
   ],
 
@@ -303,8 +303,8 @@ const remedialModule10Data = {
     {
       "type": "mcq",
       "q": "11. Head hurts: ______.",
-      "options": ["A) headache", "B) arm", "C) shoe"],
-      "ans": "A) headache"
+      "options": ["A) arm", "B) headache", "C) shoe"],
+      "ans": "B) headache"
     },
     {
       "type": "mcq",
@@ -315,8 +315,8 @@ const remedialModule10Data = {
     {
       "type": "mcq",
       "q": "13. Sticky tape for a cut: ______.",
-      "options": ["A) plaster", "B) book", "C) pen"],
-      "ans": "A) plaster"
+      "options": ["A) book", "B) pen", "C) plaster"],
+      "ans": "C) plaster"
     },
     {
       "type": "mcq",
@@ -327,8 +327,8 @@ const remedialModule10Data = {
     {
       "type": "mcq",
       "q": "15. Doctor for teeth: ______.",
-      "options": ["A) dentist", "B) cook", "C) pilot"],
-      "ans": "A) dentist"
+      "options": ["A) cook", "B) dentist", "C) pilot"],
+      "ans": "B) dentist"
     }
   ],
 
@@ -342,14 +342,14 @@ const remedialModule10Data = {
     {
       "type": "mcq",
       "q": "17. You ______ eat sweets when your tooth hurts.",
-      "options": ["A) shouldn't", "B) should", "C) can"],
-      "ans": "A) shouldn't"
+      "options": ["A) should", "B) can", "C) shouldn't"],
+      "ans": "C) shouldn't"
     },
     {
       "type": "mcq",
       "q": "18. I ______ got a fever.",
-      "options": ["A) have", "B) has", "C) am"],
-      "ans": "A) have"
+      "options": ["A) has", "B) have", "C) am"],
+      "ans": "B) have"
     },
     {
       "type": "mcq",
@@ -360,8 +360,8 @@ const remedialModule10Data = {
     {
       "type": "mcq",
       "q": "20. What's the ______?",
-      "options": ["A) matter", "B) thing", "C) problem"],
-      "ans": "A) matter"
+      "options": ["A) thing", "B) problem", "C) matter"],
+      "ans": "C) matter"
     }
   ],
 
@@ -369,8 +369,8 @@ const remedialModule10Data = {
     {
       "type": "mcq",
       "q": "21. Choose the correct spelling:",
-      "options": ["A) Fever", "B) Feever", "C) Fiver"],
-      "ans": "A) Fever"
+      "options": ["A) Feever", "B) Fever", "C) Fiver"],
+      "ans": "B) Fever"
     },
     {
       "type": "mcq",
@@ -381,14 +381,14 @@ const remedialModule10Data = {
     {
       "type": "mcq",
       "q": "23. Choose the correct spelling:",
-      "options": ["A) Cough", "B) Cauf", "C) Cougth"],
-      "ans": "A) Cough"
+      "options": ["A) Cauf", "B) Cougth", "C) Cough"],
+      "ans": "C) Cough"
     },
     {
       "type": "mcq",
       "q": "24. Rearrange: [ Rest / in bed ]",
-      "options": ["A) Rest in bed.", "B) In bed rest.", "C) Bed in rest."],
-      "ans": "A) Rest in bed."
+      "options": ["A) In bed rest.", "B) Rest in bed.", "C) Bed in rest."],
+      "ans": "B) Rest in bed."
     }
   ],
 
@@ -402,14 +402,14 @@ const remedialModule10Data = {
     {
       "type": "mcq",
       "q": "26. Are you feeling sick?",
-      "options": ["A) Yes, I am.", "B) Yes, I do.", "C) Yes, I can."],
-      "ans": "A) Yes, I am."
+      "options": ["A) Yes, I do.", "B) Yes, I am.", "C) Yes, I can."],
+      "ans": "B) Yes, I am."
     },
     {
       "type": "mcq",
       "q": "27. Should I sleep?",
-      "options": ["A) Yes, you should.", "B) No, you are.", "C) Yes, you do."],
-      "ans": "A) Yes, you should."
+      "options": ["A) No, you are.", "B) Yes, you do.", "C) Yes, you should."],
+      "ans": "C) Yes, you should."
     }
   ],
 
@@ -418,8 +418,8 @@ const remedialModule10Data = {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE10_28.png"),
       "q": "28. Look at the picture. What is wrong with the boy?",
-      "options": ["A) He has a stomach-ache.", "B) He is happy.", "C) He is running."],
-      "ans": "A) He has a stomach-ache."
+      "options": ["A) He is happy.", "B) He has a stomach-ache.", "C) He is running."],
+      "ans": "B) He has a stomach-ache."
     },
     {
       "type": "mcq",
@@ -432,8 +432,8 @@ const remedialModule10Data = {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE10_30.png"),
       "q": "30. Look at the picture. Where is the girl?",
-      "options": ["A) At the dentist", "B) At school", "C) At the park"],
-      "ans": "A) At the dentist"
+      "options": ["A) At school", "B) At the park", "C) At the dentist"],
+      "ans": "C) At the dentist"
     }
   ]
 };
