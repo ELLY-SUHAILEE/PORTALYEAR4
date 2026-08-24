@@ -16,184 +16,184 @@ if (typeof window.wrapCenterImage !== 'function') {
 // ==========================================
 const getSmartModule8Data = {
   "Reading": [
-    // --- PETIKAN 1 (Soalan 1 - 5: Record-Breaking Animals) ---
+    // --- PETIKAN 1 (Soalan 1 - 5: Malayan Tigers & The Blue Whale) ---
     {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE8_1.png"),
-      "q": "1. What is the biggest animal in the world?",
-      "options": ["A) The blue whale", "B) The African elephant", "C) The blue shark"],
-      "ans": "A) The blue whale"
+      "q": "1. Which animal is recognized as the largest animal to ever exist on Earth?",
+      "options": ["A) The African elephant", "B) The blue whale", "C) The giraffe"],
+      "ans": "B) The blue whale"
     },
     {
       "type": "mcq",
-      "q": "2. Which land animal is known to be the fastest runner?",
-      "options": ["A) The cheetah", "B) The horse", "C) The lion"],
-      "ans": "A) The cheetah"
+      "q": "2. Why are Malayan tigers currently facing the danger of extinction?",
+      "options": ["A) Loss of forest habitat and illegal hunting", "B) They have too many natural predators", "C) The weather in Malaysia is too cold"],
+      "ans": "A) Loss of forest habitat and illegal hunting"
     },
     {
       "type": "mcq",
-      "q": "3. Why is the ostrich unique among birds?",
-      "options": ["A) It is the biggest bird and runs very fast, but cannot fly", "B) It is the smallest bird", "C) It swims under water"],
-      "ans": "A) It is the biggest bird and runs very fast, but cannot fly"
+      "q": "3. What physical feature makes the cheetah the fastest land animal?",
+      "options": ["A) It can fly over high trees", "B) It has a flexible spine and muscular legs", "C) It can swim faster than sharks"],
+      "ans": "B) It has a flexible spine and muscular legs"
     },
     {
       "type": "mcq",
-      "q": "4. Which land animal is taller than all other animals?",
-      "options": ["A) The giraffe", "B) The camel", "C) The bear"],
-      "ans": "A) The giraffe"
+      "q": "4. Where do Malayan tigers primarily live in the wild?",
+      "options": ["A) In icy arctic plains", "B) In tropical rainforests of Peninsular Malaysia", "C) In dry sandy deserts"],
+      "ans": "B) In tropical rainforests of Peninsular Malaysia"
     },
     {
       "type": "mcq",
-      "q": "5. Why are blue whales heavier than elephants?",
-      "options": ["A) They can grow up to 30 meters long and weigh over 100 tonnes", "B) They eat only trees", "C) They have heavy fur"],
-      "ans": "A) They can grow up to 30 meters long and weigh over 100 tonnes"
+      "q": "5. How can people help protect endangered animals like the Malayan tiger?",
+      "options": ["A) By building factories in natural reserves", "B) By protecting forest habitats and stopping illegal wildlife trade", "C) By keeping wild tigers as domestic pets"],
+      "ans": "B) By protecting forest habitats and stopping illegal wildlife trade"
     },
 
-    // --- PETIKAN 2 (Soalan 6 - 10: Dinosaurs of the Past) ---
+    // --- PETIKAN 2 (Soalan 6 - 10: Fascinating Ostriches) ---
     {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE8_6.png"),
-      "q": "6. When did dinosaurs live on Earth?",
-      "options": ["A) Millions of years ago", "B) 100 years ago", "C) Last century"],
-      "ans": "A) Millions of years ago"
+      "q": "6. Which creature holds the record for being the largest bird in the world?",
+      "options": ["A) The bald eagle", "B) The emperor penguin", "C) The ostrich"],
+      "ans": "C) The ostrich"
     },
     {
       "type": "mcq",
-      "q": "7. What kind of teeth did Tyrannosaurus Rex have?",
-      "options": ["A) Sharp and huge teeth for eating meat", "B) Flat teeth for chewing leaves", "C) No teeth at all"],
-      "ans": "A) Sharp and huge teeth for eating meat"
+      "q": "7. Why are ostriches unable to fly despite having large wings?",
+      "options": ["A) Their heavy bodies and flat breastbones prevent flight", "B) They are afraid of heights", "C) Their wings are made of heavy metal"],
+      "ans": "A) Their heavy bodies and flat breastbones prevent flight"
     },
     {
       "type": "mcq",
-      "q": "8. Which dinosaur had a very long neck to reach tall leaves?",
-      "options": ["A) Diplodocus", "B) Tyrannosaurus Rex", "C) Velociraptor"],
-      "ans": "A) Diplodocus"
+      "q": "8. How fast can an ostrich run when fleeing from predators?",
+      "options": ["A) Up to 70 kilometers per hour", "B) Only 5 kilometers per hour", "C) Faster than an airplane"],
+      "ans": "A) Up to 70 kilometers per hour"
     },
     {
       "type": "mcq",
-      "q": "9. How do scientists learn about dinosaurs today?",
-      "options": ["A) By studying dinosaur fossils and bones", "B) By watching them in the wild", "C) By taking photos of living ones"],
-      "ans": "A) By studying dinosaur fossils and bones"
+      "q": "9. How large are ostrich eggs compared to all other bird eggs?",
+      "options": ["A) They are the smallest eggs in existence", "B) They are the largest eggs of any living bird", "C) They are identical in size to chicken eggs"],
+      "ans": "B) They are the largest eggs of any living bird"
     },
     {
       "type": "mcq",
-      "q": "10. Why are there no living dinosaurs today?",
-      "options": ["A) They became extinct millions of years ago", "B) They flew to space", "C) They live under the sea"],
-      "ans": "A) They became extinct millions of years ago"
+      "q": "10. What does an ostrich mainly feed on in the savanna?",
+      "options": ["A) Seeds, plants, roots, and small reptiles", "B) Large ocean fish", "C) Processed canned foods"],
+      "ans": "A) Seeds, plants, roots, and small reptiles"
     }
   ],
 
   "Vocabulary": [
     {
       "type": "mcq",
-      "q": "11. The fastest animal on land with a spotted coat is the ______.",
+      "q": "11. A big wild feline with black stripes on orange fur is a ______.",
       "options": ["A) cheetah", "B) tiger", "C) leopard"],
+      "ans": "B) tiger"
+    },
+    {
+      "type": "mcq",
+      "q": "12. The fastest land animal on Earth capable of running up to 100 km/h is the ______.",
+      "options": ["A) cheetah", "B) lion", "C) zebra"],
       "ans": "A) cheetah"
     },
     {
       "type": "mcq",
-      "q": "12. The remains or traces of ancient animals preserved in rocks are ______.",
-      "options": ["A) fossils", "B) statues", "C) shells"],
-      "ans": "A) fossils"
+      "q": "13. A large, powerful primate native to the forests of central Africa is a ______.",
+      "options": ["A) monkey", "B) gorilla", "C) sloth"],
+      "ans": "B) gorilla"
     },
     {
       "type": "mcq",
-      "q": "13. A large sea mammal that is the biggest creature on Earth is the ______.",
-      "options": ["A) blue whale", "B) dolphin", "C) shark"],
-      "ans": "A) blue whale"
+      "q": "14. A species at risk of disappearing forever due to low numbers is ______.",
+      "options": ["A) endangered", "B) dangerous", "C) common"],
+      "ans": "A) endangered"
     },
     {
       "type": "mcq",
-      "q": "14. A giant reptile that lived millions of years ago is a ______.",
-      "options": ["A) dinosaur", "B) crocodile", "C) lizard"],
-      "ans": "A) dinosaur"
-    },
-    {
-      "type": "mcq",
-      "q": "15. An animal that eats only plants is called a herbivore, while one that eats meat is ______.",
-      "options": ["A) dangerous / carnivorous", "B) gentle", "C) tiny"],
-      "ans": "A) dangerous / carnivorous"
+      "q": "15. The massive sea mammal known as the largest animal in existence is the blue ______.",
+      "options": ["A) shark", "B) dolphin", "C) whale"],
+      "ans": "C) whale"
     }
   ],
 
   "Grammar": [
     {
       "type": "mcq",
-      "q": "16. A cheetah is ______ than a lion.",
-      "options": ["A) faster", "B) fast", "C) fastest"],
-      "ans": "A) faster"
+      "q": "16. A cheetah runs ______ than a lion.",
+      "options": ["A) fast", "B) faster", "C) fastest"],
+      "ans": "B) faster"
     },
     {
       "type": "mcq",
-      "q": "17. The blue whale is the ______ animal in the world.",
-      "options": ["A) biggest", "B) bigger", "C) big"],
-      "ans": "A) biggest"
+      "q": "17. The blue whale is the ______ living animal on Earth.",
+      "options": ["A) big", "B) bigger", "C) biggest"],
+      "ans": "C) biggest"
     },
     {
       "type": "mcq",
-      "q": "18. Diplodocus was ______ than Tyrannosaurus Rex.",
-      "options": ["A) longer", "B) longest", "C) long"],
-      "ans": "A) longer"
-    },
-    {
-      "type": "mcq",
-      "q": "19. Which animal is the ______ dangerous in the jungle?",
-      "options": ["A) most", "B) more", "C) much"],
-      "ans": "A) most"
-    },
-    {
-      "type": "mcq",
-      "q": "20. Giraffes are ______ than horses.",
-      "options": ["A) taller", "B) tallest", "C) tall"],
+      "q": "18. Giraffes are much ______ than horses.",
+      "options": ["A) taller", "B) tall", "C) tallest"],
       "ans": "A) taller"
+    },
+    {
+      "type": "mcq",
+      "q": "19. Sharks are ______ dangerous than goldfish.",
+      "options": ["A) most", "B) more", "C) as"],
+      "ans": "B) more"
+    },
+    {
+      "type": "mcq",
+      "q": "20. Blue whales are the ______ heavy of all sea creatures.",
+      "options": ["A) more", "B) most", "C) very"],
+      "ans": "B) most"
     }
   ],
 
   "Writing": [
     {
       "type": "mcq",
-      "q": "21. Choose the sentence with the correct capitalization and punctuation.",
-      "options": ["A) The blue whale is the biggest animal in the world.", "B) the blue whale is the biggest animal in the world.", "C) The blue whale is the biggest animal in the world"],
-      "ans": "A) The blue whale is the biggest animal in the world."
+      "q": "21. Choose the sentence with correct capitalization and punctuation.",
+      "options": ["A) The cheetah is the fastest animal on land.", "B) the cheetah is the fastest animal on land", "C) The Cheetah is the Fastest animal on Land."],
+      "ans": "A) The cheetah is the fastest animal on land."
     },
     {
       "type": "mcq",
-      "q": "22. Rearrange the words to form a correct sentence: [ animal / is / Which / fastest / the / ? ]",
-      "options": ["A) Which animal is the fastest?", "B) Which fastest is the animal?", "C) Fastest animal which is the?"],
-      "ans": "A) Which animal is the fastest?"
+      "q": "22. Rearrange the words: [ animal / whale / blue / The / is / largest / the / . ]",
+      "options": ["A) The blue whale is the largest animal.", "B) Blue whale the largest animal is the.", "C) The largest animal blue whale is."],
+      "ans": "A) The blue whale is the largest animal."
     },
     {
       "type": "mcq",
-      "q": "23. Rearrange the words to form a correct sentence: [ Cheetahs / than / faster / are / lions ]",
-      "options": ["A) Cheetahs are faster than lions.", "B) Cheetahs faster than lions are.", "C) Faster than lions are cheetahs."],
-      "ans": "A) Cheetahs are faster than lions."
+      "q": "23. Rearrange the words: [ faster / Cheetahs / are / horses / than / . ]",
+      "options": ["A) Cheetahs are faster than horses.", "B) Faster than horses cheetahs are.", "C) Horses are cheetahs than faster."],
+      "ans": "A) Cheetahs are faster than horses."
     },
     {
       "type": "mcq",
       "q": "24. Choose the word with the correct spelling.",
-      "options": ["A) Dinosaur", "B) Dinosaur", "C) Dynosaur"],
-      "ans": "A) Dinosaur"
+      "options": ["A) Dangerous", "B) Dangerus", "C) Daingerous"],
+      "ans": "A) Dangerous"
     }
   ],
 
   "Speaking": [
     {
       "type": "mcq",
-      "q": "25. Someone asks: 'Which is bigger, an elephant or a horse?' How do you answer?",
-      "options": ["A) An elephant is bigger than a horse.", "B) A horse is fast.", "C) Elephants eat grass."],
-      "ans": "A) An elephant is bigger than a horse."
+      "q": "25. Someone asks: 'Which animal is bigger, an elephant or a gorilla?' How do you answer?",
+      "options": ["A) An elephant is bigger than a gorilla.", "B) Gorillas live in trees.", "C) Elephants like peanuts."],
+      "ans": "A) An elephant is bigger than a gorilla."
     },
     {
       "type": "mcq",
-      "q": "26. Someone asks: 'What is the fastest animal in the world?' How do you answer?",
-      "options": ["A) The cheetah is the fastest animal.", "B) The cheetah is spotted.", "C) A snail is slow."],
-      "ans": "A) The cheetah is the fastest animal."
+      "q": "26. A classmate asks: 'What is the fastest land animal in the world?' How do you reply?",
+      "options": ["A) The cheetah is the fastest land animal.", "B) I like riding bicycles.", "C) Animals sleep at night."],
+      "ans": "A) The cheetah is the fastest land animal."
     },
     {
       "type": "mcq",
-      "q": "27. Someone asks: 'Did T-Rex eat plants?' How do you answer?",
-      "options": ["A) No, it ate meat.", "B) Yes, it loved grass.", "C) T-Rex is alive today."],
-      "ans": "A) No, it ate meat."
+      "q": "27. Your teacher asks: 'Are Malayan tigers endangered?' How do you reply?",
+      "options": ["A) Yes, they are endangered and need our protection.", "B) No, tigers can fly.", "C) Tigers eat green grass."],
+      "ans": "A) Yes, they are endangered and need our protection."
     }
   ],
 
@@ -201,23 +201,23 @@ const getSmartModule8Data = {
     {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE8_28.png"),
-      "q": "28. Read the animal fact card. How fast can a cheetah run?",
-      "options": ["A) Up to 110 km/h", "B) 30 km/h", "C) 5 km/h"],
-      "ans": "A) Up to 110 km/h"
+      "q": "28. Look at the photo. Which big wild cat is known as the king of the jungle?",
+      "options": ["A) Lion", "B) Rabbit", "C) Ostrich"],
+      "ans": "A) Lion"
     },
     {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE8_29.png"),
-      "q": "29. Look at the bar chart comparing animal weights. Which animal is the heaviest?",
-      "options": ["A) Blue Whale", "B) Elephant", "C) Hippo"],
-      "ans": "A) Blue Whale"
+      "q": "29. Read the animal speed chart. Which land creature runs at 100 km/h?",
+      "options": ["A) Elephant", "B) Cheetah", "C) Tortoise"],
+      "ans": "B) Cheetah"
     },
     {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE8_30.png"),
-      "q": "30. Read the museum ticket info. What time does the Dinosaur Exhibition close?",
-      "options": ["A) 6:00 PM", "B) 9:00 AM", "C) 12:00 PM"],
-      "ans": "A) 6:00 PM"
+      "q": "30. Look at the ocean creature poster. How heavy can a blue whale grow?",
+      "options": ["A) Up to 180 tonnes", "B) Only 10 kilograms", "C) 50 grams"],
+      "ans": "A) Up to 180 tonnes"
     }
   ]
 };
@@ -232,136 +232,136 @@ window.quizBank["GET SMART SET"]["Module 8 - Amazing animals"] = getSmartModule8
 // ==========================================
 const remedialModule8Data = {
   "Reading": [
-    // --- PETIKAN 1 (Soalan 1 - 5: Big and Small Animals) ---
+    // --- PETIKAN 1 (Soalan 1 - 5: The Fast Cheetah) ---
     {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE8_1.png"),
-      "q": "1. An elephant is very ____.",
-      "options": ["A) big", "B) small", "C) tiny"],
-      "ans": "A) big"
+      "q": "1. The cheetah is a big ____.",
+      "options": ["A) cat", "B) bird", "C) fish"],
+      "ans": "A) cat"
     },
     {
       "type": "mcq",
-      "q": "2. A cheetah runs very ____.",
-      "options": ["A) fast", "B) slow", "C) sleepy"],
-      "ans": "A) fast"
+      "q": "2. A cheetah can run very ____.",
+      "options": ["A) slowly", "B) fast", "C) high"],
+      "ans": "B) fast"
     },
     {
       "type": "mcq",
-      "q": "3. A giraffe has a long ____.",
-      "options": ["A) neck", "B) nose", "C) ear"],
-      "ans": "A) neck"
+      "q": "3. It has black ____ on yellow fur.",
+      "options": ["A) spots", "B) stripes", "C) squares"],
+      "ans": "A) spots"
     },
     {
       "type": "mcq",
-      "q": "4. A mouse is ____ than a cat.",
-      "options": ["A) smaller", "B) bigger", "C) taller"],
-      "ans": "A) smaller"
+      "q": "4. Cheetahs live in dry ____.",
+      "options": ["A) water", "B) grasslands", "C) ice"],
+      "ans": "B) grasslands"
     },
     {
       "type": "mcq",
-      "q": "5. Blue whales live in the ____.",
-      "options": ["A) sea / ocean", "B) forest", "C) sky"],
-      "ans": "A) sea / ocean"
+      "q": "5. The cheetah is the fastest ____ animal.",
+      "options": ["A) land", "B) sea", "C) sky"],
+      "ans": "A) land"
     },
 
-    // --- PETIKAN 2 (Soalan 6 - 10: Dinosaurs) ---
+    // --- PETIKAN 2 (Soalan 6 - 10: The Giant Blue Whale) ---
     {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE8_6.png"),
-      "q": "6. Dinosaurs lived long ____.",
-      "options": ["A) ago", "B) today", "C) tomorrow"],
-      "ans": "A) ago"
+      "q": "6. The blue whale lives in the ____.",
+      "options": ["A) ocean", "B) jungle", "C) river"],
+      "ans": "A) ocean"
     },
     {
       "type": "mcq",
-      "q": "7. T-Rex had big ____.",
-      "options": ["A) teeth", "B) wings", "C) horns"],
-      "ans": "A) teeth"
+      "q": "7. It is the ____ animal on Earth.",
+      "options": ["A) smallest", "B) biggest", "C) shortest"],
+      "ans": "B) biggest"
     },
     {
       "type": "mcq",
-      "q": "8. Diplodocus was very ____.",
-      "options": ["A) long", "B) short", "C) small"],
-      "ans": "A) long"
+      "q": "8. Blue whales eat tiny ocean ____.",
+      "options": ["A) krill", "B) apples", "C) trees"],
+      "ans": "A) krill"
     },
     {
       "type": "mcq",
-      "q": "9. Dinosaurs are not alive ____.",
-      "options": ["A) now", "B) then", "C) before"],
-      "ans": "A) now"
+      "q": "9. A blue whale is ____ than an elephant.",
+      "options": ["A) smaller", "B) larger", "C) thinner"],
+      "ans": "B) larger"
     },
     {
       "type": "mcq",
-      "q": "10. We can see dinosaur bones in a ____.",
-      "options": ["A) museum", "B) school", "C) park"],
-      "ans": "A) museum"
+      "q": "10. We should ____ wild animals.",
+      "options": ["A) protect", "B) hurt", "C) ignore"],
+      "ans": "A) protect"
     }
   ],
 
   "Vocabulary": [
     {
       "type": "mcq",
-      "q": "11. Fast animal with spots: ______.",
-      "options": ["A) cheetah", "B) turtle", "C) snail"],
-      "ans": "A) cheetah"
+      "q": "11. Fastest land animal: ______.",
+      "options": ["A) Cheetah", "B) Turtle", "C) Snail"],
+      "ans": "A) Cheetah"
     },
     {
       "type": "mcq",
-      "q": "12. Very tall animal: ______.",
-      "options": ["A) giraffe", "B) monkey", "C) frog"],
-      "ans": "A) giraffe"
+      "q": "12. Huge ocean animal: blue ______.",
+      "options": ["A) Whale", "B) Frog", "C) Ant"],
+      "ans": "A) Whale"
     },
     {
       "type": "mcq",
-      "q": "13. Giant animal of the ocean: ______.",
-      "options": ["A) blue whale", "B) goldfish", "C) crab"],
-      "ans": "A) blue whale"
+      "q": "13. Tall animal with a very long neck: ______.",
+      "options": ["A) Giraffe", "B) Snake", "C) Cat"],
+      "ans": "A) Giraffe"
     },
     {
       "type": "mcq",
-      "q": "14. Big old reptile: ______.",
-      "options": ["A) dinosaur", "B) bird", "C) rabbit"],
-      "ans": "A) dinosaur"
+      "q": "14. Wild cat with orange fur and black stripes: ______.",
+      "options": ["A) Tiger", "B) Dog", "C) Rabbit"],
+      "ans": "A) Tiger"
     },
     {
       "type": "mcq",
-      "q": "15. Dinosaur bones in rock: ______.",
-      "options": ["A) fossil", "B) wood", "C) leaf"],
-      "ans": "A) fossil"
+      "q": "15. Big heavy bird that cannot fly: ______.",
+      "options": ["A) Ostrich", "B) Parrot", "C) Duck"],
+      "ans": "A) Ostrich"
     }
   ],
 
   "Grammar": [
     {
       "type": "mcq",
-      "q": "16. An elephant is ______ than a dog.",
-      "options": ["A) bigger", "B) big", "C) biggest"],
-      "ans": "A) bigger"
-    },
-    {
-      "type": "mcq",
-      "q": "17. A cheetah is ______ than a snail.",
+      "q": "16. A cheetah is ______ than a dog.",
       "options": ["A) faster", "B) fast", "C) fastest"],
       "ans": "A) faster"
     },
     {
       "type": "mcq",
-      "q": "18. The giraffe is the ______ animal.",
-      "options": ["A) tallest", "B) taller", "C) tall"],
-      "ans": "A) tallest"
-    },
-    {
-      "type": "mcq",
-      "q": "19. The blue whale is the ______.",
-      "options": ["A) biggest", "B) bigger", "C) big"],
+      "q": "17. The blue whale is the ______ animal.",
+      "options": ["A) biggest", "B) big", "C) bigger"],
       "ans": "A) biggest"
     },
     {
       "type": "mcq",
-      "q": "20. A mouse is ______ than a lion.",
-      "options": ["A) smaller", "B) small", "C) smallest"],
-      "ans": "A) smaller"
+      "q": "18. An elephant is ______ than a mouse.",
+      "options": ["A) bigger", "B) smallest", "C) big"],
+      "ans": "A) bigger"
+    },
+    {
+      "type": "mcq",
+      "q": "19. A giraffe is ______ than a goat.",
+      "options": ["A) taller", "B) tallest", "C) tall"],
+      "ans": "A) taller"
+    },
+    {
+      "type": "mcq",
+      "q": "20. The ostrich is the ______ bird in the world.",
+      "options": ["A) heaviest", "B) heavy", "C) heavier"],
+      "ans": "A) heaviest"
     }
   ],
 
@@ -374,42 +374,42 @@ const remedialModule8Data = {
     },
     {
       "type": "mcq",
-      "q": "22. Rearrange: [ Lions are / fast ]",
-      "options": ["A) Lions are fast.", "B) Fast are lions.", "C) Are lions fast."],
-      "ans": "A) Lions are fast."
+      "q": "22. Rearrange: [ The cheetah / is fast. ]",
+      "options": ["A) Is fast the cheetah.", "B) The cheetah is fast.", "C) Fast is cheetah the."],
+      "ans": "B) The cheetah is fast."
     },
     {
       "type": "mcq",
       "q": "23. Choose the correct spelling:",
-      "options": ["A) Elephant", "B) Elepant", "C) Eliphant"],
-      "ans": "A) Elephant"
+      "options": ["A) Whale", "B) Whal", "C) Wayle"],
+      "ans": "A) Whale"
     },
     {
       "type": "mcq",
-      "q": "24. Rearrange: [ It is / big ]",
-      "options": ["A) It is big.", "B) Big it is.", "C) Is big it."],
-      "ans": "A) It is big."
+      "q": "24. Rearrange: [ Tigers / are strong. ]",
+      "options": ["A) Tigers are strong.", "B) Strong are tigers.", "C) Are strong tigers."],
+      "ans": "A) Tigers are strong."
     }
   ],
 
   "Speaking": [
     {
       "type": "mcq",
-      "q": "25. Is an elephant big?",
-      "options": ["A) Yes, it is.", "B) Yes, it can.", "C) No, it isn't."],
+      "q": "25. Is the cheetah fast?",
+      "options": ["A) Yes, it is.", "B) Yes, I am.", "C) No, it isn't."],
       "ans": "A) Yes, it is."
     },
     {
       "type": "mcq",
-      "q": "26. Which is faster, a lion or a turtle?",
-      "options": ["A) A lion.", "B) A turtle.", "C) Both are slow."],
-      "ans": "A) A lion."
+      "q": "26. Which animal is bigger?",
+      "options": ["A) An elephant.", "B) An ant.", "C) A fly."],
+      "ans": "A) An elephant."
     },
     {
       "type": "mcq",
-      "q": "27. Do you like dinosaurs?",
-      "options": ["A) Yes, I do.", "B) Yes, I am.", "C) No, I'm not."],
-      "ans": "A) Yes, I do."
+      "q": "27. Does a blue whale live in water?",
+      "options": ["A) Yes, it does.", "B) Yes, it can't.", "C) No, it doesn't."],
+      "ans": "A) Yes, it does."
     }
   ],
 
@@ -418,22 +418,22 @@ const remedialModule8Data = {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE8_28.png"),
       "q": "28. Look at the picture. What animal is this?",
-      "options": ["A) Elephant", "B) Tiger", "C) Bird"],
-      "ans": "A) Elephant"
+      "options": ["A) Gorilla", "B) Duck", "C) Fish"],
+      "ans": "A) Gorilla"
     },
     {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE8_29.png"),
       "q": "29. Look at the picture. Is the giraffe tall?",
-      "options": ["A) Yes, it is very tall.", "B) No, it is short.", "C) It is small."],
+      "options": ["A) Yes, it is very tall.", "B) No, it is tiny.", "C) It is short."],
       "ans": "A) Yes, it is very tall."
     },
     {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE8_30.png"),
-      "q": "30. Look at the picture. What is this?",
-      "options": ["A) Dinosaur fossil", "B) Living dog", "C) Fish bowl"],
-      "ans": "A) Dinosaur fossil"
+      "q": "30. Look at the sign. Protect wild ______.",
+      "options": ["A) Animals", "B) Toys", "C) Cars"],
+      "ans": "A) Animals"
     }
   ]
 };
