@@ -3,206 +3,346 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Year 4 English</title>
+    <title>PORTAL YEAR 4 ENGLISH</title>
     <!-- FontAwesome Icon Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            color: #000;
+        }
+
+        body {
+            background-color: #ffffff;
+            padding: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        h1.main-title {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        p.sub-title {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .field-group {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .field-group i {
+            font-size: 16px;
+        }
+
+        .field-group label {
+            font-size: 16px;
+        }
+
+        input[type="text"], select {
+            border: 1px solid #000;
+            padding: 2px 6px;
+            font-size: 15px;
+            background: #fff;
+            border-radius: 2px;
+        }
+
+        .section-header {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 25px 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-transform: uppercase;
+        }
+
+        .module-block {
+            margin-bottom: 25px;
+        }
+
+        .module-block h2 {
+            font-size: 22px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .module-block p {
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .btn-start {
+            background-color: #efefef;
+            border: 1px solid #767676;
+            padding: 3px 10px;
+            font-size: 13px;
+            cursor: pointer;
+            border-radius: 3px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 5px;
+        }
+
+        .btn-start:hover {
+            background-color: #e5e5e5;
+        }
+
+        .sub-item {
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        .sub-item h3 {
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sub-item p {
+            font-size: 14px;
+            margin-left: 24px;
+        }
+
+        /* MODAL POPUP */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-card {
+            background: white;
+            padding: 20px;
+            border: 1px solid #000;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .modal-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .modal-card select {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 5px;
+        }
+
+        .modal-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        /* QUIZ DISPLAY */
+        .quiz-header {
+            border-bottom: 1px solid #000;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .question-box {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 15px;
+            background: #fafafa;
+        }
+
+        .btn-option {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 8px 12px;
+            margin-top: 6px;
+            border: 1px solid #bbb;
+            background: #fff;
+            cursor: pointer;
+        }
+
+        .btn-option.selected { background: #e2e8f0; font-weight: bold; }
+        .btn-option.correct { background: #d1e7dd; border-color: #0f5132; color: #0f5132; font-weight: bold; }
+        .btn-option.wrong { background: #f8d7da; border-color: #842029; color: #842029; }
+
+        .submit-btn {
+            background: #000;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+
+        .footer-link {
+            margin-top: 40px;
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
 
-    <div class="main-card">
-        
-        <!-- MENU UTAMA -->
-        <div id="menuSection">
-            <h1 class="header-title">PORTAL YEAR 4 ENGLISH</h1>
-            <p class="header-subtitle">Enter your details and choose a learning module to begin.</p>
+    <!-- MENU UTAMA -->
+    <div id="menuSection">
+        <h1 class="main-title">PORTAL YEAR 4 ENGLISH</h1>
+        <p class="sub-title">Enter your details and choose a learning module to begin.</p>
 
-            <!-- 1. BARIS NAMA & KELAS -->
-            <div class="info-bar">
-                <div class="info-item">
-                    <div class="info-icon"><i class="fa-solid fa-user"></i></div>
-                    <div class="info-content">
-                        <span class="info-label">Student Name</span>
-                        <input type="text" id="namaMurid" class="info-input" placeholder="Type your name..." required>
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <div class="info-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                    <div class="info-content">
-                        <span class="info-label">Class</span>
-                        <select id="kelasMurid" class="info-select" required>
-                            <option value="">Select Class</option>
-                            <option value="4 ARIF">4 ARIF</option>
-                            <option value="4 BESTARI">4 BESTARI</option>
-                            <option value="4 CERDIK">4 CERDIK</option>
-                            <option value="4 DEDIKASI">4 DEDIKASI</option>
-                            <option value="4 ELIT">4 ELIT</option>
-                            <option value="4 FIRDAUS">4 FIRDAUS</option>
-                            <option value="4 GIGIH">4 GIGIH</option>
-                            <option value="4 HARMONI">4 HARMONI</option>
-                            <option value="4 INOVATIF">4 INOVATIF</option>
-                            <option value="4 JUARA">4 JUARA</option>
-                            <option value="4 KREATIF">4 KREATIF</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 2. MAIN MODULES -->
-            <div class="section-divider">⭐ MAIN MODULES ⭐</div>
-
-            <div class="main-modules-grid">
-                <!-- GET SMART -->
-                <div class="module-card card-getsmart">
-                    <div class="module-body">
-                        <div class="module-icon-box"><i class="fa-solid fa-lightbulb"></i></div>
-                        <div class="module-text">
-                            <h2>GET SMART</h2>
-                            <span class="badge">30 Questions</span>
-                            <p>Improve your English skills with fun and challenging questions.</p>
-                        </div>
-                    </div>
-                    <button class="btn-start-module" onclick="bukaModalTopik('getsmart')">
-                        START MODULE <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </div>
-
-                <!-- REMEDIAL SET -->
-                <div class="module-card card-remedial">
-                    <div class="module-body">
-                        <div class="module-icon-box"><i class="fa-solid fa-bullseye"></i></div>
-                        <div class="module-text">
-                            <h2>REMEDIAL SET</h2>
-                            <span class="badge">30 Questions</span>
-                            <p>Practice and strengthen your understanding step by step.</p>
-                        </div>
-                    </div>
-                    <button class="btn-start-module" onclick="bukaModalTopik('remedial')">
-                        START MODULE <i class="fa-solid fa-arrow-right"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- 3. EXPLORATION -->
-            <div class="section-divider">🐚 EXPLORATION</div>
-
-            <div class="sub-grid">
-                <div class="sub-card bg-exp-reading" onclick="bukaAktiviti('reading.html')">
-                    <div class="sub-card-left">
-                        <div class="sub-card-icon"><i class="fa-solid fa-book-open"></i></div>
-                        <div class="sub-card-info">
-                            <h3>READING</h3>
-                            <p>Comprehension</p>
-                        </div>
-                    </div>
-                    <div class="sub-card-arrow"><i class="fa-solid fa-chevron-right"></i></div>
-                </div>
-
-                <div class="sub-card bg-exp-grammar" onclick="bukaAktiviti('grammar.html')">
-                    <div class="sub-card-left">
-                        <div class="sub-card-icon"><i class="fa-solid fa-pen-ruler"></i></div>
-                        <div class="sub-card-info">
-                            <h3>GRAMMAR</h3>
-                            <p>Language Rules</p>
-                        </div>
-                    </div>
-                    <div class="sub-card-arrow"><i class="fa-solid fa-chevron-right"></i></div>
-                </div>
-
-                <div class="sub-card bg-exp-sentence" onclick="bukaAktiviti('sentence.html')">
-                    <div class="sub-card-left">
-                        <div class="sub-card-icon"><i class="fa-solid fa-align-left"></i></div>
-                        <div class="sub-card-info">
-                            <h3>SENTENCES</h3>
-                            <p>Structure</p>
-                        </div>
-                    </div>
-                    <div class="sub-card-arrow"><i class="fa-solid fa-chevron-right"></i></div>
-                </div>
-            </div>
-
-            <!-- 4. PERMATA ACTIVITIES -->
-            <div class="section-divider">💎 PERMATA ACTIVITIES</div>
-
-            <div class="sub-grid">
-                <div class="sub-card bg-per-word" onclick="bukaAktiviti('wordpower.html')">
-                    <div class="sub-card-left">
-                        <div class="sub-card-icon"><i class="fa-solid fa-font"></i></div>
-                        <div class="sub-card-info">
-                            <h3>WORD POWER</h3>
-                            <p>Vocabulary</p>
-                        </div>
-                    </div>
-                    <div class="sub-card-arrow"><i class="fa-solid fa-chevron-right"></i></div>
-                </div>
-
-                <div class="sub-card bg-per-repeat" onclick="bukaAktiviti('readrepeat.html')">
-                    <div class="sub-card-left">
-                        <div class="sub-card-icon"><i class="fa-solid fa-microphone"></i></div>
-                        <div class="sub-card-info">
-                            <h3>READ & REPEAT</h3>
-                            <p>Pronunciation</p>
-                        </div>
-                    </div>
-                    <div class="sub-card-arrow"><i class="fa-solid fa-chevron-right"></i></div>
-                </div>
-
-                <div class="sub-card bg-per-build" onclick="bukaAktiviti('buildsentence.html')">
-                    <div class="sub-card-left">
-                        <div class="sub-card-icon"><i class="fa-solid fa-cubes"></i></div>
-                        <div class="sub-card-info">
-                            <h3>BUILD SENTENCE</h3>
-                            <p>Interactive Game</p>
-                        </div>
-                    </div>
-                    <div class="sub-card-arrow"><i class="fa-solid fa-chevron-right"></i></div>
-                </div>
-            </div>
-
-            <div class="footer-nav">
-                <span style="font-size: 0.85rem; color: #ffffff;">© Portal Bahasa Inggeris Tahun 4</span>
-                <a href="dashboard.html" class="teacher-link">
-                    <i class="fa-solid fa-lock"></i> Dashboard / Rekod Guru
-                </a>
-            </div>
+        <!-- INPUT NAMA & KELAS -->
+        <div class="field-group">
+            <i class="fa-solid fa-user"></i>
+            <label for="namaMurid">Student Name</label>
+            <input type="text" id="namaMurid" placeholder="Type your name..." required>
         </div>
 
-        <!-- PAPARAN KUIZ -->
-        <div id="quizSection" style="display: none;">
-            <div class="header-bar">
-                <button class="btn-home" onclick="kembaliKeMenu()"><i class="fa-solid fa-house"></i> Home</button>
-                <span class="module-title-tag" id="displayModuleName">Module</span>
-                <span class="student-tag" id="displayStudentInfo">Student</span>
-            </div>
+        <div class="field-group">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <label for="kelasMurid">Class</label>
+            <select id="kelasMurid" required>
+                <option value="">Select Class</option>
+                <option value="4 ARIF">4 ARIF</option>
+                <option value="4 BESTARI">4 BESTARI</option>
+                <option value="4 CERDIK">4 CERDIK</option>
+                <option value="4 DEDIKASI">4 DEDIKASI</option>
+                <option value="4 ELIT">4 ELIT</option>
+                <option value="4 FIRDAUS">4 FIRDAUS</option>
+                <option value="4 GIGIH">4 GIGIH</option>
+                <option value="4 HARMONI">4 HARMONI</option>
+                <option value="4 INOVATIF">4 INOVATIF</option>
+                <option value="4 JUARA">4 JUARA</option>
+                <option value="4 KREATIF">4 KREATIF</option>
+            </select>
+        </div>
 
-            <div class="score-banner" id="scoreBanner" style="display: none;">
-                <h2 id="scoreText">Your Score: 0</h2>
-                <p id="feedbackText">Well done!</p>
-                <div style="font-size: 0.85rem; margin-top: 8px; color: #666;" id="syncStatus">🔄 Menghantar keputusan ke rekod guru...</div>
-            </div>
+        <!-- MAIN MODULES -->
+        <div class="section-header">
+            <i class="fa-solid fa-star" style="color: #d4af37;"></i> MAIN MODULES <i class="fa-solid fa-star" style="color: #d4af37;"></i>
+        </div>
 
-            <div id="questionsContainer"></div>
-
-            <button class="submit-btn" id="submitBtn" onclick="hantarJawapan()" style="display: none;">
-                <i class="fa-solid fa-paper-plane"></i> Hantar Jawapan
+        <div class="module-block">
+            <i class="fa-solid fa-lightbulb"></i>
+            <h2>GET SMART</h2>
+            <p>30 Questions</p>
+            <p>Improve your English skills with fun and challenging questions.</p>
+            <button class="btn-start" onclick="bukaModalTopik('getsmart')">
+                START MODULE <i class="fa-solid fa-arrow-right"></i>
             </button>
         </div>
 
+        <div class="module-block">
+            <i class="fa-solid fa-bullseye"></i>
+            <h2>REMEDIAL SET</h2>
+            <p>30 Questions</p>
+            <p>Practice and strengthen your understanding step by step.</p>
+            <button class="btn-start" onclick="bukaModalTopik('remedial')">
+                START MODULE <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+
+        <!-- EXPLORATION -->
+        <div class="section-header">
+            <i class="fa-solid fa-shell"></i> EXPLORATION
+        </div>
+
+        <div class="sub-item" onclick="bukaAktiviti('reading.html')">
+            <h3><i class="fa-solid fa-book-open"></i> READING</h3>
+            <p>Comprehension</p>
+        </div>
+
+        <div class="sub-item" onclick="bukaAktiviti('grammar.html')">
+            <h3><i class="fa-solid fa-pen-ruler"></i> GRAMMAR</h3>
+            <p>Language Rules</p>
+        </div>
+
+        <div class="sub-item" onclick="bukaAktiviti('sentence.html')">
+            <h3><i class="fa-solid fa-align-left"></i> SENTENCES</h3>
+            <p>Structure</p>
+        </div>
+
+        <!-- PERMATA ACTIVITIES -->
+        <div class="section-header">
+            <i class="fa-solid fa-gem"></i> PERMATA ACTIVITIES
+        </div>
+
+        <div class="sub-item" onclick="bukaAktiviti('wordpower.html')">
+            <h3><i class="fa-solid fa-font"></i> WORD POWER</h3>
+            <p>Vocabulary</p>
+        </div>
+
+        <div class="sub-item" onclick="bukaAktiviti('readrepeat.html')">
+            <h3><i class="fa-solid fa-microphone"></i> READ & REPEAT</h3>
+            <p>Pronunciation</p>
+        </div>
+
+        <div class="sub-item" onclick="bukaAktiviti('buildsentence.html')">
+            <h3><i class="fa-solid fa-cubes"></i> BUILD SENTENCE</h3>
+            <p>Interactive Game</p>
+        </div>
+
+        <div class="footer-link">
+            <a href="dashboard.html" style="color: #000;"><i class="fa-solid fa-lock"></i> Dashboard / Rekod Guru</a>
+        </div>
     </div>
 
-    <!-- MODAL POPUP UNTUK PILIHAN TOPIK -->
+    <!-- PAPARAN KUIZ -->
+    <div id="quizSection" style="display: none;">
+        <div class="quiz-header">
+            <button class="btn-start" onclick="kembaliKeMenu()"><i class="fa-solid fa-house"></i> Home</button>
+            <span id="displayModuleName" style="font-weight: bold;">Module</span>
+            <span id="displayStudentInfo">Student</span>
+        </div>
+
+        <div id="scoreBanner" style="display: none; border: 1px solid #000; padding: 15px; margin-bottom: 20px; background: #f9f9f9;">
+            <h2 id="scoreText">Your Score: 0</h2>
+            <p id="feedbackText">Well done!</p>
+            <p id="syncStatus" style="font-size: 13px; color: #555; margin-top: 5px;">🔄 Menghantar keputusan...</p>
+        </div>
+
+        <div id="questionsContainer"></div>
+
+        <button class="submit-btn" id="submitBtn" onclick="hantarJawapan()" style="display: none;">
+            Hantar Jawapan
+        </button>
+    </div>
+
+    <!-- MODAL PILIHAN TOPIK -->
     <div id="topicModal" class="modal-overlay" style="display: none;">
         <div class="modal-card">
             <h3 id="modalTitle">Select Topic</h3>
             <select id="topicSelect"></select>
             <div class="modal-actions">
-                <button class="btn-modal-confirm" onclick="mulaDariModal()"><i class="fa-solid fa-play"></i> Start Quiz</button>
-                <button class="btn-modal-cancel" onclick="tutupModal()">Cancel</button>
+                <button class="btn-start" onclick="mulaDariModal()">Start Quiz</button>
+                <button class="btn-start" onclick="tutupModal()">Cancel</button>
             </div>
         </div>
     </div>
 
-    <!-- JAVASCRIPT LOGIK KAWALAN UTAMA -->
     <script>
         const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxHX4PNriq3p4DoicXnryv27u_TxOyx7HXO7IN0G2emgiGmVoU5kOVo_YY1MBsv5hR90A/exec";
         
@@ -275,8 +415,6 @@
             const modalTitle = document.getElementById('modalTitle');
             const topicSelect = document.getElementById('topicSelect');
 
-            if (!modal || !topicSelect) return;
-
             topicSelect.innerHTML = '';
             const list = (mode === 'getsmart') ? getSmartTopics : remedialTopics;
             
@@ -295,16 +433,13 @@
         }
 
         function tutupModal() {
-            const modal = document.getElementById('topicModal');
-            if (modal) modal.style.display = 'none';
+            document.getElementById('topicModal').style.display = 'none';
         }
 
         function mulaDariModal() {
             const topicVal = document.getElementById('topicSelect').value;
             tutupModal();
-            if (topicVal) {
-                prosesMulaKuiz(topicVal);
-            }
+            if (topicVal) prosesMulaKuiz(topicVal);
         }
 
         function prosesMulaKuiz(val) {
@@ -324,11 +459,7 @@
             document.getElementById('displayStudentInfo').textContent = `${info.nama} (${info.kelas})`;
             document.getElementById('displayModuleName').textContent = currentModuleName;
 
-            document.getElementById('questionsContainer').innerHTML = `
-                <div style="padding: 30px; color: #ffffff; text-align: center;">
-                    <i class="fa-solid fa-spinner fa-spin fa-2x"></i><br><br>
-                    Sila tunggu, memuatkan soalan...
-                </div>`;
+            document.getElementById('questionsContainer').innerHTML = `<p style="padding: 20px;">Sila tunggu, memuatkan soalan...</p>`;
             document.getElementById('scoreBanner').style.display = 'none';
             document.getElementById('submitBtn').style.display = 'none';
 
@@ -341,7 +472,7 @@
             window.quizQuestions = null;
 
             loadModule(skripModul, currentModuleName, currentCategory);
-        } 
+        }
 
         function loadModule(skripModul, moduleName, categoryName) {
             currentCategory = categoryName; 
@@ -382,10 +513,7 @@
                 }
             };
 
-            script.onerror = () => {
-                alert("Gagal memuatkan fail skrip: " + skripModul);
-            };
-
+            script.onerror = () => alert("Gagal memuatkan fail skrip: " + skripModul);
             document.head.appendChild(script);
         }
 
@@ -395,7 +523,7 @@
 
             activeQuestions.forEach((qObj, idx) => {
                 const qCard = document.createElement('div');
-                qCard.className = 'question-card';
+                qCard.className = 'question-box';
 
                 const textSoalan = qObj.q || qObj.question || `Soalan ${idx + 1}`;
 
@@ -405,7 +533,7 @@
                     if (typeof imgVal === 'string' && imgVal.includes('<img')) {
                         imageHTML = imgVal;
                     } else {
-                        imageHTML = `<div style="text-align: center; margin: 15px 0;"><img src="${imgVal}" style="max-width: 100%; max-height: 250px; border-radius: 10px; border: 1px solid #ddd;" onerror="this.style.display='none'"></div>`;
+                        imageHTML = `<div style="margin: 10px 0;"><img src="${imgVal}" style="max-width: 100%; max-height: 250px;" onerror="this.style.display='none'"></div>`;
                     }
                 }
 
@@ -420,10 +548,10 @@
                 }
 
                 qCard.innerHTML = `
-                    <div class="question-number">Question ${idx + 1} / ${activeQuestions.length}</div>
-                    <div class="question-text">${textSoalan}</div>
+                    <div style="font-size: 13px; color: #666; font-weight: bold;">Question ${idx + 1} / ${activeQuestions.length}</div>
+                    <div style="font-size: 16px; font-weight: bold; margin: 8px 0;">${textSoalan}</div>
                     ${imageHTML}
-                    <div class="options-grid">${optionsHTML}</div>
+                    <div>${optionsHTML}</div>
                 `;
                 container.appendChild(qCard);
             });
@@ -431,17 +559,13 @@
 
         function pilihJawapan(qIdx, optIdx) {
             userAnswers[qIdx] = optIdx;
-            
             const q = activeQuestions[qIdx];
             if (q && q.options) {
                 q.options.forEach((_, i) => {
                     const btn = document.getElementById(`opt_${qIdx}_${i}`);
                     if (btn) {
-                        if (i === optIdx) {
-                            btn.classList.add('selected');
-                        } else {
-                            btn.classList.remove('selected');
-                        }
+                        if (i === optIdx) btn.classList.add('selected');
+                        else btn.classList.remove('selected');
                     }
                 });
             }
@@ -449,7 +573,6 @@
 
         function dapatkanIndeksJawapanBetul(q) {
             if (!q) return 0;
-
             let val = (q.answer !== undefined) ? q.answer : q.ans;
             if (val === undefined || val === null) return 0;
 
@@ -466,26 +589,16 @@
 
                 let padananHuruf = valStr.match(/^([a-d])[\)\.\s]?/);
                 if (padananHuruf) {
-                    let huruf = padananHuruf[1];
-                    let idxHuruf = huruf.charCodeAt(0) - 97;
+                    let idxHuruf = padananHuruf[1].charCodeAt(0) - 97;
                     if (idxHuruf >= 0 && idxHuruf < q.options.length) return idxHuruf;
                 }
-
-                idx = q.options.findIndex(opt => {
-                    let optStr = bersihkan(opt);
-                    return optStr.includes(valStr) || valStr.includes(optStr);
-                });
-                if (idx !== -1) return idx;
             }
-
             return 0;
         }
 
         function hantarJawapan() {
             if (Object.keys(userAnswers).length < activeQuestions.length) {
-                if (!confirm("Anda belum menjawab semua soalan. Adakah anda pasti mahu menghantar?")) {
-                    return;
-                }
+                if (!confirm("Anda belum menjawab semua soalan. Adakah anda pasti mahu menghantar?")) return;
             }
 
             let score = 0;
@@ -501,17 +614,12 @@
                         btn.disabled = true;
                         btn.classList.remove('selected');
 
-                        if (optIdx == correctIdx) {
-                            btn.classList.add('correct');
-                        } else if (chosen !== undefined && chosen == optIdx && chosen != correctIdx) {
-                            btn.classList.add('wrong');
-                        }
+                        if (optIdx == correctIdx) btn.classList.add('correct');
+                        else if (chosen !== undefined && chosen == optIdx && chosen != correctIdx) btn.classList.add('wrong');
                     });
                 }
 
-                if (chosen !== undefined && Number(chosen) === Number(correctIdx)) {
-                    score++;
-                }
+                if (chosen !== undefined && Number(chosen) === Number(correctIdx)) score++;
             });
 
             const percent = Math.round((score / activeQuestions.length) * 100);
