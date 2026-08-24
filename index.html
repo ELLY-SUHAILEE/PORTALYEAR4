@@ -395,7 +395,8 @@
             border-radius: 14px;
             cursor: pointer;
             font-weight: 900;
-            font-size: 1.15rem;
+            font-size: 16pt !important;
+            font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif !important;
             box-shadow: 0 6px 15px rgba(0,0,0,0.2);
             transition: transform 0.2s, background 0.2s;
         }
@@ -413,7 +414,8 @@
             border-radius: 14px;
             cursor: pointer;
             font-weight: 900;
-            font-size: 1.15rem;
+            font-size: 16pt !important;
+            font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif !important;
             box-shadow: 0 6px 15px rgba(0,0,0,0.2);
             transition: transform 0.2s, background 0.2s;
         }
@@ -423,10 +425,11 @@
             transform: scale(1.03);
         }
 
-        /* PAPARAN KUIZ - DITUKAR KEPADA CENTURY GOTHIC SAIS 14 */
+        /* PAPARAN KUIZ MURID - CENTURY GOTHIC SAIS 16 UNTUK SEMUA ELEMEN & BUTANG */
         #quizSection, 
         #quizSection * {
             font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif !important;
+            font-size: 16pt;
         }
 
         #quizSection {
@@ -445,7 +448,12 @@
             background: #e2e8f0;
             padding: 12px 16px;
             border-radius: 12px;
-            font-size: 14pt;
+            font-size: 16pt !important;
+        }
+
+        .quiz-topbar button {
+            font-size: 16pt !important;
+            padding: 8px 20px !important;
         }
 
         .score-box {
@@ -457,7 +465,11 @@
             margin-bottom: 20px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             border: 2px solid #cbd5e1;
-            font-size: 14pt;
+            font-size: 16pt !important;
+        }
+
+        .score-box h2 {
+            font-size: 20pt !important;
         }
 
         .q-card {
@@ -467,7 +479,7 @@
             margin-bottom: 15px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.06);
             border: 2px solid #e2e8f0;
-            font-size: 14pt;
+            font-size: 16pt !important;
         }
 
         .opt-btn {
@@ -480,7 +492,7 @@
             border-radius: 12px;
             background: #f8fafc;
             cursor: pointer;
-            font-size: 14pt !important; /* SAIS 14 CENTURY GOTHIC */
+            font-size: 16pt !important; /* SAIS 16 CENTURY GOTHIC */
             font-weight: 700;
             transition: all 0.2s;
         }
@@ -496,7 +508,7 @@
             color: white;
             border: none;
             border-radius: 12px;
-            font-size: 14pt;
+            font-size: 16pt !important; /* SAIS 16 CENTURY GOTHIC */
             font-weight: 900;
             cursor: pointer;
             margin-top: 15px;
@@ -680,7 +692,7 @@
             <div class="score-box" id="scoreBanner" style="display: none;">
                 <h2 id="scoreText">Your Score: 0</h2>
                 <p id="feedbackText">Well done!</p>
-                <div style="font-size: 14pt; margin-top: 8px; color: #64748b;" id="syncStatus">🔄 Menghantar keputusan ke rekod guru...</div>
+                <div style="font-size: 16pt; margin-top: 8px; color: #64748b;" id="syncStatus">🔄 Menghantar keputusan ke rekod guru...</div>
             </div>
 
             <div id="questionsContainer"></div>
@@ -821,7 +833,7 @@
             document.getElementById('displayStudentInfo').textContent = `${info.nama} (${info.kelas})`;
             document.getElementById('displayModuleName').textContent = currentModuleName;
 
-            document.getElementById('questionsContainer').innerHTML = `<p style="padding: 20px; text-align: center; font-size: 14pt;">Memuatkan soalan...</p>`;
+            document.getElementById('questionsContainer').innerHTML = `<p style="padding: 20px; text-align: center; font-size: 16pt;">Memuatkan soalan...</p>`;
             document.getElementById('scoreBanner').style.display = 'none';
             document.getElementById('submitBtn').style.display = 'none';
 
@@ -879,7 +891,7 @@
             document.head.appendChild(script);
         }
 
-        /* DITUKAR KEPADA CENTURY GOTHIC SAIS 14 */
+        /* PAPAR SOALAN - CENTURY GOTHIC SAIS 16 UNTUK TEKS DAN BUTANG */
         function paparSoalan() {
             const container = document.getElementById('questionsContainer');
             container.innerHTML = '';
@@ -911,8 +923,8 @@
                 }
 
                 qCard.innerHTML = `
-                    <div style="font-size: 14pt; color: #64748b; font-weight: 800; font-family: 'Century Gothic', sans-serif;">Question ${idx + 1} / ${activeQuestions.length}</div>
-                    <div style="font-size: 14pt; font-weight: 700; color:#1e293b; margin: 10px 0; font-family: 'Century Gothic', sans-serif;">${textSoalan}</div>
+                    <div style="font-size: 16pt; color: #64748b; font-weight: 800;">Question ${idx + 1} / ${activeQuestions.length}</div>
+                    <div style="font-size: 16pt; font-weight: 700; color:#1e293b; margin: 10px 0;">${textSoalan}</div>
                     ${imageHTML}
                     <div>${optionsHTML}</div>
                 `;
