@@ -444,12 +444,19 @@ function formatDataModule(dataObj) {
 const getSmartModule1Array = formatDataModule(getSmartModule1Data);
 const remedialModule1Array = formatDataModule(remedialModule1Data);
 
-// PASANGKAN DATA KE DALAM QUIZBANK
+// ==========================================
+// PENDAFTARAN KUNCI KE QUIZBANK (SEMUA VARIASI EJAAN)
+// ==========================================
+
+// 1. GET SMART SET
 window.quizBank["GET SMART SET"]["Module 1: Where are you from?"] = getSmartModule1Array;
 window.quizBank["GET SMART SET"]["Module 1 - Where are you from?"] = getSmartModule1Array;
+window.quizBank["GET SMART SET"]["Module 1 – Where are you from?"] = getSmartModule1Array; // dash en
 
+// 2. REMEDIAL SET
 window.quizBank["REMEDIAL SET"]["Remedial 1: Where are you from?"] = remedialModule1Array;
 window.quizBank["REMEDIAL SET"]["Remedial 1 - Where are you from?"] = remedialModule1Array;
+window.quizBank["REMEDIAL SET"]["Remedial 1 – Where are you from?"] = remedialModule1Array; // dash en
 
-// ESKPORT JUGA KE GLOBAL WINDOW
+// 3. FALLBACK GLOBAL
 window.quizQuestions = getSmartModule1Array;
