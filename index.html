@@ -784,82 +784,60 @@
             window.quizBank["REMEDIAL SET"] = {};
             window.quizQuestions = null;
 
-            // 1. Kosongkan memori soalan lama
-window.quizQuestions = null;
+           function loadModule(skripModul, moduleName, categoryName) {
+    // 1. Kemaskini pemboleh ubah global
+    currentCategory = categoryName; 
+    currentModuleName = moduleName;
+    window.quizQuestions = null;
 
-const oldScript = document.getElementById('dynamicQuizScript');
-if (oldScript) oldScript.remove();
+    // 2. Padam skrip lama jika ada
+    const oldScript = document.getElementById('dynamicQuizScript');
+    if (oldScript) oldScript.remove();
 
-const script = document.createElement('script');
-script.id = 'dynamicQuizScript';
-script.src = skripModul + "?v=" + new Date().getTime();
+    // 3. Bina skrip baharu
+    const script = document.createElement('script');
+    script.id = 'dynamicQuizScript';
+    script.src = skripModul + "?v=" + new Date().getTime();
 
-script.onload = () => {
-    let rawData = null;
+    script.onload = () => {
+        let rawData = null;
 
-    // 2. Utamakan semakan Kategori (GET SMART SET / REMEDIAL SET)
-    if (window.quizBank && window.quizBank[currentCategory]) {
-        const cat = window.quizBank[currentCategory];
-        
-        if (cat[currentModuleName]) {
-            rawData = cat[currentModuleName];
+        // 4. Cari soalan dalam quizBank mengikut Kategori & Tajuk
+        if (window.quizBank && window.quizBank[currentCategory]) {
+            const cat = window.quizBank[currentCategory];
+            if (cat[currentModuleName]) {
+                rawData = cat[currentModuleName];
+            } else {
+                const keys = Object.keys(cat);
+                const matchedKey = keys.find(k => k.toLowerCase().includes(currentModuleName.toLowerCase())) || keys[0];
+                if (matchedKey) rawData = cat[matchedKey];
+            }
+        } 
+
+        // 5. Fallback jika quizBank tiada
+        if (!rawData && Array.isArray(window.quizQuestions) && window.quizQuestions.length > 0) {
+            rawData = window.quizQuestions;
+        }
+
+        // 6. Jalankan & Paparkan Soalan
+        if (rawData && rawData.length > 0) {
+            activeQuestions = rawData;
+            currentQuestionIndex = 0; // Reset indeks ke soalan pertama
+            
+            // PENTING: Tukar 'showQuestion(0)' di bawah kepada nama fungsi paparan skrin anda
+            // Contoh lain: renderQuiz() / startQuiz() / displayQuestion()
+            if (typeof showQuestion === 'function') {
+                showQuestion(0);
+            } else if (typeof renderQuiz === 'function') {
+                renderQuiz();
+            }
         } else {
-            // Cari padanan ejaan paling dekat jika ada perbezaan simbol
-            const keys = Object.keys(cat);
-            const matchedKey = keys.find(k => k.toLowerCase().includes(currentModuleName.toLowerCase())) || keys[0];
-            if (matchedKey) rawData = cat[matchedKey];
+            alert("Soalan tidak dijumpai dalam fail skrip ini.");
         }
-    } 
+    };
 
-    // 3. Gunakan fallback global HANYA jika quizBank tiada data
-    if (!rawData && Array.isArray(window.quizQuestions) && window.quizQuestions.length > 0) {
-        rawData = window.quizQuestions;
-    }
-
-    // 4. Setkan soalan aktif
-    if (rawData) {
-        activeQuestions = rawData;
-        // Panggil fungsi paparan soalan anda di sini (contoh: renderQuiz() / showQuestion())
-    } else {
-        alert("Soalan tidak dijumpai dalam fail skrip ini.");
-    }
-};
-
-document.head.appendChild(script);
-
-                if (rawData) {
-                    if (Array.isArray(rawData)) {
-                        activeQuestions = rawData;
-                    } else if (typeof rawData === 'object') {
-                        activeQuestions = [];
-                        for (let key in rawData) {
-                            if (Array.isArray(rawData[key])) {
-                                activeQuestions = activeQuestions.concat(rawData[key]);
-                            }
-                        }
-                    }
-                }
-
-                if (activeQuestions && activeQuestions.length > 0) {
-                    paparSoalan();
-                    document.getElementById('submitBtn').style.display = 'block';
-                } else {
-                    document.getElementById('questionsContainer').innerHTML = `
-                        <div style="padding: 20px; color: #ffffff; text-align: center;">
-                            ⚠️ Soalan tidak dijumpai dalam fail ${skripModul}.
-                        </div>`;
-                }
-            };
-
-            script.onerror = () => {
-                document.getElementById('questionsContainer').innerHTML = `
-                    <div style="padding: 20px; color: #ffffff; text-align: center;">
-                        ⚠️ Gagal memuatkan fail ${skripModul}. Pastikan fail wujud di lokasi server/folder anda.
-                    </div>`;
-            };
-
-            document.head.appendChild(script);
-        }
+    document.head.appendChild(script);
+} 
 
         function paparSoalan() {
             const container = document.getElementById('questionsContainer');
