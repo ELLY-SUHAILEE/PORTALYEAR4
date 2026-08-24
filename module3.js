@@ -16,184 +16,184 @@ if (typeof window.wrapCenterImage !== 'function') {
 // ==========================================
 const getSmartModule3Data = {
   "Reading": [
-    // --- PETIKAN 1 (Soalan 1 - 5: Ancient Egyptians & Mummies) ---
+    // --- PETIKAN 1 (Soalan 1 - 5: Adam at the Park Right Now) ---
     {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE3_1.png"),
-      "q": "1. What did ancient Egyptians do to preserve dead bodies?",
-      "options": ["A) They made mummies", "B) They buried them in gardens", "C) They burned them"],
-      "ans": "A) They made mummies"
+      "q": "1. What is Adam doing at the park right now?",
+      "options": ["A) Swimming in the pool", "B) Playing chess on a wooden bench", "C) Sleeping under a tree"],
+      "ans": "B) Playing chess on a wooden bench"
     },
     {
       "type": "mcq",
-      "q": "2. What did Egyptians wrap mummies in?",
-      "options": ["A) Strips of linen", "B) Cotton sheets", "C) Plastic wraps"],
-      "ans": "A) Strips of linen"
+      "q": "2. Who is skateboarding safely near the trees?",
+      "options": ["A) Adam's sister", "B) Adam's mother", "C) Adam's teacher"],
+      "ans": "A) Adam's sister"
     },
     {
       "type": "mcq",
-      "q": "3. Where did Egyptians put the mummies of kings?",
-      "options": ["A) Inside pyramids and tombs", "B) In wooden huts", "C) Near the river"],
-      "ans": "A) Inside pyramids and tombs"
+      "q": "3. What instrument is Adam's friend playing near the fountain?",
+      "options": ["A) The piano", "B) The drums", "C) The guitar"],
+      "ans": "C) The guitar"
     },
     {
       "type": "mcq",
-      "q": "4. How long did it take to make a mummy in ancient Egypt?",
-      "options": ["A) About 70 days", "B) 10 days", "C) One year"],
-      "ans": "A) About 70 days"
+      "q": "4. Why is Adam wearing a hat right now?",
+      "options": ["A) Because the weather is sunny and hot", "B) Because it is raining heavily", "C) Because it is snowing outside"],
+      "ans": "A) Because the weather is sunny and hot"
     },
     {
       "type": "mcq",
-      "q": "5. What valuable items were buried inside the tombs?",
-      "options": ["A) Gold, jewels, and statues", "B) Modern clothes", "C) Paper money"],
-      "ans": "A) Gold, jewels, and statues"
+      "q": "5. What safety gear is Adam's sister wearing while skateboarding?",
+      "options": ["A) A heavy coat and boots", "B) A helmet and knee pads", "C) Swimming goggles"],
+      "ans": "B) A helmet and knee pads"
     },
 
-    // --- PETIKAN 2 (Soalan 6 - 10: Life in the Past) ---
+    // --- PETIKAN 2 (Soalan 6 - 10: People at Work Right Now) ---
     {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE3_6.png"),
-      "q": "6. How did people travel hundreds of years ago?",
-      "options": ["A) On horses and carriages", "B) By airplanes", "C) By electric trains"],
-      "ans": "A) On horses and carriages"
+      "q": "6. What is Mr. Lee doing at the public swimming pool right now?",
+      "options": ["A) He is eating lunch at the cafe", "B) He is cleaning the floor", "C) He is working as a lifeguard to protect swimmers"],
+      "ans": "C) He is working as a lifeguard to protect swimmers"
     },
     {
       "type": "mcq",
-      "q": "7. Did people have electricity in their homes long ago?",
-      "options": ["A) No, they used oil lamps and candles", "B) Yes, they had bright electric bulbs", "C) Yes, they used solar panels"],
-      "ans": "A) No, they used oil lamps and candles"
+      "q": "7. Why are the firefighters wearing heavy protective coats at the scene?",
+      "options": ["A) To protect themselves from high heat and flames", "B) Because they feel very cold", "C) To stay dry in the rain"],
+      "ans": "A) To protect themselves from high heat and flames"
     },
     {
       "type": "mcq",
-      "q": "8. How did people send messages before phones existed?",
-      "options": ["A) By writing letters sent via post or messengers", "B) By sending text messages", "C) By making video calls"],
-      "ans": "A) By writing letters sent via post or messengers"
+      "q": "8. What is the doctor doing in the clinic right now?",
+      "options": ["A) Sleeping at his desk", "B) Examining a sick patient with a high fever", "C) Fixing a broken bicycle"],
+      "ans": "B) Examining a sick patient with a high fever"
     },
     {
       "type": "mcq",
-      "q": "9. What did children in the past play with?",
-      "options": ["A) Wooden toys and board games", "B) Video games", "C) Tablets and smartphones"],
-      "ans": "A) Wooden toys and board games"
+      "q": "9. Which professional is currently helping a patient fix a painful toothache?",
+      "options": ["A) The dentist", "B) The pilot", "C) The chef"],
+      "ans": "A) The dentist"
     },
     {
       "type": "mcq",
-      "q": "10. Where did people store water without modern taps?",
-      "options": ["A) In clay pots and wooden buckets", "B) In plastic bottles", "C) In metal tanks"],
-      "ans": "A) In clay pots and wooden buckets"
+      "q": "10. Which statement best describes what the lifeguard is doing?",
+      "options": ["A) He is diving off the high springboard", "B) He is sleeping under an umbrella", "C) He is watching the swimmers carefully from his high chair"],
+      "ans": "C) He is watching the swimmers carefully from his high chair"
     }
   ],
 
   "Vocabulary": [
     {
       "type": "mcq",
-      "q": "11. A dead body wrapped in linen bandages in ancient Egypt is called a ______.",
-      "options": ["A) mummy", "B) statue", "C) pyramid"],
-      "ans": "A) mummy"
+      "q": "11. A person whose job is to put out fires and rescue people is a ______.",
+      "options": ["A) police officer", "B) dentist", "C) firefighter"],
+      "ans": "C) firefighter"
     },
     {
       "type": "mcq",
-      "q": "12. A giant stone structure with triangular sides built in ancient Egypt is a ______.",
-      "options": ["A) pyramid", "B) castle", "C) tower"],
-      "ans": "A) pyramid"
+      "q": "12. An expert swimmer employed to watch over swimmers at a pool or beach is a ______.",
+      "options": ["A) pilot", "B) lifeguard", "C) waiter"],
+      "ans": "B) lifeguard"
     },
     {
       "type": "mcq",
-      "q": "13. A room or building used to bury dead people is a ______.",
-      "options": ["A) tomb", "B) palace", "C) stadium"],
-      "ans": "A) tomb"
+      "q": "13. Hard protective headwear worn when riding a bike or skateboarding is a ______.",
+      "options": ["A) helmet", "B) cap", "C) crown"],
+      "ans": "A) helmet"
     },
     {
       "type": "mcq",
-      "q": "14. Thin cloth made from flax fibers, used to wrap mummies, is called ______.",
-      "options": ["A) linen", "B) silk", "C) wool"],
-      "ans": "A) linen"
+      "q": "14. An instrument used by doctors to measure body temperature is a ______.",
+      "options": ["A) ruler", "B) thermometer", "C) stethoscope"],
+      "ans": "B) thermometer"
     },
     {
       "type": "mcq",
-      "q": "15. A yellow precious metal used to make ancient Egyptian treasure is ______.",
-      "options": ["A) gold", "B) silver", "C) copper"],
-      "ans": "A) gold"
+      "q": "15. A doctor who specializes in taking care of teeth is a ______.",
+      "options": ["A) dentist", "B) nurse", "C) firefighter"],
+      "ans": "A) dentist"
     }
   ],
 
   "Grammar": [
     {
       "type": "mcq",
-      "q": "16. Ancient Egyptians ______ pyramids thousands of years ago.",
-      "options": ["A) built", "B) build", "C) building"],
-      "ans": "A) built"
+      "q": "16. Look! My brother ______ chess with his friend at the moment.",
+      "options": ["A) play", "B) is playing", "C) plays"],
+      "ans": "B) is playing"
     },
     {
       "type": "mcq",
-      "q": "17. Yesterday, I ______ a museum with my family.",
-      "options": ["A) visited", "B) visit", "C) visiting"],
-      "ans": "A) visited"
+      "q": "17. What ______ the kids doing in the park right now?",
+      "options": ["A) are", "B) is", "C) do"],
+      "ans": "A) are"
     },
     {
       "type": "mcq",
-      "q": "18. They ______ not have smartphones in the past.",
-      "options": ["A) did", "B) do", "C) does"],
-      "ans": "A) did"
+      "q": "18. Listen! She ______ safely down the concrete ramp.",
+      "options": ["A) skateboard", "B) skateboards", "C) is skateboarding"],
+      "ans": "C) is skateboarding"
     },
     {
       "type": "mcq",
-      "q": "19. ______ Egyptians write in hieroglyphics?",
-      "options": ["A) Did", "B) Were", "C) Are"],
-      "ans": "A) Did"
+      "q": "19. We ______ watching television right now; we are studying for a test.",
+      "options": ["A) are not", "B) is not", "C) do not"],
+      "ans": "A) are not"
     },
     {
       "type": "mcq",
-      "q": "20. The king ______ inside a large wooden coffin.",
-      "options": ["A) slept / lay", "B) lies", "C) sleep"],
-      "ans": "A) slept / lay"
+      "q": "20. Is the firefighter putting out the fire right now? Yes, he ______.",
+      "options": ["A) do", "B) is", "C) does"],
+      "ans": "B) is"
     }
   ],
 
   "Writing": [
     {
       "type": "mcq",
-      "q": "21. Choose the sentence with the correct capitalization and punctuation.",
-      "options": ["A) Ancient Egyptians built pyramids.", "B) ancient egyptians built pyramids.", "C) Ancient egyptians built Pyramids"],
-      "ans": "A) Ancient Egyptians built pyramids."
+      "q": "21. Choose the sentence with correct capitalization and punctuation.",
+      "options": ["A) Look! They are playing football in the garden.", "B) look they are playing football in the garden", "C) Look they are playing football in the garden."],
+      "ans": "A) Look! They are playing football in the garden."
     },
     {
       "type": "mcq",
-      "q": "22. Rearrange the words to form a correct sentence: [ wrapped / They / linen / in / mummies ]",
-      "options": ["A) They wrapped mummies in linen.", "B) Linen in wrapped mummies they.", "C) They in linen mummies wrapped."],
-      "ans": "A) They wrapped mummies in linen."
+      "q": "22. Rearrange the words: [ doing / What / you / right now / are / ? ]",
+      "options": ["A) What you are doing right now?", "B) What are you doing right now?", "C) Are you doing what right now?"],
+      "ans": "B) What are you doing right now?"
     },
     {
       "type": "mcq",
-      "q": "23. Rearrange the words to form a correct sentence: [ yesterday / museum / visited / We / the ]",
-      "options": ["A) We visited the museum yesterday.", "B) Museum visited we yesterday the.", "C) Yesterday the museum visited we."],
-      "ans": "A) We visited the museum yesterday."
+      "q": "23. Rearrange the words: [ wearing / She / helmet / is / a / . ]",
+      "options": ["A) Wearing a helmet she is.", "B) She helmet is wearing a.", "C) She is wearing a helmet."],
+      "ans": "C) She is wearing a helmet."
     },
     {
       "type": "mcq",
       "q": "24. Choose the word with the correct spelling.",
-      "options": ["A) Pyramid", "B) Pyramyd", "C) Piramid"],
-      "ans": "A) Pyramid"
+      "options": ["A) Firefighter", "B) Firefiter", "C) Firefayter"],
+      "ans": "A) Firefighter"
     }
   ],
 
   "Speaking": [
     {
       "type": "mcq",
-      "q": "25. Someone asks: 'Did you visit the history museum last weekend?' How do you answer?",
-      "options": ["A) Yes, I did.", "B) Yes, I do.", "C) Yes, I am."],
-      "ans": "A) Yes, I did."
+      "q": "25. Someone asks: 'What are you doing right now?' How do you answer?",
+      "options": ["A) I like eating apples.", "B) I am writing an English exercise.", "C) I went to the shop yesterday."],
+      "ans": "B) I am writing an English exercise."
     },
     {
       "type": "mcq",
-      "q": "26. How do you ask about what someone did yesterday?",
-      "options": ["A) What did you do yesterday?", "B) What are you doing yesterday?", "C) What do you do yesterday?"],
-      "ans": "A) What did you do yesterday?"
+      "q": "26. Your friend asks: 'Is your brother doing his homework?' How do you reply?",
+      "options": ["A) Yes, he is.", "B) Yes, he does.", "C) Yes, he can."],
+      "ans": "A) Yes, he is."
     },
     {
       "type": "mcq",
-      "q": "27. Someone asks: 'What was inside the tomb?' How do you answer?",
-      "options": ["A) There was a mummy and gold treasures.", "B) There is a laptop.", "C) There will be a car."],
-      "ans": "A) There was a mummy and gold treasures."
+      "q": "27. Someone asks: 'What is the lifeguard doing at the beach?' How do you reply?",
+      "options": ["A) He swims every morning.", "B) He is buying ice cream.", "C) He is watching the swimmers carefully."],
+      "ans": "C) He is watching the swimmers carefully."
     }
   ],
 
@@ -201,30 +201,30 @@ const getSmartModule3Data = {
     {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE3_28.png"),
-      "q": "28. Read the museum ticket. What time does the Egypt Exhibition open?",
-      "options": ["A) 9.00 AM", "B) 12.00 PM", "C) 5.00 PM"],
-      "ans": "A) 9.00 AM"
+      "q": "28. Look at the worker uniform picture. What job requires wearing a helmet and putting out fires?",
+      "options": ["A) Police officer", "B) Doctor", "C) Firefighter"],
+      "ans": "C) Firefighter"
     },
     {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE3_29.png"),
-      "q": "29. Read the poster. What artifact is on display this month?",
-      "options": ["A) A golden mask", "B) A wooden car", "C) A modern watch"],
-      "ans": "A) A golden mask"
+      "q": "29. Look at the park scene image. What is the girl doing near the trees?",
+      "options": ["A) Skateboarding", "B) Reading a book", "C) Flying a kite"],
+      "ans": "A) Skateboarding"
     },
     {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE3_30.png"),
-      "q": "30. Read the sign inside the museum. What is NOT allowed?",
-      "options": ["A) Taking flash photos", "B) Walking quietly", "C) Looking at items"],
-      "ans": "A) Taking flash photos"
+      "q": "30. Look at the beach warning sign image. What activity is prohibited right now?",
+      "options": ["A) Sunbathing", "B) Swimming in high waves", "C) Walking on sand"],
+      "ans": "B) Swimming in high waves"
     }
   ]
 };
 
 // Pasangkan data ke dalam QuizBank
-window.quizBank["GET SMART SET"]["Module 3: In the past"] = getSmartModule3Data;
-window.quizBank["GET SMART SET"]["Module 3 - In the past"] = getSmartModule3Data;
+window.quizBank["GET SMART SET"]["Module 3: Right now"] = getSmartModule3Data;
+window.quizBank["GET SMART SET"]["Module 3 - Right now"] = getSmartModule3Data;
 
 
 // ==========================================
@@ -232,136 +232,136 @@ window.quizBank["GET SMART SET"]["Module 3 - In the past"] = getSmartModule3Data
 // ==========================================
 const remedialModule3Data = {
   "Reading": [
-    // --- PETIKAN 1 (Soalan 1 - 5: Mummies) ---
+    // --- PETIKAN 1 (Soalan 1 - 5: Ben at the Park) ---
     {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE3_1.png"),
-      "q": "1. Mummies are from ancient ____.",
-      "options": ["A) Egypt", "B) China", "C) Malaysia"],
-      "ans": "A) Egypt"
+      "q": "1. Ben is at the ____ right now.",
+      "options": ["A) school", "B) park", "C) shop"],
+      "ans": "B) park"
     },
     {
       "type": "mcq",
-      "q": "2. Egyptians wrapped mummies in ____.",
-      "options": ["A) linen", "B) paper", "C) leaves"],
-      "ans": "A) linen"
+      "q": "2. What is Ben doing?",
+      "options": ["A) Playing chess", "B) Sleeping", "C) Washing hands"],
+      "ans": "A) Playing chess"
     },
     {
       "type": "mcq",
-      "q": "3. Mummies were placed inside ____.",
-      "options": ["A) tombs", "B) cars", "C) schools"],
-      "ans": "A) tombs"
+      "q": "3. Ben is playing chess with his ____.",
+      "options": ["A) teacher", "B) mother", "C) friend"],
+      "ans": "C) friend"
     },
     {
       "type": "mcq",
-      "q": "4. Kings were buried with ____.",
-      "options": ["A) gold", "B) plastic toys", "C) books"],
-      "ans": "A) gold"
+      "q": "4. What is his sister doing?",
+      "options": ["A) Cooking", "B) Skateboarding", "C) Swimming"],
+      "ans": "B) Skateboarding"
     },
     {
       "type": "mcq",
-      "q": "5. What shape is a pyramid?",
-      "options": ["A) Triangle", "B) Circle", "C) Square"],
-      "ans": "A) Triangle"
+      "q": "5. Ben and his sister are having ____.",
+      "options": ["A) fun", "B) work", "C) lunch"],
+      "ans": "A) fun"
     },
 
-    // --- PETIKAN 2 (Soalan 6 - 10: Yesterday) ---
+    // --- PETIKAN 2 (Soalan 6 - 10: Mr. Dan the Firefighter) ---
     {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE3_6.png"),
-      "q": "6. Yesterday, Tom went to the ____.",
-      "options": ["A) museum", "B) beach", "C) park"],
-      "ans": "A) museum"
+      "q": "6. Mr. Dan is a ____.",
+      "options": ["A) cook", "B) driver", "C) firefighter"],
+      "ans": "C) firefighter"
     },
     {
       "type": "mcq",
-      "q": "7. Tom saw an old ____.",
-      "options": ["A) mummy", "B) computer", "C) airplane"],
-      "ans": "A) mummy"
+      "q": "7. He puts out ____.",
+      "options": ["A) fires", "B) water", "C) lights"],
+      "ans": "A) fires"
     },
     {
       "type": "mcq",
-      "q": "8. Tom took photos with his ____.",
-      "options": ["A) camera", "B) pen", "C) bag"],
-      "ans": "A) camera"
+      "q": "8. He wears a red ____ on his head.",
+      "options": ["A) hat", "B) helmet", "C) cap"],
+      "ans": "B) helmet"
     },
     {
       "type": "mcq",
-      "q": "9. Did Tom like the museum?",
-      "options": ["A) Yes, he did.", "B) No, he didn't.", "C) He was sad."],
-      "ans": "A) Yes, he did."
+      "q": "9. Is Mr. Dan helping people right now?",
+      "options": ["A) Yes, he is.", "B) No, he isn't.", "C) Yes, he does."],
+      "ans": "A) Yes, he is."
     },
     {
       "type": "mcq",
-      "q": "10. Who went to the museum?",
-      "options": ["A) Tom", "B) Ben", "C) Ali"],
-      "ans": "A) Tom"
+      "q": "10. He drives a big red fire ____.",
+      "options": ["A) bike", "B) boat", "C) engine"],
+      "ans": "C) engine"
     }
   ],
 
   "Vocabulary": [
     {
       "type": "mcq",
-      "q": "11. A dead body wrapped in cloth: ______.",
-      "options": ["A) mummy", "B) doll", "C) toy"],
-      "ans": "A) mummy"
+      "q": "11. Person putting out fires: ______.",
+      "options": ["A) doctor", "B) firefighter", "C) teacher"],
+      "ans": "B) firefighter"
     },
     {
       "type": "mcq",
-      "q": "12. A big stone building in Egypt: ______.",
-      "options": ["A) pyramid", "B) house", "C) shop"],
-      "ans": "A) pyramid"
+      "q": "12. Board with wheels: ______.",
+      "options": ["A) skateboard", "B) table", "C) car"],
+      "ans": "A) skateboard"
     },
     {
       "type": "mcq",
-      "q": "13. A room for dead kings: ______.",
-      "options": ["A) tomb", "B) kitchen", "C) class"],
-      "ans": "A) tomb"
+      "q": "13. Protects head: ______.",
+      "options": ["A) shoe", "B) sock", "C) helmet"],
+      "ans": "C) helmet"
     },
     {
       "type": "mcq",
-      "q": "14. A shiny gold item is made of ______.",
-      "options": ["A) gold", "B) wood", "C) paper"],
-      "ans": "A) gold"
+      "q": "14. Helps sick people: ______.",
+      "options": ["A) doctor", "B) baker", "C) pilot"],
+      "ans": "A) doctor"
     },
     {
       "type": "mcq",
-      "q": "15. Time before now is called the ______.",
-      "options": ["A) past", "B) future", "C) today"],
-      "ans": "A) past"
+      "q": "15. Swim helper at beach: ______.",
+      "options": ["A) farmer", "B) lifeguard", "C) driver"],
+      "ans": "B) lifeguard"
     }
   ],
 
   "Grammar": [
     {
       "type": "mcq",
-      "q": "16. Yesterday, I ______ a mummy.",
-      "options": ["A) saw", "B) see", "C) seeing"],
-      "ans": "A) saw"
+      "q": "16. He ______ running in the park right now.",
+      "options": ["A) are", "B) is", "C) am"],
+      "ans": "B) is"
     },
     {
       "type": "mcq",
-      "q": "17. They ______ live in modern houses in the past.",
-      "options": ["A) didn't", "B) don't", "C) aren't"],
-      "ans": "A) didn't"
+      "q": "17. They ______ playing chess right now.",
+      "options": ["A) are", "B) is", "C) am"],
+      "ans": "A) are"
     },
     {
       "type": "mcq",
-      "q": "18. He ______ to the museum yesterday.",
-      "options": ["A) went", "B) go", "C) going"],
-      "ans": "A) went"
+      "q": "18. I ______ reading a book now.",
+      "options": ["A) is", "B) are", "C) am"],
+      "ans": "C) am"
     },
     {
       "type": "mcq",
-      "q": "19. ______ you see the pyramid?",
-      "options": ["A) Did", "B) Do", "C) Are"],
-      "ans": "A) Did"
+      "q": "19. What are you ______?",
+      "options": ["A) doing", "B) do", "C) does"],
+      "ans": "A) doing"
     },
     {
       "type": "mcq",
-      "q": "20. The kings ______ rich.",
-      "options": ["A) were", "B) is", "C) am"],
-      "ans": "A) were"
+      "q": "20. She is ______ right now.",
+      "options": ["A) sleep", "B) sleeping", "C) slept"],
+      "ans": "B) sleeping"
     }
   ],
 
@@ -369,47 +369,47 @@ const remedialModule3Data = {
     {
       "type": "mcq",
       "q": "21. Choose the correct spelling:",
-      "options": ["A) Mummy", "B) Mumi", "C) Mumy"],
-      "ans": "A) Mummy"
+      "options": ["A) Park", "B) Pak", "C) Parck"],
+      "ans": "A) Park"
     },
     {
       "type": "mcq",
-      "q": "22. Rearrange: [ went / He / home ]",
-      "options": ["A) He went home.", "B) Went he home.", "C) Home went he."],
-      "ans": "A) He went home."
+      "q": "22. Rearrange: [ He is / running. ]",
+      "options": ["A) Running he is.", "B) He is running.", "C) Is running he."],
+      "ans": "B) He is running."
     },
     {
       "type": "mcq",
       "q": "23. Choose the correct spelling:",
-      "options": ["A) Gold", "B) Goold", "C) Golde"],
-      "ans": "A) Gold"
+      "options": ["A) Helmet", "B) Helmat", "C) Helmet"],
+      "ans": "C) Helmet"
     },
     {
       "type": "mcq",
-      "q": "24. Rearrange: [ saw / I / a pyramid ]",
-      "options": ["A) I saw a pyramid.", "B) A pyramid saw I.", "C) Saw I pyramid a."],
-      "ans": "A) I saw a pyramid."
+      "q": "24. Rearrange: [ She is / swimming. ]",
+      "options": ["A) She is swimming.", "B) Swimming is she.", "C) Is she swimming."],
+      "ans": "A) She is swimming."
     }
   ],
 
   "Speaking": [
     {
       "type": "mcq",
-      "q": "25. Did you go to school yesterday?",
-      "options": ["A) Yes, I did.", "B) Yes, I do.", "C) Yes, I am."],
-      "ans": "A) Yes, I did."
+      "q": "25. What are you doing?",
+      "options": ["A) I am playing.", "B) I am seven.", "C) It is red."],
+      "ans": "A) I am playing."
     },
     {
       "type": "mcq",
-      "q": "26. What did you see?",
-      "options": ["A) I saw a gold mask.", "B) I see a cat.", "C) I will play."],
-      "ans": "A) I saw a gold mask."
+      "q": "26. Is he reading?",
+      "options": ["A) No, he do.", "B) Yes, he is.", "C) Yes, he can."],
+      "ans": "B) Yes, he is."
     },
     {
       "type": "mcq",
-      "q": "27. Was the mummy old?",
-      "options": ["A) Yes, it was.", "B) Yes, it is.", "C) Yes, it does."],
-      "ans": "A) Yes, it was."
+      "q": "27. Are they running?",
+      "options": ["A) No, they am not.", "B) No, they isn't.", "C) No, they aren't."],
+      "ans": "C) No, they aren't."
     }
   ],
 
@@ -417,27 +417,27 @@ const remedialModule3Data = {
     {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE3_28.png"),
-      "q": "28. Read the sign. Where is the mummy room?",
-      "options": ["A) Room 3", "B) Room 1", "C) Room 5"],
-      "ans": "A) Room 3"
+      "q": "28. Look at the picture. Who is this worker?",
+      "options": ["A) Dentist", "B) Firefighter", "C) Teacher"],
+      "ans": "B) Firefighter"
     },
     {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE3_29.png"),
-      "q": "29. Look at the photo. What object is this?",
-      "options": ["A) Pyramid", "B) Car", "C) Phone"],
-      "ans": "A) Pyramid"
+      "q": "29. Look at the picture. What is the boy doing?",
+      "options": ["A) Skateboarding", "B) Swimming", "C) Sleeping"],
+      "ans": "A) Skateboarding"
     },
     {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE3_30.png"),
-      "q": "30. Read the ticket. How much is the entrance fee?",
-      "options": ["A) RM 5", "B) RM 10", "C) RM 20"],
-      "ans": "A) RM 5"
+      "q": "30. Look at the picture. Who is helping the sick child?",
+      "options": ["A) Pilot", "B) Chef", "C) Doctor"],
+      "ans": "C) Doctor"
     }
   ]
 };
 
 // Pasangkan data ke dalam QuizBank
-window.quizBank["REMEDIAL SET"]["Remedial 3: In the past"] = remedialModule3Data;
-window.quizBank["REMEDIAL SET"]["Remedial 3 - In the past"] = remedialModule3Data;
+window.quizBank["REMEDIAL SET"]["Remedial 3: Right now"] = remedialModule3Data;
+window.quizBank["REMEDIAL SET"]["Remedial 3 - Right now"] = remedialModule3Data;
