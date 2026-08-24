@@ -16,162 +16,162 @@ if (typeof window.wrapCenterImage !== 'function') {
 // ==========================================
 const getSmartModule2Data = {
   "Reading": [
-    // --- PETIKAN 1 (Soalan 1 - 5: Adam's School Timetable) ---
+    // --- PETIKAN 1 (Soalan 1 - 5: Maya's Tuesday Routine) ---
     {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE2_1.png"),
-      "q": "1. What is Adam's favourite subject?",
-      "options": ["A) Science", "B) Maths", "C) Art"],
-      "ans": "A) Science"
+      "q": "1. What subjects does Maya study on Tuesdays?",
+      "options": ["A) Art and Music", "B) P.E. and English", "C) Maths and Science"],
+      "ans": "C) Maths and Science"
     },
     {
       "type": "mcq",
-      "q": "2. How often does Adam have PE lessons?",
-      "options": ["A) Twice a week", "B) Once a week", "C) Three times a week"],
-      "ans": "A) Twice a week"
+      "q": "2. What household task does Maya do after school?",
+      "options": ["A) Waters the plants", "B) Washes the car", "C) Cooks dinner"],
+      "ans": "A) Waters the plants"
     },
     {
       "type": "mcq",
-      "q": "3. On which day does Adam have Social Studies?",
-      "options": ["A) On Tuesday", "B) On Monday", "C) On Friday"],
-      "ans": "A) On Tuesday"
+      "q": "3. How often does Maya do her homework after school?",
+      "options": ["A) Never", "B) Always", "C) Sometimes"],
+      "ans": "B) Always"
     },
     {
       "type": "mcq",
-      "q": "4. Why does Adam like Art?",
-      "options": ["A) Because he likes drawing and painting", "B) Because he likes playing sports", "C) Because he likes numbers"],
-      "ans": "A) Because he likes drawing and painting"
+      "q": "4. When is Maya allowed to play with her friends?",
+      "options": ["A) Before doing her homework", "B) During school hours", "C) After finishing her chores and homework"],
+      "ans": "C) After finishing her chores and homework"
     },
     {
       "type": "mcq",
-      "q": "5. What subject does Adam have on Thursday morning?",
-      "options": ["A) English", "B) Music", "C) PE"],
-      "ans": "A) English"
+      "q": "5. What can we infer about Maya's character?",
+      "options": ["A) She is responsible and manages her time well", "B) She dislikes going to school", "C) She prefers playing games all day"],
+      "ans": "A) She is responsible and manages her time well"
     },
 
-    // --- PETIKAN 2 (Soalan 6 - 10: Nurul's Home Chores) ---
+    // --- PETIKAN 2 (Soalan 6 - 10: Alex's Weekdays & Chores) ---
     {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE2_6.png"),
-      "q": "6. What chore does Nurul have to do after dinner?",
-      "options": ["A) Clear the table and wash the dishes", "B) Make her bed", "C) Wash the car"],
-      "ans": "A) Clear the table and wash the dishes"
+      "q": "6. What chore does Alex usually do after dinner?",
+      "options": ["A) Sweep the floor", "B) Clear the table", "C) Wash the clothes"],
+      "ans": "B) Clear the table"
     },
     {
       "type": "mcq",
-      "q": "7. How often does Nurul clean her bedroom?",
-      "options": ["A) She always cleans her room on Saturday", "B) She never cleans her room", "C) She cleans her room once a month"],
-      "ans": "A) She always cleans her room on Saturday"
+      "q": "7. On which day does Alex have P.E. lessons at school?",
+      "options": ["A) On Wednesdays", "B) On Sundays", "C) On Saturdays"],
+      "ans": "A) On Wednesdays"
     },
     {
       "type": "mcq",
-      "q": "8. What does Nurul do to help her mother in the garden?",
-      "options": ["A) Water the plants", "B) Take out the rubbish", "C) Vacuum the floor"],
-      "ans": "A) Water the plants"
+      "q": "8. Why does Alex never stay up late on weekdays?",
+      "options": ["A) He has to wake up early for school", "B) He does not like sleeping", "C) He watches TV all night"],
+      "ans": "A) He has to wake up early for school"
     },
     {
       "type": "mcq",
-      "q": "9. Does Nurul have to take out the rubbish every evening?",
-      "options": ["A) Yes, she does.", "B) No, her brother does it.", "C) No, she never does."],
-      "ans": "A) Yes, she does."
+      "q": "9. What activity does Alex do on Friday afternoons?",
+      "options": ["A) Takes out the rubbish", "B) Goes swimming with his brother", "C) Studies for exams"],
+      "ans": "B) Goes swimming with his brother"
     },
     {
       "type": "mcq",
-      "q": "10. How does Nurul feel about helping at home?",
-      "options": ["A) She enjoys helping her family.", "B) She hates doing chores.", "C) She feels tired."],
-      "ans": "A) She enjoys helping her family."
+      "q": "10. Which statement about Alex is true?",
+      "options": ["A) He never helps his parents at home", "B) He goes to school on weekends", "C) He clears the table after dinner"],
+      "ans": "C) He clears the table after dinner"
     }
   ],
 
   "Vocabulary": [
     {
       "type": "mcq",
-      "q": "11. The subject where you exercise and play sports is called ______.",
-      "options": ["A) Physical Education (PE)", "B) Social Studies", "C) Science"],
-      "ans": "A) Physical Education (PE)"
+      "q": "11. The subject where you draw, paint, and create crafts is called ______.",
+      "options": ["A) Music", "B) Art", "C) Science"],
+      "ans": "B) Art"
     },
     {
       "type": "mcq",
-      "q": "12. The household chore of cleaning dirty plates and cups is called ______.",
-      "options": ["A) washing the dishes", "B) making the bed", "C) watering the plants"],
-      "ans": "A) washing the dishes"
+      "q": "12. The household chore of cleaning dust and dirt off the floor with a broom is ______.",
+      "options": ["A) sweeping the floor", "B) washing the dishes", "C) making the bed"],
+      "ans": "A) sweeping the floor"
     },
     {
       "type": "mcq",
-      "q": "13. The subject where you learn about history and geography is ______.",
-      "options": ["A) Social Studies", "B) Music", "C) Art"],
-      "ans": "A) Social Studies"
+      "q": "13. The school subject where students learn about numbers and solve sums is ______.",
+      "options": ["A) History", "B) Geography", "C) Maths"],
+      "ans": "C) Maths"
     },
     {
       "type": "mcq",
-      "q": "14. Putting away trash into the bin outside is called ______.",
-      "options": ["A) taking out the rubbish", "B) clearing the table", "C) sweeping the floor"],
-      "ans": "A) taking out the rubbish"
+      "q": "14. Removing plates, cups, and cutlery after finishing a meal is called ______.",
+      "options": ["A) clearing the table", "B) watering plants", "C) washing the car"],
+      "ans": "A) clearing the table"
     },
     {
       "type": "mcq",
-      "q": "15. Tidy up your blanket and pillows in the morning is called ______.",
-      "options": ["A) making your bed", "B) washing your clothes", "C) setting the table"],
-      "ans": "A) making your bed"
+      "q": "15. In which subject do students play sports, run, and stay active?",
+      "options": ["A) English", "B) P.E.", "C) History"],
+      "ans": "B) P.E."
     }
   ],
 
   "Grammar": [
     {
       "type": "mcq",
-      "q": "16. How often ______ you have Science lessons?",
-      "options": ["A) do", "B) does", "C) are"],
-      "ans": "A) do"
-    },
-    {
-      "type": "mcq",
-      "q": "17. She ______ to make her bed every morning.",
-      "options": ["A) has", "B) have", "C) is"],
-      "ans": "A) has"
-    },
-    {
-      "type": "mcq",
-      "q": "18. I ______ take out the rubbish. I do it 100% of the time.",
-      "options": ["A) always", "B) never", "C) sometimes"],
+      "q": "16. How often do you make your bed? I ______ make it every morning without fail.",
+      "options": ["A) always", "B) never", "C) rarely"],
       "ans": "A) always"
     },
     {
       "type": "mcq",
-      "q": "19. They ______ have to wash the dishes because their dad does it.",
-      "options": ["A) don't", "B) doesn't", "C) hasn't"],
-      "ans": "A) don't"
+      "q": "17. She ______ her homework at 5:00 PM every evening.",
+      "options": ["A) do", "B) does", "C) doing"],
+      "ans": "B) does"
     },
     {
       "type": "mcq",
-      "q": "20. He ______ waters the plants—0% of the time.",
+      "q": "18. They ______ have to go to school on Saturday and Sunday.",
+      "options": ["A) doesn't", "B) hasn't", "C) don't"],
+      "ans": "C) don't"
+    },
+    {
+      "type": "mcq",
+      "q": "19. He ______ sweeps the floor because his older brother does it every day.",
       "options": ["A) never", "B) always", "C) usually"],
       "ans": "A) never"
+    },
+    {
+      "type": "mcq",
+      "q": "20. Do you have to set the table before dinner? Yes, I ______.",
+      "options": ["A) do", "B) have", "C) am"],
+      "ans": "A) do"
     }
   ],
 
   "Writing": [
     {
       "type": "mcq",
-      "q": "21. Choose the sentence with the correct capitalization and punctuation.",
-      "options": ["A) I have Art on Wednesdays.", "B) i have art on wednesdays.", "C) I have Art on Wednesdays"],
-      "ans": "A) I have Art on Wednesdays."
+      "q": "21. Choose the sentence with correct capitalization and punctuation.",
+      "options": ["A) I always study maths on wednesdays.", "B) I always study Maths on Wednesdays.", "C) i always study Maths on Wednesdays."],
+      "ans": "B) I always study Maths on Wednesdays."
     },
     {
       "type": "mcq",
-      "q": "22. Rearrange the words to form a correct sentence: [ have / I / clear / to / the table ]",
-      "options": ["A) I have to clear the table.", "B) Clear the table I have to.", "C) I clear to have the table."],
-      "ans": "A) I have to clear the table."
+      "q": "22. Rearrange the words: [ table / clears / She / usually / the / . ]",
+      "options": ["A) She clears usually the table.", "B) Table she clears usually the.", "C) She usually clears the table."],
+      "ans": "C) She usually clears the table."
     },
     {
       "type": "mcq",
-      "q": "23. Rearrange the words to form a correct sentence: [ always / She / her / makes / bed ]",
-      "options": ["A) She always makes her bed.", "B) Makes her bed she always.", "C) She makes bed always her."],
-      "ans": "A) She always makes her bed."
+      "q": "23. Rearrange the words: [ do / What / have / chores / you / to / do / ? ]",
+      "options": ["A) What chores do you have to do?", "B) What do chores you have to do?", "C) Do you have to do what chores?"],
+      "ans": "A) What chores do you have to do?"
     },
     {
       "type": "mcq",
       "q": "24. Choose the word with the correct spelling.",
-      "options": ["A) Science", "B) Sience", "C) Sciense"],
+      "options": ["A) Science", "B) Scence", "C) Sciense"],
       "ans": "A) Science"
     }
   ],
@@ -179,21 +179,21 @@ const getSmartModule2Data = {
   "Speaking": [
     {
       "type": "mcq",
-      "q": "25. Someone asks: 'What is your favourite subject?' How do you answer?",
-      "options": ["A) My favourite subject is Music.", "B) I am ten years old.", "C) I go to school by bus."],
-      "ans": "A) My favourite subject is Music."
+      "q": "25. Someone asks: 'How often do you clean your room?' How do you answer?",
+      "options": ["A) I have a big room.", "B) I usually clean it on Saturdays.", "C) My room is blue."],
+      "ans": "B) I usually clean it on Saturdays."
     },
     {
       "type": "mcq",
-      "q": "26. Someone asks: 'Do you have to clean your room?' How do you reply?",
-      "options": ["A) Yes, I do.", "B) Yes, I am.", "C) Yes, I can."],
-      "ans": "A) Yes, I do."
+      "q": "26. Your friend asks: 'Do you have to take out the rubbish?' How do you reply?",
+      "options": ["A) Yes, I do every evening.", "B) Yes, I am going to school.", "C) No, it is a bin."],
+      "ans": "A) Yes, I do every evening."
     },
     {
       "type": "mcq",
-      "q": "27. How do you ask your friend about their home routine?",
-      "options": ["A) How often do you water the plants?", "B) What color is your plant?", "C) Where is your garden?"],
-      "ans": "A) How often do you water the plants?"
+      "q": "27. Someone asks: 'What is your favourite weekday subject?' How do you reply?",
+      "options": ["A) I like playing games at home.", "B) It is half past eight.", "C) I like Science because we do experiments."],
+      "ans": "C) I like Science because we do experiments."
     }
   ],
 
@@ -201,30 +201,30 @@ const getSmartModule2Data = {
     {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE2_28.png"),
-      "q": "28. Read the school timetable. What lesson is on Friday at 9.00 AM?",
-      "options": ["A) Maths", "B) PE", "C) Art"],
-      "ans": "A) Maths"
+      "q": "28. Look at the school timetable image. When is the Art class scheduled?",
+      "options": ["A) Monday at 8:00 AM", "B) Thursday at 10:00 AM", "C) Friday at 2:00 PM"],
+      "ans": "B) Thursday at 10:00 AM"
     },
     {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE2_29.png"),
-      "q": "29. Read the chore chart. Who has to take out the rubbish on Tuesday?",
-      "options": ["A) Imran", "B) Sarah", "C) Danial"],
-      "ans": "A) Imran"
+      "q": "29. Read the chore chart image. Who is responsible for watering the plants on Wednesday?",
+      "options": ["A) Sarah", "B) Tim", "C) Maya"],
+      "ans": "C) Maya"
     },
     {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE2_30.png"),
-      "q": "30. Read the note. What must students bring for Art class?",
-      "options": ["A) Watercolours and brushes", "B) Sports shoes", "C) Calculator"],
-      "ans": "A) Watercolours and brushes"
+      "q": "30. Look at the schedule poster. Which days do students need to bring their P.E. kit?",
+      "options": ["A) Tuesday and Friday", "B) Monday only", "C) Sunday"],
+      "ans": "A) Tuesday and Friday"
     }
   ]
 };
 
 // Pasangkan data ke dalam QuizBank
-window.quizBank["GET SMART SET"]["Module 2: My week"] = getSmartModule2Data;
-window.quizBank["GET SMART SET"]["Module 2 - My week"] = getSmartModule2Data;
+window.quizBank["GET SMART SET"]["Module 2: My weekdays"] = getSmartModule2Data;
+window.quizBank["GET SMART SET"]["Module 2 - My weekdays"] = getSmartModule2Data;
 
 
 // ==========================================
@@ -232,136 +232,136 @@ window.quizBank["GET SMART SET"]["Module 2 - My week"] = getSmartModule2Data;
 // ==========================================
 const remedialModule2Data = {
   "Reading": [
-    // --- PETIKAN 1 (Soalan 1 - 5: Siti's Favourite Subject) ---
+    // --- PETIKAN 1 (Soalan 1 - 5: Ben's School Days) ---
     {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE2_1.png"),
-      "q": "1. Siti likes ____.",
-      "options": ["A) Art", "B) PE", "C) Maths"],
-      "ans": "A) Art"
+      "q": "1. Ben has P.E. on ____.",
+      "options": ["A) Sunday", "B) Monday", "C) Saturday"],
+      "ans": "B) Monday"
     },
     {
       "type": "mcq",
-      "q": "2. Siti has Art on ____.",
-      "options": ["A) Monday", "B) Friday", "C) Sunday"],
-      "ans": "A) Monday"
+      "q": "2. What does Ben do after school?",
+      "options": ["A) He does homework.", "B) He sleeps all day.", "C) He goes to the zoo."],
+      "ans": "A) He does homework."
     },
     {
       "type": "mcq",
-      "q": "3. What does Siti draw in class?",
-      "options": ["A) Flowers", "B) Cars", "C) Animals"],
-      "ans": "A) Flowers"
+      "q": "3. Who helps Ben with Maths?",
+      "options": ["A) His cat", "B) His teacher", "C) His sister"],
+      "ans": "C) His sister"
     },
     {
       "type": "mcq",
-      "q": "4. Is Art hard for Siti?",
-      "options": ["A) No, it is fun.", "B) Yes, it is.", "C) No, it is boring."],
-      "ans": "A) No, it is fun."
+      "q": "4. Ben ____ makes his bed.",
+      "options": ["A) never", "B) always", "C) rarely"],
+      "ans": "B) always"
     },
     {
       "type": "mcq",
-      "q": "5. Who is the text about?",
-      "options": ["A) Siti", "B) Sarah", "C) Amin"],
-      "ans": "A) Siti"
+      "q": "5. Ben goes to bed at ____.",
+      "options": ["A) 9:00 PM", "B) 1:00 AM", "C) 12:00 PM"],
+      "ans": "A) 9:00 PM"
     },
 
-    // --- PETIKAN 2 (Soalan 6 - 10: Ben's Chores) ---
+    // --- PETIKAN 2 (Soalan 6 - 10: Lina's Home Chores) ---
     {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE2_6.png"),
-      "q": "6. Ben has to make his ____.",
-      "options": ["A) bed", "B) chair", "C) table"],
-      "ans": "A) bed"
+      "q": "6. Lina helps her mother at ____.",
+      "options": ["A) school", "B) the park", "C) home"],
+      "ans": "C) home"
     },
     {
       "type": "mcq",
-      "q": "7. Ben washes the ____ after eating.",
-      "options": ["A) dishes", "B) shoes", "C) clothes"],
-      "ans": "A) dishes"
+      "q": "7. She clears the ____ after eating.",
+      "options": ["A) table", "B) floor", "C) bed"],
+      "ans": "A) table"
     },
     {
       "type": "mcq",
-      "q": "8. When does Ben clean his room?",
-      "options": ["A) Every morning", "B) At night", "C) On Sunday"],
-      "ans": "A) Every morning"
+      "q": "8. Lina sweeps the floor with a ____.",
+      "options": ["A) pen", "B) broom", "C) spoon"],
+      "ans": "B) broom"
     },
     {
       "type": "mcq",
-      "q": "9. Does Ben help at home?",
-      "options": ["A) Yes, he does.", "B) No, he doesn't.", "C) He is sleeping."],
-      "ans": "A) Yes, he does."
+      "q": "9. Lina is a ____ girl.",
+      "options": ["A) helpful", "B) lazy", "C) sad"],
+      "ans": "A) helpful"
     },
     {
       "type": "mcq",
-      "q": "10. What is Ben's chore in the garden?",
-      "options": ["A) Water the plants", "B) Wash the car", "C) Cut the trees"],
-      "ans": "A) Water the plants"
+      "q": "10. Lina's mother is ____.",
+      "options": ["A) angry", "B) happy", "C) tired"],
+      "ans": "B) happy"
     }
   ],
 
   "Vocabulary": [
     {
       "type": "mcq",
-      "q": "11. We sing and play instruments in ______ class.",
-      "options": ["A) Music", "B) Maths", "C) PE"],
-      "ans": "A) Music"
+      "q": "11. School subject with sports: ______.",
+      "options": ["A) Art", "B) P.E.", "C) Music"],
+      "ans": "B) P.E."
     },
     {
       "type": "mcq",
-      "q": "12. We count numbers in ______ class.",
-      "options": ["A) Maths", "B) Art", "C) English"],
+      "q": "12. Subject with numbers: ______.",
+      "options": ["A) Maths", "B) English", "C) History"],
       "ans": "A) Maths"
     },
     {
       "type": "mcq",
-      "q": "13. Cleaning dirty cups is: washing the ______.",
-      "options": ["A) dishes", "B) beds", "C) plants"],
-      "ans": "A) dishes"
+      "q": "13. Sweep the ______.",
+      "options": ["A) wall", "B) window", "C) floor"],
+      "ans": "C) floor"
     },
     {
       "type": "mcq",
-      "q": "14. Putting water on flowers is: watering the ______.",
-      "options": ["A) plants", "B) dishes", "C) tables"],
-      "ans": "A) plants"
+      "q": "14. Clear the ______.",
+      "options": ["A) table", "B) door", "C) shoe"],
+      "ans": "A) table"
     },
     {
       "type": "mcq",
-      "q": "15. Tidying your blanket is: making your ______.",
-      "options": ["A) bed", "B) room", "C) table"],
-      "ans": "A) bed"
+      "q": "15. Draw pictures in ______ class.",
+      "options": ["A) Science", "B) Art", "C) P.E."],
+      "ans": "B) Art"
     }
   ],
 
   "Grammar": [
     {
       "type": "mcq",
-      "q": "16. I ______ to wash the dishes.",
-      "options": ["A) have", "B) has", "C) am"],
-      "ans": "A) have"
-    },
-    {
-      "type": "mcq",
-      "q": "17. He ______ to clear the table.",
-      "options": ["A) has", "B) have", "C) are"],
-      "ans": "A) has"
-    },
-    {
-      "type": "mcq",
-      "q": "18. I ______ wash my hands before eating.",
-      "options": ["A) always", "B) never", "C) zero"],
+      "q": "16. I ______ go to school on Monday.",
+      "options": ["A) always", "B) never", "C) no"],
       "ans": "A) always"
     },
     {
       "type": "mcq",
-      "q": "19. She ______ has PE on Monday.",
-      "options": ["A) usually", "B) have", "C) do"],
-      "ans": "A) usually"
+      "q": "17. She ______ her homework every day.",
+      "options": ["A) do", "B) does", "C) doing"],
+      "ans": "B) does"
     },
     {
       "type": "mcq",
-      "q": "20. They ______ have Music today.",
-      "options": ["A) don't", "B) doesn't", "C) hasn't"],
+      "q": "18. We ______ have school on Sunday.",
+      "options": ["A) don't", "B) doesn't", "C) not"],
       "ans": "A) don't"
+    },
+    {
+      "type": "mcq",
+      "q": "19. He ______ plays football after school.",
+      "options": ["A) is", "B) sometimes", "C) have"],
+      "ans": "B) sometimes"
+    },
+    {
+      "type": "mcq",
+      "q": "20. Do you sweep the floor? Yes, I ______.",
+      "options": ["A) am", "B) have", "C) do"],
+      "ans": "C) do"
     }
   ],
 
@@ -369,47 +369,47 @@ const remedialModule2Data = {
     {
       "type": "mcq",
       "q": "21. Choose the correct spelling:",
-      "options": ["A) Music", "B) Musick", "C) Muzik"],
-      "ans": "A) Music"
+      "options": ["A) Maths", "B) Mates", "C) Mathz"],
+      "ans": "A) Maths"
     },
     {
       "type": "mcq",
-      "q": "22. Rearrange: [ I / to / have / study ]",
-      "options": ["A) I have to study.", "B) Study have to I.", "C) Have I to study."],
-      "ans": "A) I have to study."
+      "q": "22. Rearrange: [ I clean / my room. ]",
+      "options": ["A) Room my I clean.", "B) I clean my room.", "C) My clean I room."],
+      "ans": "B) I clean my room."
     },
     {
       "type": "mcq",
       "q": "23. Choose the correct spelling:",
-      "options": ["A) English", "B) Inglish", "C) English"],
-      "ans": "A) English"
+      "options": ["A) Twesday", "B) Tuesday", "C) Tuseday"],
+      "ans": "B) Tuesday"
     },
     {
       "type": "mcq",
-      "q": "24. Rearrange: [ She / her bed / makes ]",
-      "options": ["A) She makes her bed.", "B) Makes her bed she.", "C) Her bed she makes."],
-      "ans": "A) She makes her bed."
+      "q": "24. Rearrange: [ She has / P.E. today. ]",
+      "options": ["A) P.E. today she has.", "B) Today P.E. has she.", "C) She has P.E. today."],
+      "ans": "C) She has P.E. today."
     }
   ],
 
   "Speaking": [
     {
       "type": "mcq",
-      "q": "25. Do you like Maths?",
-      "options": ["A) Yes, I do.", "B) Yes, I am.", "C) Yes, I have."],
-      "ans": "A) Yes, I do."
+      "q": "25. What day is today?",
+      "options": ["A) It is Monday.", "B) It is red.", "C) It is big."],
+      "ans": "A) It is Monday."
     },
     {
       "type": "mcq",
-      "q": "26. What subject is it?",
-      "options": ["A) It is Science.", "B) It is Monday.", "C) It is red."],
-      "ans": "A) It is Science."
+      "q": "26. Do you like Art?",
+      "options": ["A) Yes, I am.", "B) Yes, I do.", "C) Yes, I can."],
+      "ans": "B) Yes, I do."
     },
     {
       "type": "mcq",
       "q": "27. Do you make your bed?",
-      "options": ["A) Yes, I do.", "B) No, I am.", "C) No, I can't."],
-      "ans": "A) Yes, I do."
+      "options": ["A) No, I am not.", "B) No, I don't.", "C) No, I hasn't."],
+      "ans": "B) No, I don't."
     }
   ],
 
@@ -417,27 +417,27 @@ const remedialModule2Data = {
     {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE2_28.png"),
-      "q": "28. Read the sign. What subject is in Room 1?",
-      "options": ["A) Art", "B) Music", "C) PE"],
-      "ans": "A) Art"
+      "q": "28. Look at the picture. What subject is this?",
+      "options": ["A) Art", "B) Maths", "C) Music"],
+      "ans": "B) Maths"
     },
     {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE2_29.png"),
-      "q": "29. Look at the chart. Does Ali water the plants?",
-      "options": ["A) Yes, he does.", "B) No, he doesn't.", "C) He doesn't know."],
-      "ans": "A) Yes, he does."
+      "q": "29. Look at the picture. What chore is she doing?",
+      "options": ["A) Sweeping the floor", "B) Washing the car", "C) Cooking"],
+      "ans": "A) Sweeping the floor"
     },
     {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE2_30.png"),
-      "q": "30. Read the timetable. What day is PE class?",
-      "options": ["A) Tuesday", "B) Sunday", "C) Saturday"],
-      "ans": "A) Tuesday"
+      "q": "30. Look at the timetable. What lesson is on Wednesday morning?",
+      "options": ["A) Science", "B) Art", "C) English"],
+      "ans": "C) English"
     }
   ]
 };
 
 // Pasangkan data ke dalam QuizBank
-window.quizBank["REMEDIAL SET"]["Remedial 2: My week"] = remedialModule2Data;
-window.quizBank["REMEDIAL SET"]["Remedial 2 - My week"] = remedialModule2Data;
+window.quizBank["REMEDIAL SET"]["Remedial 2: My weekdays"] = remedialModule2Data;
+window.quizBank["REMEDIAL SET"]["Remedial 2 - My weekdays"] = remedialModule2Data;
