@@ -10,22 +10,12 @@ if (typeof window.wrapCenterImage !== 'function') {
     return `<div style="text-align: center; margin: 15px 0;"><img src="${imagePath}" style="display: block; margin: 0 auto; max-width: 100%; max-height: 250px; border-radius: 10px; border: 1px solid #ddd;" onerror="this.style.display='none'"></div>`;
   };
 }
-// 2. KEMASKINI NAMA PEMBOLEH UBAH SOALAN KEPADA window.quizQuestions
-window.quizQuestions = [
-  // --- KEKALKAN SEMUA SOALAN KANDUNGAN ANDA DI SINI ---
-  {
-    question: "Where are you from?",
-    options: ["Malaysia", "Brazil", "UK", "Korea"],
-    answer: 0
-  }
-  // ... soalan-soalan anda yang lain
-];
+
 // ==========================================
 // 1. GET SMART SET (30 SOALAN - YEAR 4 MODULE 1)
 // ==========================================
 const getSmartModule1Data = {
   "Reading": [
-    // --- PETIKAN 1 (Soalan 1 - 5: Friends from Around the World) ---
     {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE1_1.png"),
@@ -57,8 +47,6 @@ const getSmartModule1Data = {
       "options": ["A) They live in the same house", "B) They speak the exact same language", "C) They love sharing their cultures with each other"],
       "ans": "C) They love sharing their cultures with each other"
     },
-
-    // --- PETIKAN 2 (Soalan 6 - 10: Pen Pals and Hobbies) ---
     {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE1_6.png"),
@@ -91,7 +79,6 @@ const getSmartModule1Data = {
       "ans": "B) She comes from Brazil"
     }
   ],
-
   "Vocabulary": [
     {
       "type": "mcq",
@@ -124,7 +111,6 @@ const getSmartModule1Data = {
       "ans": "A) Korean"
     }
   ],
-
   "Grammar": [
     {
       "type": "mcq",
@@ -157,7 +143,6 @@ const getSmartModule1Data = {
       "ans": "C) his"
     }
   ],
-
   "Writing": [
     {
       "type": "mcq",
@@ -184,7 +169,6 @@ const getSmartModule1Data = {
       "ans": "A) Malaysian"
     }
   ],
-
   "Speaking": [
     {
       "type": "mcq",
@@ -205,7 +189,6 @@ const getSmartModule1Data = {
       "ans": "C) Yes, he is."
     }
   ],
-
   "Mixed Skills": [
     {
       "type": "mcq",
@@ -231,17 +214,11 @@ const getSmartModule1Data = {
   ]
 };
 
-// Pasangkan data ke dalam QuizBank
-window.quizBank["GET SMART SET"]["Module 1: Where are you from?"] = getSmartModule1Data;
-window.quizBank["GET SMART SET"]["Module 1 - Where are you from?"] = getSmartModule1Data;
-
-
 // ==========================================
 // 2. REMEDIAL SET (30 SOALAN - YEAR 4 MODULE 1)
 // ==========================================
 const remedialModule1Data = {
   "Reading": [
-    // --- PETIKAN 1 (Soalan 1 - 5: My Friend Ali) ---
     {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE1_1.png"),
@@ -273,8 +250,6 @@ const remedialModule1Data = {
       "options": ["A) brothers", "B) friends", "C) teachers"],
       "ans": "B) friends"
     },
-
-    // --- PETIKAN 2 (Soalan 6 - 10: Anna from Korea) ---
     {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE1_6.png"),
@@ -307,7 +282,6 @@ const remedialModule1Data = {
       "ans": "B) girl"
     }
   ],
-
   "Vocabulary": [
     {
       "type": "mcq",
@@ -340,7 +314,6 @@ const remedialModule1Data = {
       "ans": "B) Mexican"
     }
   ],
-
   "Grammar": [
     {
       "type": "mcq",
@@ -373,7 +346,6 @@ const remedialModule1Data = {
       "ans": "B) is"
     }
   ],
-
   "Writing": [
     {
       "type": "mcq",
@@ -400,7 +372,6 @@ const remedialModule1Data = {
       "ans": "A) He is from Korea."
     }
   ],
-
   "Speaking": [
     {
       "type": "mcq",
@@ -421,7 +392,6 @@ const remedialModule1Data = {
       "ans": "C) Sandy"
     }
   ],
-
   "Mixed Skills": [
     {
       "type": "mcq",
@@ -447,6 +417,39 @@ const remedialModule1Data = {
   ]
 };
 
-// Pasangkan data ke dalam QuizBank
-window.quizBank["REMEDIAL SET"]["Remedial 1: Where are you from?"] = remedialModule1Data;
-window.quizBank["REMEDIAL SET"]["Remedial 1 - Where are you from?"] = remedialModule1Data;
+// ==========================================
+// FUNGSI PENUKAR DATA KEPADA ARRAY SENARAI SOALAN
+// ==========================================
+function formatDataModule(dataObj) {
+  const flatArray = [];
+  for (const category in dataObj) {
+    if (Array.isArray(dataObj[category])) {
+      dataObj[category].forEach(item => {
+        let ansIndex = item.options ? item.options.indexOf(item.ans) : 0;
+        if (ansIndex === -1) ansIndex = 0;
+
+        flatArray.push({
+          question: (item.image ? item.image : "") + (item.q || item.question || ""),
+          options: item.options || [],
+          answer: ansIndex,
+          ansText: item.ans
+        });
+      });
+    }
+  }
+  return flatArray;
+}
+
+// FORMATKAN DATA KE ARRAY 30 SOALAN
+const getSmartModule1Array = formatDataModule(getSmartModule1Data);
+const remedialModule1Array = formatDataModule(remedialModule1Data);
+
+// PASANGKAN DATA KE DALAM QUIZBANK
+window.quizBank["GET SMART SET"]["Module 1: Where are you from?"] = getSmartModule1Array;
+window.quizBank["GET SMART SET"]["Module 1 - Where are you from?"] = getSmartModule1Array;
+
+window.quizBank["REMEDIAL SET"]["Remedial 1: Where are you from?"] = remedialModule1Array;
+window.quizBank["REMEDIAL SET"]["Remedial 1 - Where are you from?"] = remedialModule1Array;
+
+// ESKPORT JUGA KE GLOBAL WINDOW
+window.quizQuestions = getSmartModule1Array;
