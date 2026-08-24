@@ -784,27 +784,48 @@
             window.quizBank["REMEDIAL SET"] = {};
             window.quizQuestions = null;
 
-            const oldScript = document.getElementById('dynamicQuizScript');
-            if (oldScript) oldScript.remove();
+            // 1. Kosongkan memori soalan lama
+window.quizQuestions = null;
 
-            const script = document.createElement('script');
-            script.id = 'dynamicQuizScript';
-            script.src = skripModul + "?v=" + new Date().getTime();
+const oldScript = document.getElementById('dynamicQuizScript');
+if (oldScript) oldScript.remove();
 
-            script.onload = () => {
-                let rawData = null;
+const script = document.createElement('script');
+script.id = 'dynamicQuizScript';
+script.src = skripModul + "?v=" + new Date().getTime();
 
-                if (Array.isArray(window.quizQuestions) && window.quizQuestions.length > 0) {
-                    activeQuestions = window.quizQuestions;
-                } else if (window.quizBank && window.quizBank[currentCategory]) {
-                    const cat = window.quizBank[currentCategory];
-                    if (cat[currentModuleName]) {
-                        rawData = cat[currentModuleName];
-                    } else {
-                        const keys = Object.keys(cat);
-                        if (keys.length > 0) rawData = cat[keys[0]];
-                    }
-                }
+script.onload = () => {
+    let rawData = null;
+
+    // 2. Utamakan semakan Kategori (GET SMART SET / REMEDIAL SET)
+    if (window.quizBank && window.quizBank[currentCategory]) {
+        const cat = window.quizBank[currentCategory];
+        
+        if (cat[currentModuleName]) {
+            rawData = cat[currentModuleName];
+        } else {
+            // Cari padanan ejaan paling dekat jika ada perbezaan simbol
+            const keys = Object.keys(cat);
+            const matchedKey = keys.find(k => k.toLowerCase().includes(currentModuleName.toLowerCase())) || keys[0];
+            if (matchedKey) rawData = cat[matchedKey];
+        }
+    } 
+
+    // 3. Gunakan fallback global HANYA jika quizBank tiada data
+    if (!rawData && Array.isArray(window.quizQuestions) && window.quizQuestions.length > 0) {
+        rawData = window.quizQuestions;
+    }
+
+    // 4. Setkan soalan aktif
+    if (rawData) {
+        activeQuestions = rawData;
+        // Panggil fungsi paparan soalan anda di sini (contoh: renderQuiz() / showQuestion())
+    } else {
+        alert("Soalan tidak dijumpai dalam fail skrip ini.");
+    }
+};
+
+document.head.appendChild(script);
 
                 if (rawData) {
                     if (Array.isArray(rawData)) {
