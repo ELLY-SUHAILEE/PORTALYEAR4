@@ -16,184 +16,184 @@ if (typeof window.wrapCenterImage !== 'function') {
 // ==========================================
 const getSmartModule5Data = {
   "Reading": [
-    // --- PETIKAN 1 (Soalan 1 - 5: Healthy Eating Habits) ---
+    // --- PETIKAN 1 (Soalan 1 - 5: Sarah's Healthy Lunchbox) ---
     {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE5_1.png"),
-      "q": "1. Why is it important to eat fruits and vegetables every day?",
-      "options": ["A) They contain vitamins that keep us healthy", "B) They have lots of sugar and fat", "C) They make us sleepy"],
-      "ans": "A) They contain vitamins that keep us healthy"
+      "q": "1. What does Sarah pack in her lunchbox for school?",
+      "options": ["A) A sandwich, a red apple, and a carton of milk", "B) Potato chips, chocolate bars, and fizzy soda", "C) Fried chicken, French fries, and ice cream"],
+      "ans": "A) A sandwich, a red apple, and a carton of milk"
     },
     {
       "type": "mcq",
-      "q": "2. How many glasses of water should we drink each day?",
-      "options": ["A) At least 6 to 8 glasses", "B) Only 1 glass", "C) 15 to 20 glasses"],
-      "ans": "A) At least 6 to 8 glasses"
+      "q": "2. Why does Sarah avoid drinking too many sugary sodas?",
+      "options": ["A) Because sodas are not good for her teeth and health", "B) Because she does not like cold drinks", "C) Because sodas are too expensive"],
+      "ans": "A) Because sodas are not good for her teeth and health"
     },
     {
       "type": "mcq",
-      "q": "3. What happens if we eat too many sweets and crisps?",
-      "options": ["A) It can damage our teeth and health", "B) It makes our bones very strong", "C) It helps us run faster"],
-      "ans": "A) It can damage our teeth and health"
+      "q": "3. How much water does Sarah drink every day?",
+      "options": ["A) Only one small glass", "B) At least eight glasses of water", "C) No water at all"],
+      "ans": "B) At least eight glasses of water"
     },
     {
       "type": "mcq",
-      "q": "4. Which food group gives us energy to run and play?",
-      "options": ["A) Carbohydrates like bread and rice", "B) Soft drinks", "C) Candy bars"],
-      "ans": "A) Carbohydrates like bread and rice"
+      "q": "4. What snack does Sarah eat when she feels hungry in the afternoon?",
+      "options": ["A) A bowl of fresh fruits", "B) A bag of salty crisps", "C) A piece of sweet cake"],
+      "ans": "A) A bowl of fresh fruits"
     },
     {
       "type": "mcq",
-      "q": "5. What should we eat before going to school in the morning?",
-      "options": ["A) A healthy breakfast", "B) A bag of potato chips", "C) Ice cream"],
-      "ans": "A) A healthy breakfast"
+      "q": "5. What is the main message of Sarah's daily diet?",
+      "options": ["A) Skip breakfast every day", "B) Eat balanced meals with plenty of fruits and water", "C) Eat fast food for dinner every night"],
+      "ans": "B) Eat balanced meals with plenty of fruits and water"
     },
 
-    // --- PETIKAN 2 (Soalan 6 - 10: Maya's Lunchbox) ---
+    // --- PETIKAN 2 (Soalan 6 - 10: Making a Fresh Fruit Salad) ---
     {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE5_6.png"),
-      "q": "6. What did Maya pack in her lunchbox today?",
-      "options": ["A) A egg sandwich, an apple, and a bottle of milk", "B) A burger and fries", "C) Two chocolate bars"],
-      "ans": "A) A egg sandwich, an apple, and a bottle of milk"
+      "q": "6. What ingredients are needed to make Tom's fruit salad?",
+      "options": ["A) Bananas, strawberries, apples, and natural yogurt", "B) Rice, chicken, carrots, and cabbage", "C) Chocolate, butter, flour, and sugar"],
+      "ans": "A) Bananas, strawberries, apples, and natural yogurt"
     },
     {
       "type": "mcq",
-      "q": "7. Does Maya bring soft drinks to school?",
-      "options": ["A) No, she prefers water and milk", "B) Yes, every day", "C) Only on Mondays"],
-      "ans": "A) No, she prefers water and milk"
+      "q": "7. How many bananas does Tom slice into the mixing bowl?",
+      "options": ["A) Five whole bananas", "B) Two ripe bananas", "C) Ten green bananas"],
+      "ans": "B) Two ripe bananas"
     },
     {
       "type": "mcq",
-      "q": "8. What food item in Maya's lunchbox provides protein?",
-      "options": ["A) The egg in her sandwich", "B) The apple", "C) The cucumber slices"],
-      "ans": "A) The egg in her sandwich"
+      "q": "8. What does Tom add at the end to make the fruit salad creamy?",
+      "options": ["A) A spoonful of natural yogurt", "B) A cup of olive oil", "C) Hot chocolate syrup"],
+      "ans": "A) A spoonful of natural yogurt"
     },
     {
       "type": "mcq",
-      "q": "9. Why does Maya's mother prepare homemade food for her?",
-      "options": ["A) Because it is cleaner and healthier", "B) Because it is expensive", "C) Because canteen food is closed"],
-      "ans": "A) Because it is cleaner and healthier"
+      "q": "9. Why is fruit salad a healthy dessert option?",
+      "options": ["A) It contains high amounts of refined sugar", "B) It is packed with vitamins and natural fiber", "C) It is fried in heavy vegetable oil"],
+      "ans": "B) It is packed with vitamins and natural fiber"
     },
     {
       "type": "mcq",
-      "q": "10. What healthy snack does Maya share with her friends at break time?",
-      "options": ["A) Fresh fruit slices", "B) Salty crisps", "C) Sweet candies"],
-      "ans": "A) Fresh fruit slices"
+      "q": "10. Which step should Tom do before cutting the fruits?",
+      "options": ["A) Wash the fruits thoroughly with clean water", "B) Freeze the fruits overnight", "C) Add sugar directly onto the unpeeled skin"],
+      "ans": "A) Wash the fruits thoroughly with clean water"
     }
   ],
 
   "Vocabulary": [
     {
       "type": "mcq",
-      "q": "11. A tall glass or plastic container used for holding liquids like water or milk is a ______.",
-      "options": ["A) bottle", "B) box", "C) bag"],
-      "ans": "A) bottle"
+      "q": "11. A liquid dairy drink rich in calcium is ______.",
+      "options": ["A) milk", "B) flour", "C) oil"],
+      "ans": "A) milk"
     },
     {
       "type": "mcq",
-      "q": "12. Crunchy thin slices of fried potato eaten as a snack are called ______.",
-      "options": ["A) crisps / chips", "B) biscuits", "C) cereal"],
-      "ans": "A) crisps / chips"
+      "q": "12. Small, sweet red berries with seeds on the outside are ______.",
+      "options": ["A) grapes", "B) strawberries", "C) pineapples"],
+      "ans": "B) strawberries"
     },
     {
       "type": "mcq",
-      "q": "13. A cardboard container used to hold milk or juice is called a ______.",
-      "options": ["A) carton", "B) packet", "C) cup"],
+      "q": "13. Food items like lettuce, carrots, and cucumbers belong to the ______ group.",
+      "options": ["A) sweets", "B) dairy", "C) vegetables"],
+      "ans": "C) vegetables"
+    },
+    {
+      "type": "mcq",
+      "q": "14. A container made of paperboard used for holding milk or juice is a ______.",
+      "options": ["A) carton", "B) cup", "C) plate"],
       "ans": "A) carton"
     },
     {
       "type": "mcq",
-      "q": "14. Small dry sweet baked cakes, usually flat, are called ______.",
-      "options": ["A) biscuits", "B) vegetables", "C) noodles"],
-      "ans": "A) biscuits"
-    },
-    {
-      "type": "mcq",
-      "q": "15. A food made from grain eaten usually with milk for breakfast is ______.",
-      "options": ["A) cereal", "B) soup", "C) salad"],
-      "ans": "A) cereal"
+      "q": "15. Crunchy, thin slices of fried potato often sold in small bags are ______.",
+      "options": ["A) crisps", "B) noodles", "C) pancakes"],
+      "ans": "A) crisps"
     }
   ],
 
   "Grammar": [
     {
       "type": "mcq",
-      "q": "16. How ______ milk do you drink every day?",
-      "options": ["A) much", "B) many", "C) number"],
-      "ans": "A) much"
+      "q": "16. How ______ milk is there in the fridge?",
+      "options": ["A) many", "B) much", "C) any"],
+      "ans": "B) much"
     },
     {
       "type": "mcq",
-      "q": "17. How ______ apples are there in the basket?",
-      "options": ["A) many", "B) much", "C) size"],
-      "ans": "A) many"
+      "q": "17. How ______ apples do we need for the fruit salad?",
+      "options": ["A) much", "B) any", "C) many"],
+      "ans": "C) many"
     },
     {
       "type": "mcq",
-      "q": "18. You ______ eat too much sugar; it is bad for your teeth.",
-      "options": ["A) shouldn't", "B) should", "C) must"],
-      "ans": "A) shouldn't"
+      "q": "18. There isn't ______ sugar left in the bowl.",
+      "options": ["A) any", "B) some", "C) many"],
+      "ans": "A) any"
     },
     {
       "type": "mcq",
-      "q": "19. We need a ______ of cereal for breakfast.",
-      "options": ["A) box", "B) bottle", "C) glass"],
-      "ans": "A) box"
+      "q": "19. Would you like ______ fresh orange juice with your meal?",
+      "options": ["A) any", "B) some", "C) many"],
+      "ans": "B) some"
     },
     {
       "type": "mcq",
-      "q": "20. There is ______ water left in the jug.",
-      "options": ["A) some", "B) many", "C) a few"],
-      "ans": "A) some"
+      "q": "20. There ______ a few bananas on the dining table.",
+      "options": ["A) is", "B) are", "C) was"],
+      "ans": "B) are"
     }
   ],
 
   "Writing": [
     {
       "type": "mcq",
-      "q": "21. Choose the sentence with the correct capitalization and punctuation.",
-      "options": ["A) You should drink plenty of water.", "B) you should drink plenty of water.", "C) You should drink plenty of water"],
-      "ans": "A) You should drink plenty of water."
+      "q": "21. Choose the sentence with correct capitalization and punctuation.",
+      "options": ["A) We need some apples milk and bread.", "B) We need some apples, milk, and bread.", "C) we need some apples, milk and bread."],
+      "ans": "B) We need some apples, milk, and bread."
     },
     {
       "type": "mcq",
-      "q": "22. Rearrange the words to form a correct sentence: [ water / How much / do you / drink ]",
-      "options": ["A) How much water do you drink?", "B) Water do you drink how much?", "C) How do you drink much water?"],
+      "q": "22. Rearrange the words: [ much / How / water / drink / you / do / ? ]",
+      "options": ["A) How much water do you drink?", "B) How water much do you drink?", "C) Do you drink how much water?"],
       "ans": "A) How much water do you drink?"
     },
     {
       "type": "mcq",
-      "q": "23. Rearrange the words to form a correct sentence: [ eat / shouldn't / You / junk food / too much ]",
-      "options": ["A) You shouldn't eat too much junk food.", "B) Too much junk food you shouldn't eat.", "C) You junk food shouldn't eat too much."],
-      "ans": "A) You shouldn't eat too much junk food."
+      "q": "23. Rearrange the words: [ are / There / apples / some / the / in / basket / . ]",
+      "options": ["A) There are some apples in the basket.", "B) Some apples are there in the basket.", "C) In the basket are there some apples."],
+      "ans": "A) There are some apples in the basket."
     },
     {
       "type": "mcq",
       "q": "24. Choose the word with the correct spelling.",
-      "options": ["A) Vegetables", "B) Vegetabels", "C) Vegtables"],
-      "ans": "A) Vegetables"
+      "options": ["A) Vegeatables", "B) Vegetables", "C) Vegtables"],
+      "ans": "B) Vegetables"
     }
   ],
 
   "Speaking": [
     {
       "type": "mcq",
-      "q": "25. Someone asks: 'How much water do you drink daily?' How do you answer?",
-      "options": ["A) I drink about six glasses a day.", "B) I drink water in the room.", "C) Water is blue."],
-      "ans": "A) I drink about six glasses a day."
+      "q": "25. Someone asks: 'How much water do you drink every day?' How do you answer?",
+      "options": ["A) I drink six to eight glasses a day.", "B) Yes, I like drinking water.", "C) Water is clear and cold."],
+      "ans": "A) I drink six to eight glasses a day."
     },
     {
       "type": "mcq",
-      "q": "26. How do you advise a friend who eats too many sweets?",
-      "options": ["A) You shouldn't eat so many sweets.", "B) You should eat more sweets.", "C) Sweets are very cheap."],
-      "ans": "A) You shouldn't eat so many sweets."
+      "q": "26. A waiter asks: 'Would you like some fruit juice?' How do you reply politely?",
+      "options": ["A) Yes, please. I would like orange juice.", "B) No, I am ten years old.", "C) Juice is made from fruits."],
+      "ans": "A) Yes, please. I would like orange juice."
     },
     {
       "type": "mcq",
-      "q": "27. Someone asks: 'Would you like a packet of crisps?' How do you decline politely?",
-      "options": ["A) No, thank you. I am trying to eat healthy.", "B) No, I hate bags.", "C) Yes, I am 10 years old."],
-      "ans": "A) No, thank you. I am trying to eat healthy."
+      "q": "27. Your friend asks: 'Are there any biscuits in the tin?' How do you answer?",
+      "options": ["A) No, there aren't any left.", "B) Yes, it is a tin.", "C) Biscuits are sweet."],
+      "ans": "A) No, there aren't any left."
     }
   ],
 
@@ -201,22 +201,22 @@ const getSmartModule5Data = {
     {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE5_28.png"),
-      "q": "28. Read the food pyramid chart. Which level should we eat the MOST of?",
-      "options": ["A) Grains, fruits, and vegetables", "B) Sweets and fats", "C) Meat and dairy"],
-      "ans": "A) Grains, fruits, and vegetables"
+      "q": "28. Look at the Food Pyramid diagram. Which food group should we eat the most?",
+      "options": ["A) Fats, oils, and sweets", "B) Rice, grains, and bread", "C) Meat and poultry"],
+      "ans": "B) Rice, grains, and bread"
     },
     {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE5_29.png"),
-      "q": "29. Read the canteen poster. How much is a bottle of mineral water?",
-      "options": ["A) RM 1.00", "B) RM 3.50", "C) RM 5.00"],
-      "ans": "A) RM 1.00"
+      "q": "29. Read the grocery shopping list. Which item is UNCOUNTABLE?",
+      "options": ["A) Milk", "B) Eggs", "C) Apples"],
+      "ans": "A) Milk"
     },
     {
       "type": "mcq",
       "image": wrapCenterImage("images/GS_MODULE5_30.png"),
-      "q": "30. Read the nutrition label. How many grams of sugar are in one serving?",
-      "options": ["A) 5 grams", "B) 25 grams", "C) 50 grams"],
+      "q": "30. Look at the nutrition label. How many grams of sugar are in one serving?",
+      "options": ["A) 5 grams", "B) 12 grams", "C) 25 grams"],
       "ans": "A) 5 grams"
     }
   ]
@@ -232,136 +232,136 @@ window.quizBank["GET SMART SET"]["Module 5 - Eating right"] = getSmartModule5Dat
 // ==========================================
 const remedialModule5Data = {
   "Reading": [
-    // --- PETIKAN 1 (Soalan 1 - 5: Healthy Snacks) ---
+    // --- PETIKAN 1 (Soalan 1 - 5: Healthy Food) ---
     {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE5_1.png"),
-      "q": "1. Apples and bananas are ____.",
-      "options": ["A) fruits", "B) toys", "C) sweets"],
+      "q": "1. Apples and oranges are ____.",
+      "options": ["A) fruits", "B) toys", "C) clothes"],
       "ans": "A) fruits"
     },
     {
       "type": "mcq",
-      "q": "2. We should drink ____ every day.",
-      "options": ["A) water", "B) cola", "C) ink"],
-      "ans": "A) water"
+      "q": "2. We should drink plenty of ____.",
+      "options": ["A) oil", "B) water", "C) soda"],
+      "ans": "B) water"
     },
     {
       "type": "mcq",
-      "q": "3. Fruits are good for our ____.",
-      "options": ["A) health", "B) clothes", "C) shoes"],
-      "ans": "A) health"
+      "q": "3. Carrots are good for our ____.",
+      "options": ["A) eyes", "B) hair", "C) shoes"],
+      "ans": "A) eyes"
     },
     {
       "type": "mcq",
-      "q": "4. Candy has a lot of ____.",
-      "options": ["A) sugar", "B) water", "C) salt"],
-      "ans": "A) sugar"
+      "q": "4. Milk makes our bones ____.",
+      "options": ["A) weak", "B) strong", "C) small"],
+      "ans": "B) strong"
     },
     {
       "type": "mcq",
-      "q": "5. Eating well makes us feel ____.",
-      "options": ["A) strong", "B) sick", "C) sad"],
-      "ans": "A) strong"
+      "q": "5. Eating fruits makes us ____.",
+      "options": ["A) healthy", "B) sick", "C) sad"],
+      "ans": "A) healthy"
     },
 
-    // --- PETIKAN 2 (Soalan 6 - 10: Breakfast) ---
+    // --- PETIKAN 2 (Soalan 6 - 10: Tim's Breakfast) ---
     {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE5_6.png"),
-      "q": "6. Ali eats cereal with ____.",
-      "options": ["A) milk", "B) oil", "C) soup"],
+      "q": "6. Tim eats ____ for breakfast.",
+      "options": ["A) bread and eggs", "B) ice cream", "C) candy"],
+      "ans": "A) bread and eggs"
+    },
+    {
+      "type": "mcq",
+      "q": "7. Tim drinks a glass of ____.",
+      "options": ["A) milk", "B) ink", "C) oil"],
       "ans": "A) milk"
     },
     {
       "type": "mcq",
-      "q": "7. When does Ali eat cereal?",
-      "options": ["A) In the morning", "B) At night", "C) At school"],
-      "ans": "A) In the morning"
+      "q": "8. Breakfast gives Tim ____.",
+      "options": ["A) energy", "B) sleep", "C) homework"],
+      "ans": "A) energy"
     },
     {
       "type": "mcq",
-      "q": "8. Cereal is a good ____.",
-      "options": ["A) breakfast", "B) dinner", "C) lunch"],
-      "ans": "A) breakfast"
+      "q": "9. Tim goes to school at ____.",
+      "options": ["A) 7:30 AM", "B) 10:00 PM", "C) 12:00 AM"],
+      "ans": "A) 7:30 AM"
     },
     {
       "type": "mcq",
-      "q": "9. Cereal comes in a ____.",
-      "options": ["A) box", "B) bottle", "C) cup"],
-      "ans": "A) box"
-    },
-    {
-      "type": "mcq",
-      "q": "10. Who eats cereal for breakfast?",
-      "options": ["A) Ali", "B) John", "C) Sara"],
-      "ans": "A) Ali"
+      "q": "10. Tim is a ____ boy.",
+      "options": ["A) healthy", "B) lazy", "C) dirty"],
+      "ans": "A) healthy"
     }
   ],
 
   "Vocabulary": [
     {
       "type": "mcq",
-      "q": "11. A bottle of ______.",
-      "options": ["A) water", "B) cereal", "C) chips"],
-      "ans": "A) water"
+      "q": "11. Red round fruit: ______.",
+      "options": ["A) Apple", "B) Egg", "C) Milk"],
+      "ans": "A) Apple"
     },
     {
       "type": "mcq",
-      "q": "12. A box of ______.",
-      "options": ["A) cereal", "B) milk", "C) water"],
-      "ans": "A) cereal"
+      "q": "12. White drink from cows: ______.",
+      "options": ["A) Milk", "B) Water", "C) Juice"],
+      "ans": "A) Milk"
     },
     {
       "type": "mcq",
-      "q": "13. A packet of ______.",
-      "options": ["A) biscuits", "B) milk", "C) juice"],
-      "ans": "A) biscuits"
+      "q": "13. Long yellow fruit: ______.",
+      "options": ["A) Banana", "B) Carrot", "C) Mango"],
+      "ans": "A) Banana"
     },
     {
       "type": "mcq",
-      "q": "14. A carton of ______.",
-      "options": ["A) milk", "B) crisps", "C) apples"],
-      "ans": "A) milk"
+      "q": "14. Orange vegetable: ______.",
+      "options": ["A) Carrot", "B) Apple", "C) Bread"],
+      "ans": "A) Carrot"
     },
     {
       "type": "mcq",
-      "q": "15. Sweet food that damages teeth: ______.",
-      "options": ["A) candy / sweets", "B) carrots", "C) apples"],
-      "ans": "A) candy / sweets"
+      "q": "15. Sweet food item: ______.",
+      "options": ["A) Chocolate", "B) Salt", "C) Water"],
+      "ans": "A) Chocolate"
     }
   ],
 
   "Grammar": [
     {
       "type": "mcq",
-      "q": "16. How ______ apples do you have?",
-      "options": ["A) many", "B) much", "C) some"],
+      "q": "16. How ______ apples are there?",
+      "options": ["A) many", "B) much", "C) any"],
       "ans": "A) many"
     },
     {
       "type": "mcq",
-      "q": "17. How ______ water do you drink?",
-      "options": ["A) much", "B) many", "C) any"],
+      "q": "17. How ______ milk is in the cup?",
+      "options": ["A) much", "B) many", "C) count"],
       "ans": "A) much"
     },
     {
       "type": "mcq",
-      "q": "18. You ______ eat healthy food.",
-      "options": ["A) should", "B) shouldn't", "C) don't"],
-      "ans": "A) should"
-    },
-    {
-      "type": "mcq",
-      "q": "19. You ______ eat too much candy.",
-      "options": ["A) shouldn't", "B) should", "C) must"],
-      "ans": "A) shouldn't"
-    },
-    {
-      "type": "mcq",
-      "q": "20. I have ______ milk in my cup.",
+      "q": "18. There is ______ milk in the bottle.",
       "options": ["A) some", "B) many", "C) two"],
       "ans": "A) some"
+    },
+    {
+      "type": "mcq",
+      "q": "19. Are there ______ bananas left?",
+      "options": ["A) any", "B) much", "C) some"],
+      "ans": "A) any"
+    },
+    {
+      "type": "mcq",
+      "q": "20. There ______ an apple on the table.",
+      "options": ["A) is", "B) are", "C) am"],
+      "ans": "A) is"
     }
   ],
 
@@ -369,47 +369,47 @@ const remedialModule5Data = {
     {
       "type": "mcq",
       "q": "21. Choose the correct spelling:",
-      "options": ["A) Water", "B) Wateer", "C) Watar"],
-      "ans": "A) Water"
+      "options": ["A) Milk", "B) Melk", "C) Milck"],
+      "ans": "A) Milk"
     },
     {
       "type": "mcq",
-      "q": "22. Rearrange: [ Drink / water / more ]",
-      "options": ["A) Drink more water.", "B) Water more drink.", "C) More water drink."],
-      "ans": "A) Drink more water."
+      "q": "22. Rearrange: [ I drink / water. ]",
+      "options": ["A) Water I drink.", "B) I drink water.", "C) Drink I water."],
+      "ans": "B) I drink water."
     },
     {
       "type": "mcq",
       "q": "23. Choose the correct spelling:",
-      "options": ["A) Apple", "B) Apel", "C) Appell"],
-      "ans": "A) Apple"
+      "options": ["A) Fruit", "B) Froot", "C) Fruite"],
+      "ans": "A) Fruit"
     },
     {
       "type": "mcq",
-      "q": "24. Rearrange: [ I like / fruits ]",
-      "options": ["A) I like fruits.", "B) Fruits I like.", "C) Like fruits I."],
-      "ans": "A) I like fruits."
+      "q": "24. Rearrange: [ Eat / healthy food. ]",
+      "options": ["A) Healthy food eat.", "B) Eat healthy food.", "C) Food eat healthy."],
+      "ans": "B) Eat healthy food."
     }
   ],
 
   "Speaking": [
     {
       "type": "mcq",
-      "q": "25. Do you drink milk?",
-      "options": ["A) Yes, I do.", "B) Yes, I am.", "C) Yes, I have."],
+      "q": "25. Do you like apples?",
+      "options": ["A) Yes, I do.", "B) Yes, I am.", "C) Yes, I can."],
       "ans": "A) Yes, I do."
     },
     {
       "type": "mcq",
-      "q": "26. Is candy healthy?",
-      "options": ["A) No, it isn't.", "B) Yes, it is.", "C) Yes, it can."],
-      "ans": "A) No, it isn't."
+      "q": "26. Would you like some water?",
+      "options": ["A) Yes, please.", "B) No, I am ten.", "C) I am fine."],
+      "ans": "A) Yes, please."
     },
     {
       "type": "mcq",
-      "q": "27. Would you like an apple?",
-      "options": ["A) Yes, please.", "B) Yes, I am.", "C) No, I do."],
-      "ans": "A) Yes, please."
+      "q": "27. How much milk do you drink?",
+      "options": ["A) One glass.", "B) Two apples.", "C) Five bananas."],
+      "ans": "A) One glass."
     }
   ],
 
@@ -417,23 +417,23 @@ const remedialModule5Data = {
     {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE5_28.png"),
-      "q": "28. Look at the picture. What food is this?",
-      "options": ["A) Banana", "B) Milk", "C) Candy"],
+      "q": "28. Look at the picture. What fruit is this?",
+      "options": ["A) Banana", "B) Apple", "C) Orange"],
       "ans": "A) Banana"
     },
     {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE5_29.png"),
-      "q": "29. Look at the picture. Is this drink healthy?",
-      "options": ["A) Yes, mineral water is healthy.", "B) No, it is bad.", "C) It is candy."],
-      "ans": "A) Yes, mineral water is healthy."
+      "q": "29. Look at the picture. What drink is this?",
+      "options": ["A) Milk", "B) Tea", "C) Soda"],
+      "ans": "A) Milk"
     },
     {
       "type": "mcq",
       "image": wrapCenterImage("images/REMEDIAL_MODULE5_30.png"),
-      "q": "30. Read the sign. How much is an orange?",
-      "options": ["A) 50 sen", "B) RM 10", "C) RM 50"],
-      "ans": "A) 50 sen"
+      "q": "30. Look at the picture. Is this healthy food?",
+      "options": ["A) Yes, it is.", "B) No, it isn't.", "C) Maybe."],
+      "ans": "A) Yes, it is."
     }
   ]
 };
