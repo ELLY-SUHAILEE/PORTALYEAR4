@@ -196,336 +196,300 @@
     </div>
 
     <script>
-        const DEFAULT_URL = "https://script.google.com/macros/s/AKfycbxXtbHDaHhdFIiOvjf_z5nAQ3qOZI94tPXMsyI3k-VvSbkoMRH-5UGULMCe1UK4HnOnxA/exec";
-        const DASHBOARD_PASSWORD = "guru123";
+    // URL Web App Terbaharu Anda
+    const DEFAULT_URL = "https://script.google.com/macros/s/AKfycbxXtbHDaHhdFIiOvjf_z5nAQ3qOZI94tPXMsyI3k-VvSbkoMRH-5UGULMCe1UK4HnOnxA/exec";
+    const DASHBOARD_PASSWORD = "guru123";
 
-        let rawData = [];
-        let filteredData = [];
-        let barChartInstance = null;
-        let pieChartInstance = null;
+    // Paksa kemaskini URL dalam LocalStorage supaya tidak guna URL lama
+    localStorage.setItem('customWebAppUrl', DEFAULT_URL);
 
-        // Sample Data jika Fetch Gagal
-        const SAMPLE_DATA = [
-            { TIMESTAMP: "8/24/2026 12:20", NAME: "Seri Aaliyah", CLASS: "4 Tekun", CATEGORY: "Pentaksiran", MODULE: "Modul 1", SCORE: "85", PERATUS: "85" },
-            { TIMESTAMP: "8/24/2026 12:25", NAME: "Ahmad Zaki", CLASS: "4 Tekun", CATEGORY: "Pentaksiran", MODULE: "Modul 1", SCORE: "90", PERATUS: "90" },
-            { TIMESTAMP: "8/24/2026 14:00", NAME: "Nur Hanim", CLASS: "4 Gigih", CATEGORY: "Pentaksiran", MODULE: "Modul 2", SCORE: "75", PERATUS: "75" },
-            { TIMESTAMP: "8/24/2026 14:10", NAME: "Muhammad Rayyan", CLASS: "4 Gigih", CATEGORY: "Pentaksiran", MODULE: "Modul 2", SCORE: "35", PERATUS: "35" },
-            { TIMESTAMP: "8/24/2026 15:00", NAME: "Siti Sarah", CLASS: "4 Tekun", CATEGORY: "Latihan", MODULE: "Modul 3", SCORE: "95", PERATUS: "95" }
-        ];
+    let rawData = [];
+    let filteredData = [];
+    let barChartInstance = null;
+    let pieChartInstance = null;
 
-        window.onload = function() {
-            const isAuth = sessionStorage.getItem('guruAuthYear4');
-            if (isAuth === 'true') {
-                document.getElementById('loginModal').classList.add('hidden');
-                document.getElementById('mainApp').classList.remove('hidden');
-                fetchData();
-            } else {
-                document.getElementById('loginModal').classList.remove('hidden');
-                document.getElementById('mainApp').classList.add('hidden');
-            }
-        };
-
-        function handleLogin(e) {
-            e.preventDefault();
-            const pwd = document.getElementById('inputPassword').value;
-            if (pwd === DASHBOARD_PASSWORD) {
-                sessionStorage.setItem('guruAuthYear4', 'true');
-                document.getElementById('loginModal').classList.add('hidden');
-                document.getElementById('mainApp').classList.remove('hidden');
-                document.getElementById('loginError').classList.add('hidden');
-                fetchData();
-            } else {
-                document.getElementById('loginError').classList.remove('hidden');
-            }
+    window.onload = function() {
+        const isAuth = sessionStorage.getItem('guruAuthYear4');
+        if (isAuth === 'true') {
+            document.getElementById('loginModal').classList.add('hidden');
+            document.getElementById('mainApp').classList.remove('hidden');
+            fetchData();
+        } else {
+            document.getElementById('loginModal').classList.remove('hidden');
+            document.getElementById('mainApp').classList.add('hidden');
         }
+    };
 
-        function logout() {
-            sessionStorage.removeItem('guruAuthYear4');
-            location.reload();
+    function handleLogin(e) {
+        e.preventDefault();
+        const pwd = document.getElementById('inputPassword').value;
+        if (pwd === DASHBOARD_PASSWORD) {
+            sessionStorage.setItem('guruAuthYear4', 'true');
+            document.getElementById('loginModal').classList.add('hidden');
+            document.getElementById('mainApp').classList.remove('hidden');
+            document.getElementById('loginError').classList.add('hidden');
+            fetchData();
+        } else {
+            document.getElementById('loginError').classList.remove('hidden');
         }
+    }
 
-        function getWebAppUrl() {
-            return localStorage.getItem('customWebAppUrl') || DEFAULT_URL;
-        }
+    function logout() {
+        sessionStorage.removeItem('guruAuthYear4');
+        location.reload();
+    }
 
-        function fetchData() {
-            const url = getWebAppUrl();
-            const banner = document.getElementById('statusBanner');
-            const statusText = document.getElementById('statusText');
-            const spinner = document.getElementById('statusSpinner');
+    function fetchData() {
+        const banner = document.getElementById('statusBanner');
+        const statusText = document.getElementById('statusText');
+        const spinner = document.getElementById('statusSpinner');
 
-            banner.className = "p-4 rounded-xl text-xs font-medium bg-blue-50 text-blue-700 border border-blue-200 flex items-center justify-between no-print";
-            spinner.classList.remove('hidden');
-            statusText.innerText = "Sedang mengambil data dari Google Sheets...";
+        banner.className = "p-4 rounded-xl text-xs font-medium bg-blue-50 text-blue-700 border border-blue-200 flex items-center justify-between no-print";
+        spinner.classList.remove('hidden');
+        statusText.innerText = "Sedang mengambil data dari Google Sheets...";
 
-            fetch(url)
-                .then(res => {
-                    if (!res.ok) throw new Error("Respons pelayan tidak sah (Status: " + res.status + ")");
-                    return res.json();
-                })
-                .then(data => {
-                    rawData = parseData(data);
-                    if (rawData.length === 0) {
-                        statusText.innerText = "⚠️ Sambungan berjaya tetapi data kosong atau format tidak sesuai. Menunjukkan data sampel.";
-                        banner.className = "p-4 rounded-xl text-xs font-medium bg-amber-50 text-amber-800 border border-amber-200 flex items-center justify-between no-print";
-                        rawData = SAMPLE_DATA;
-                    } else {
-                        statusText.innerText = `✅ Berjaya memuatkan ${rawData.length} rekod dari Google Sheets.`;
-                        banner.className = "p-4 rounded-xl text-xs font-medium bg-emerald-50 text-emerald-800 border border-emerald-200 flex items-center justify-between no-print";
+        fetch(DEFAULT_URL)
+            .then(res => {
+                if (!res.ok) throw new Error("Status: " + res.status);
+                return res.json();
+            })
+            .then(data => {
+                rawData = Array.isArray(data) ? data : (data.data || []);
+                if (rawData.length === 0) {
+                    statusText.innerText = "⚠️ Sambungan berjaya tetapi tiada rekod dijumpai.";
+                    banner.className = "p-4 rounded-xl text-xs font-medium bg-amber-50 text-amber-800 border border-amber-200 flex items-center justify-between no-print";
+                } else {
+                    statusText.innerText = `✅ Berjaya memuatkan ${rawData.length} rekod dari Google Sheets.`;
+                    banner.className = "p-4 rounded-xl text-xs font-medium bg-emerald-50 text-emerald-800 border border-emerald-200 flex items-center justify-between no-print";
+                }
+                spinner.classList.add('hidden');
+                populateDropdowns();
+                applyFilters();
+            })
+            .catch(err => {
+                console.error("Fetch Error:", err);
+                statusText.innerText = `⚠️ Ralat menyambung ke Web App (${err.message}). Sila muat semula halaman.`;
+                banner.className = "p-4 rounded-xl text-xs font-medium bg-red-50 text-red-800 border border-red-200 flex items-center justify-between no-print";
+                spinner.classList.add('hidden');
+            });
+    }
+
+    // Fungsi fleksibel untuk mengambil nilai tanpa mengira huruf besar/kecil
+    function getVal(item, keys) {
+        if (!item) return "";
+        for (let k of keys) {
+            for (let itemKey in item) {
+                if (itemKey.trim().toLowerCase() === k.trim().toLowerCase()) {
+                    let val = item[itemKey];
+                    if (val !== undefined && val !== null && String(val).trim() !== "" && String(val).trim() !== "-") {
+                        return String(val).trim();
                     }
-                    spinner.classList.add('hidden');
-                    populateDropdowns();
-                    applyFilters();
-                })
-                .catch(err => {
-                    console.error("Fetch Error:", err);
-                    statusText.innerText = `⚠️ Tidak dapat menyambung ke Web App (${err.message}). Menunjukkan data sampel.`;
-                    banner.className = "p-4 rounded-xl text-xs font-medium bg-red-50 text-red-800 border border-red-200 flex items-center justify-between no-print";
-                    spinner.classList.add('hidden');
-                    rawData = SAMPLE_DATA;
-                    populateDropdowns();
-                    applyFilters();
-                });
-        }
-
-        function parseData(data) {
-            if (!data) return [];
-            let list = data;
-            if (typeof data === 'object' && !Array.isArray(data)) {
-                list = data.data || data.result || data.rows || [];
-            }
-            if (!Array.isArray(list) || list.length === 0) return [];
-
-            if (Array.isArray(list[0])) {
-                const headers = list[0].map(h => String(h || '').trim().toUpperCase());
-                return list.slice(1).map(row => {
-                    let obj = {};
-                    headers.forEach((h, i) => { obj[h] = row[i] !== undefined ? row[i] : ""; });
-                    return obj;
-                });
-            }
-
-            if (typeof list[0] === 'object') {
-                return list.map(item => {
-                    let obj = {};
-                    for (let key in item) { obj[key.trim().toUpperCase()] = item[key]; }
-                    return obj;
-                });
-            }
-
-            return [];
-        }
-
-        function useSampleData() {
-            rawData = SAMPLE_DATA;
-            document.getElementById('statusText').innerText = "ℹ️ Menggunakan Data Sampel Ujian.";
-            populateDropdowns();
-            applyFilters();
-        }
-
-        function populateDropdowns() {
-            const classes = new Set();
-            const modules = new Set();
-
-            rawData.forEach(item => {
-                const c = getVal(item, ['CLASS', 'KELAS']);
-                const m = getVal(item, ['MODULE', 'MODUL', 'CATEGORY', 'KATEGORI']);
-                if (c) classes.add(c);
-                if (m) modules.add(m);
-            });
-
-            const classSelect = document.getElementById('filterClass');
-            classSelect.innerHTML = '<option value="">-- Semua Kelas --</option>';
-            Array.from(classes).sort().forEach(c => {
-                classSelect.innerHTML += `<option value="${c}">${c}</option>`;
-            });
-
-            const moduleSelect = document.getElementById('filterModule');
-            moduleSelect.innerHTML = '<option value="">-- Semua Modul --</option>';
-            Array.from(modules).sort().forEach(m => {
-                moduleSelect.innerHTML += `<option value="${m}">${m}</option>`;
-            });
-        }
-
-        function getVal(item, keys) {
-            for (let k of keys) {
-                if (item[k] !== undefined && item[k] !== null && String(item[k]).trim() !== "") {
-                    return String(item[k]).trim();
                 }
             }
-            return "";
+        }
+        return "";
+    }
+
+    // Ekstrak nilai peratus tepat (contoh: "70%" -> 70, atau "21/30" -> 70)
+    function getPercentVal(item) {
+        let rawPct = getVal(item, ['peratus', 'percent', 'peratusan']);
+        if (rawPct) {
+            let num = parseFloat(rawPct.replace('%', ''));
+            if (!isNaN(num)) return num;
+        }
+        let rawScore = getVal(item, ['score', 'skor', 'markah']);
+        if (rawScore && rawScore.includes('/')) {
+            let parts = rawScore.split('/');
+            let n = parseFloat(parts[0]), d = parseFloat(parts[1]);
+            if (!isNaN(n) && !isNaN(d) && d > 0) return Math.round((n / d) * 100);
+        }
+        return 0;
+    }
+
+    function populateDropdowns() {
+        const classes = new Set();
+        const modules = new Set();
+
+        rawData.forEach(item => {
+            const c = getVal(item, ['class', 'kelas']);
+            const m = getVal(item, ['module', 'modul', 'category', 'kategori']);
+            if (c) classes.add(c);
+            if (m) modules.add(m);
+        });
+
+        const classSelect = document.getElementById('filterClass');
+        classSelect.innerHTML = '<option value="">-- Semua Kelas --</option>';
+        Array.from(classes).sort().forEach(c => {
+            classSelect.innerHTML += `<option value="${c}">${c}</option>`;
+        });
+
+        const moduleSelect = document.getElementById('filterModule');
+        moduleSelect.innerHTML = '<option value="">-- Semua Modul --</option>';
+        Array.from(modules).sort().forEach(m => {
+            moduleSelect.innerHTML += `<option value="${m}">${m}</option>`;
+        });
+    }
+
+    function applyFilters() {
+        const searchVal = document.getElementById('filterSearch').value.toLowerCase();
+        const classVal = document.getElementById('filterClass').value;
+        const moduleVal = document.getElementById('filterModule').value;
+
+        filteredData = rawData.filter(item => {
+            const name = getVal(item, ['name', 'nama']).toLowerCase();
+            const cls = getVal(item, ['class', 'kelas']);
+            const mod = getVal(item, ['module', 'modul', 'category', 'kategori']);
+
+            const matchesSearch = !searchVal || name.includes(searchVal);
+            const matchesClass = !classVal || cls === classVal;
+            const matchesModule = !moduleVal || mod === moduleVal;
+
+            return matchesSearch && matchesClass && matchesModule;
+        });
+
+        renderStats();
+        renderTable();
+        renderCharts();
+    }
+
+    function renderStats() {
+        const total = filteredData.length;
+        let sumPercent = 0;
+        let passCount = 0;
+        let maxScore = 0;
+
+        filteredData.forEach(item => {
+            const pct = getPercentVal(item);
+            sumPercent += pct;
+            if (pct >= 40) passCount++;
+            if (pct > maxScore) maxScore = pct;
+        });
+
+        const avg = total > 0 ? (sumPercent / total).toFixed(1) : "0";
+        const passRate = total > 0 ? ((passCount / total) * 100).toFixed(1) : "0";
+
+        document.getElementById('statTotal').innerText = total;
+        document.getElementById('statAverage').innerText = avg + "%";
+        document.getElementById('statPassRate').innerText = passRate + "%";
+        document.getElementById('statPassCount').innerText = `${passCount} murid menguasai (≥40%)`;
+        document.getElementById('statMaxScore').innerText = maxScore + "%";
+    }
+
+    function renderTable() {
+        const tbody = document.getElementById('tableBody');
+        document.getElementById('tableCount').innerText = filteredData.length;
+
+        if (filteredData.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="9" class="px-4 py-8 text-center text-slate-400">Tiada rekod dijumpai mengikut carian/penapis.</td></tr>`;
+            return;
         }
 
-        function applyFilters() {
-            const searchVal = document.getElementById('filterSearch').value.toLowerCase();
-            const classVal = document.getElementById('filterClass').value;
-            const moduleVal = document.getElementById('filterModule').value;
+        let html = "";
+        filteredData.forEach((item, index) => {
+            const ts = getVal(item, ['timestamp', 'masa', 'tarikh']) || "-";
+            const name = getVal(item, ['name', 'nama']) || "Tanpa Nama";
+            const cls = getVal(item, ['class', 'kelas']) || "-";
+            const cat = getVal(item, ['category', 'kategori']) || "GET SMART MODULES";
+            const mod = getVal(item, ['module', 'modul']) || "Modul Utama";
+            const score = getVal(item, ['score', 'skor', 'markah']) || "0/0";
+            const pctVal = getPercentVal(item);
 
-            filteredData = rawData.filter(item => {
-                const name = getVal(item, ['NAME', 'NAMA', 'NAMA PELAJAR', 'NAMA MURID']).toLowerCase();
-                const cls = getVal(item, ['CLASS', 'KELAS']);
-                const mod = getVal(item, ['MODULE', 'MODUL', 'CATEGORY', 'KATEGORI']);
+            const isPass = pctVal >= 40;
+            const badgeClass = isPass 
+                ? "bg-emerald-100 text-emerald-800 border-emerald-200" 
+                : "bg-rose-100 text-rose-800 border-rose-200";
+            const statusLabel = isPass ? "Menguasai" : "Belum Menguasai";
 
-                const matchesSearch = !searchVal || name.includes(searchVal);
-                const matchesClass = !classVal || cls === classVal;
-                const matchesModule = !moduleVal || mod === moduleVal;
+            html += `
+                <tr class="hover:bg-slate-50 transition">
+                    <td class="px-4 py-3 font-medium text-slate-500">${index + 1}</td>
+                    <td class="px-4 py-3 whitespace-nowrap text-slate-500">${ts}</td>
+                    <td class="px-4 py-3 font-bold text-slate-800">${name}</td>
+                    <td class="px-4 py-3">${cls}</td>
+                    <td class="px-4 py-3">${cat}</td>
+                    <td class="px-4 py-3">${mod}</td>
+                    <td class="px-4 py-3 text-right font-mono font-semibold">${score}</td>
+                    <td class="px-4 py-3 text-right font-mono font-bold text-blue-600">${pctVal}%</td>
+                    <td class="px-4 py-3 text-center">
+                        <span class="px-2.5 py-1 rounded-full text-[10px] font-bold border ${badgeClass}">${statusLabel}</span>
+                    </td>
+                </tr>
+            `;
+        });
+        tbody.innerHTML = html;
+    }
 
-                return matchesSearch && matchesClass && matchesModule;
-            });
+    function renderCharts() {
+        const modMap = {};
+        let passCount = 0;
+        let failCount = 0;
 
-            renderStats();
-            renderTable();
-            renderCharts();
-        }
+        filteredData.forEach(item => {
+            const mod = getVal(item, ['module', 'modul']) || "Modul Utama";
+            const pct = getPercentVal(item);
+            
+            if (!modMap[mod]) modMap[mod] = { sum: 0, count: 0 };
+            modMap[mod].sum += pct;
+            modMap[mod].count += 1;
 
-        function renderStats() {
-            const total = filteredData.length;
-            let sumPercent = 0;
-            let passCount = 0;
-            let maxScore = 0;
+            if (pct >= 40) passCount++;
+            else failCount++;
+        });
 
-            filteredData.forEach(item => {
-                const rawPct = getVal(item, ['PERATUS', 'PERATUSAN', 'SCORE', 'MARKAH']);
-                const pct = parseFloat(rawPct) || 0;
-                sumPercent += pct;
-                if (pct >= 40) passCount++;
-                if (pct > maxScore) maxScore = pct;
-            });
+        const barLabels = Object.keys(modMap);
+        const barData = barLabels.map(m => (modMap[m].sum / modMap[m].count).toFixed(1));
 
-            const avg = total > 0 ? (sumPercent / total).toFixed(1) : "0";
-            const passRate = total > 0 ? ((passCount / total) * 100).toFixed(1) : "0";
-
-            document.getElementById('statTotal').innerText = total;
-            document.getElementById('statAverage').innerText = avg + "%";
-            document.getElementById('statPassRate').innerText = passRate + "%";
-            document.getElementById('statPassCount').innerText = `${passCount} murid menguasai (≥40%)`;
-            document.getElementById('statMaxScore').innerText = maxScore + "%";
-        }
-
-        function renderTable() {
-            const tbody = document.getElementById('tableBody');
-            document.getElementById('tableCount').innerText = filteredData.length;
-
-            if (filteredData.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="9" class="px-4 py-8 text-center text-slate-400">Tiada rekod dijumpai mengikut carian/penapis.</td></tr>`;
-                return;
+        const ctxBar = document.getElementById('barChart').getContext('2d');
+        if (barChartInstance) barChartInstance.destroy();
+        barChartInstance = new Chart(ctxBar, {
+            type: 'bar',
+            data: {
+                labels: barLabels.length ? barLabels : ['Tiada Data'],
+                datasets: [{
+                    label: 'Purata Peratus (%)',
+                    data: barData.length ? barData : [0],
+                    backgroundColor: '#3b82f6',
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: { y: { beginAtZero: true, max: 100 } }
             }
+        });
 
-            let html = "";
-            filteredData.forEach((item, index) => {
-                const ts = getVal(item, ['TIMESTAMP', 'MASA', 'TARIKH']) || "-";
-                const name = getVal(item, ['NAME', 'NAMA', 'NAMA PELAJAR', 'NAMA MURID']) || "Tanpa Nama";
-                const cls = getVal(item, ['CLASS', 'KELAS']) || "-";
-                const cat = getVal(item, ['CATEGORY', 'KATEGORI']) || "-";
-                const mod = getVal(item, ['MODULE', 'MODUL']) || "-";
-                const score = getVal(item, ['SCORE', 'MARKAH']) || "0";
-                const pctVal = parseFloat(getVal(item, ['PERATUS', 'PERATUSAN', 'SCORE', 'MARKAH'])) || 0;
-
-                const isPass = pctVal >= 40;
-                const badgeClass = isPass 
-                    ? "bg-emerald-100 text-emerald-800 border-emerald-200" 
-                    : "bg-rose-100 text-rose-800 border-rose-200";
-                const statusLabel = isPass ? "Lulus" : "Gagal";
-
-                html += `
-                    <tr class="hover:bg-slate-50 transition">
-                        <td class="px-4 py-3 font-medium text-slate-500">${index + 1}</td>
-                        <td class="px-4 py-3 whitespace-nowrap text-slate-500">${ts}</td>
-                        <td class="px-4 py-3 font-bold text-slate-800">${name}</td>
-                        <td class="px-4 py-3">${cls}</td>
-                        <td class="px-4 py-3">${cat}</td>
-                        <td class="px-4 py-3">${mod}</td>
-                        <td class="px-4 py-3 text-right font-mono font-semibold">${score}</td>
-                        <td class="px-4 py-3 text-right font-mono font-bold text-blue-600">${pctVal}%</td>
-                        <td class="px-4 py-3 text-center">
-                            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold border ${badgeClass}">${statusLabel}</span>
-                        </td>
-                    </tr>
-                `;
-            });
-            tbody.innerHTML = html;
-        }
-
-        function renderCharts() {
-            // Group by Module
-            const modMap = {};
-            let passCount = 0;
-            let failCount = 0;
-
-            filteredData.forEach(item => {
-                const mod = getVal(item, ['MODULE', 'MODUL', 'CATEGORY', 'KATEGORI']) || "Lain-lain";
-                const pct = parseFloat(getVal(item, ['PERATUS', 'PERATUSAN', 'SCORE', 'MARKAH'])) || 0;
-                
-                if (!modMap[mod]) modMap[mod] = { sum: 0, count: 0 };
-                modMap[mod].sum += pct;
-                modMap[mod].count += 1;
-
-                if (pct >= 40) passCount++;
-                else failCount++;
-            });
-
-            const barLabels = Object.keys(modMap);
-            const barData = barLabels.map(m => (modMap[m].sum / modMap[m].count).toFixed(1));
-
-            // Render Bar Chart
-            const ctxBar = document.getElementById('barChart').getContext('2d');
-            if (barChartInstance) barChartInstance.destroy();
-            barChartInstance = new Chart(ctxBar, {
-                type: 'bar',
-                data: {
-                    labels: barLabels.length ? barLabels : ['Tiada Data'],
-                    datasets: [{
-                        label: 'Purata Peratus (%)',
-                        data: barData.length ? barData : [0],
-                        backgroundColor: '#3b82f6',
-                        borderRadius: 6
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: { y: { beginAtZero: true, max: 100 } }
-                }
-            });
-
-            // Render Pie Chart
-            const ctxPie = document.getElementById('pieChart').getContext('2d');
-            if (pieChartInstance) pieChartInstance.destroy();
-            pieChartInstance = new Chart(ctxPie, {
-                type: 'doughnut',
-                data: {
-                    labels: ['Menguasai (≥40%)', 'Belum Menguasai (<40%)'],
-                    datasets: [{
-                        data: [passCount, failCount],
-                        backgroundColor: ['#10b981', '#f43f5e']
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false
-                }
-            });
-        }
-
-        function openConfigModal() {
-            document.getElementById('webAppUrlInput').value = getWebAppUrl();
-            document.getElementById('configModal').classList.remove('hidden');
-            document.getElementById('configModal').classList.add('flex');
-        }
-
-        function closeConfigModal() {
-            document.getElementById('configModal').classList.add('hidden');
-            document.getElementById('configModal').classList.remove('flex');
-        }
-
-        function saveConfigUrl() {
-            const val = document.getElementById('webAppUrlInput').value.trim();
-            if (val) {
-                localStorage.setItem('customWebAppUrl', val);
-                closeConfigModal();
-                fetchData();
+        const ctxPie = document.getElementById('pieChart').getContext('2d');
+        if (pieChartInstance) pieChartInstance.destroy();
+        pieChartInstance = new Chart(ctxPie, {
+            type: 'doughnut',
+            data: {
+                labels: ['Menguasai (≥40%)', 'Belum Menguasai (<40%)'],
+                datasets: [{
+                    data: [passCount, failCount],
+                    backgroundColor: ['#10b981', '#f43f5e']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
             }
-        }
-    </script>
-</body>
-</html>
+        });
+    }
+
+    function openConfigModal() {
+        document.getElementById('webAppUrlInput').value = DEFAULT_URL;
+        document.getElementById('configModal').classList.remove('hidden');
+        document.getElementById('configModal').classList.add('flex');
+    }
+
+    function closeConfigModal() {
+        document.getElementById('configModal').classList.add('hidden');
+        document.getElementById('configModal').classList.remove('flex');
+    }
+
+    function saveConfigUrl() {
+        closeConfigModal();
+        fetchData();
+    }
+</script>
