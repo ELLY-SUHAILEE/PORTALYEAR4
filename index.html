@@ -12,121 +12,307 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Times New Roman', Times, serif, sans-serif;
-            color: #000;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #ffffff;
-            padding: 30px;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.5;
+            /* TUKAR 'poster.jpg' KEPADA NAMA FAIL POSTER ANDA */
+            background: url('poster.jpg') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
         }
 
-        h1.main-title {
-            font-size: 28px;
-            font-weight: bold;
+        /* Bekas utama lutsinar supaya poster nampak di belakang */
+        .portal-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            border-radius: 24px;
+            padding: 30px;
+            width: 100%;
+            max-width: 850px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border: 3px solid #ffffff;
+        }
+
+        .main-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #2c3e50;
             letter-spacing: 1px;
             margin-bottom: 5px;
-            text-transform: uppercase;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
 
-        p.sub-title {
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-
-        .field-group {
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .field-group i {
-            font-size: 16px;
-        }
-
-        .field-group label {
-            font-size: 16px;
-        }
-
-        input[type="text"], select {
-            border: 1px solid #000;
-            padding: 2px 6px;
-            font-size: 15px;
-            background: #fff;
-            border-radius: 2px;
-        }
-
-        .section-header {
-            font-size: 18px;
-            font-weight: bold;
-            margin: 25px 0 15px 0;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            text-transform: uppercase;
-        }
-
-        .module-block {
+        .sub-title {
+            text-align: center;
+            font-size: 1rem;
+            color: #555;
             margin-bottom: 25px;
+            font-weight: 600;
         }
 
-        .module-block h2 {
-            font-size: 22px;
-            font-weight: bold;
+        /* BORANG INPUT NAMA & KELAS */
+        .info-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            background: #f0f4f8;
+            padding: 15px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            border: 2px solid #d9e2ec;
+        }
+
+        @media (max-width: 600px) {
+            .info-container { grid-template-columns: 1fr; }
+        }
+
+        .info-field {
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+            padding: 10px 15px;
+            border-radius: 12px;
+            border: 2px solid #cbd5e1;
+        }
+
+        .info-field i {
+            font-size: 1.4rem;
+            color: #3b82f6;
+            margin-right: 12px;
+        }
+
+        .info-box {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .info-box label {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: #64748b;
             text-transform: uppercase;
-            margin-bottom: 5px;
         }
 
-        .module-block p {
-            font-size: 15px;
-            margin-bottom: 8px;
+        .info-box input, .info-box select {
+            border: none;
+            outline: none;
+            background: transparent;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1e293b;
+            width: 100%;
+        }
+
+        /* TAJUK SEKSYEN */
+        .section-header {
+            text-align: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            margin: 30px 0 15px 0;
+            color: #1e293b;
+            letter-spacing: 1px;
+        }
+
+        .section-header i {
+            color: #f59e0b;
+        }
+
+        /* MODUL UTAMA (WARNA-WARNI) */
+        .main-modules-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 650px) {
+            .main-modules-grid { grid-template-columns: 1fr; }
+        }
+
+        .mod-card {
+            border-radius: 18px;
+            padding: 22px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .mod-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+        }
+
+        /* WARNA MODUL 1: GET SMART (BIRU & KUNING) */
+        .card-getsmart {
+            background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+        }
+
+        /* WARNA MODUL 2: REMEDIAL SET (ORANJE & MERAH) */
+        .card-remedial {
+            background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+        }
+
+        .mod-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .mod-icon {
+            background: rgba(255, 255, 255, 0.25);
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+
+        .mod-info h2 {
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        .badge-count {
+            display: inline-block;
+            background: #fef08a;
+            color: #854d0e;
+            font-size: 0.75rem;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin: 4px 0 8px 0;
+        }
+
+        .mod-info p {
+            font-size: 0.88rem;
+            opacity: 0.95;
+            line-height: 1.3;
         }
 
         .btn-start {
-            background-color: #efefef;
-            border: 1px solid #767676;
-            padding: 3px 10px;
-            font-size: 13px;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: #facc15;
+            color: #713f12;
+            font-weight: 800;
+            font-size: 0.95rem;
             cursor: pointer;
-            border-radius: 3px;
-            display: inline-flex;
+            display: flex;
             align-items: center;
-            gap: 6px;
-            margin-top: 5px;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: background 0.2s;
         }
 
         .btn-start:hover {
-            background-color: #e5e5e5;
+            background: #fde047;
         }
 
-        .sub-item {
-            margin-bottom: 20px;
-            cursor: pointer;
+        /* KAD SEKSYEN WARNA-WARNI (EXPLORATION & PERMATA) */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
         }
 
-        .sub-item h3 {
-            font-size: 18px;
-            font-weight: bold;
-            text-transform: uppercase;
+        @media (max-width: 700px) {
+            .color-grid { grid-template-columns: 1fr; }
+        }
+
+        .act-card {
+            border-radius: 14px;
+            padding: 15px;
+            color: white;
             display: flex;
             align-items: center;
-            gap: 8px;
+            justify-content: space-between;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
         }
 
-        .sub-item p {
-            font-size: 14px;
-            margin-left: 24px;
+        .act-card:hover {
+            transform: scale(1.03);
         }
+
+        .act-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .act-icon {
+            font-size: 1.4rem;
+            background: rgba(255, 255, 255, 0.2);
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .act-text h3 {
+            font-size: 0.95rem;
+            font-weight: 800;
+        }
+
+        .act-text p {
+            font-size: 0.75rem;
+            opacity: 0.9;
+        }
+
+        /* SKIM WARNA BUTANG/KAD AKTIVITI */
+        .bg-green  { background: linear-gradient(135deg, #10b981, #047857); }
+        .bg-purple { background: linear-gradient(135deg, #8b5cf6, #6d28d9); }
+        .bg-pink   { background: linear-gradient(135deg, #ec4899, #be185d); }
+        .bg-cyan   { background: linear-gradient(135deg, #06b6d4, #0e7490); }
+        .bg-amber  { background: linear-gradient(135deg, #f59e0b, #b45309); }
+        .bg-indigo { background: linear-gradient(135deg, #6366f1, #4338ca); }
+
+        /* FOOTER */
+        .footer-bar {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 2px dashed #cbd5e1;
+        }
+
+        .link-guru {
+            color: #1e293b;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            background: #e2e8f0;
+            padding: 6px 12px;
+            border-radius: 8px;
+        }
+
+        .link-guru:hover { background: #cbd5e1; }
 
         /* MODAL POPUP */
         .modal-overlay {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.6);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -135,20 +321,27 @@
 
         .modal-card {
             background: white;
-            padding: 20px;
-            border: 1px solid #000;
+            padding: 25px;
+            border-radius: 18px;
             width: 90%;
-            max-width: 400px;
+            max-width: 420px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
         .modal-card h3 {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
+            color: #1e293b;
+            font-size: 1.2rem;
         }
 
         .modal-card select {
             width: 100%;
-            margin-bottom: 15px;
-            padding: 5px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 2px solid #cbd5e1;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
         }
 
         .modal-actions {
@@ -157,192 +350,290 @@
             gap: 10px;
         }
 
-        /* QUIZ DISPLAY */
-        .quiz-header {
-            border-bottom: 1px solid #000;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+        .btn-modal-start {
+            background: #22c55e;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .btn-modal-close {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        /* PAPARAN KUIZ */
+        .quiz-topbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 20px;
+            background: #e2e8f0;
+            padding: 10px 15px;
+            border-radius: 12px;
         }
 
-        .question-box {
-            border: 1px solid #ccc;
-            padding: 15px;
+        .score-box {
+            background: #ffffff;
+            color: #1e293b;
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .q-card {
+            background: white;
+            padding: 20px;
+            border-radius: 16px;
             margin-bottom: 15px;
-            background: #fafafa;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
         }
 
-        .btn-option {
+        .opt-btn {
             display: block;
             width: 100%;
             text-align: left;
-            padding: 8px 12px;
-            margin-top: 6px;
-            border: 1px solid #bbb;
-            background: #fff;
+            padding: 12px 15px;
+            margin-top: 8px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            background: #f8fafc;
             cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.2s;
         }
 
-        .btn-option.selected { background: #e2e8f0; font-weight: bold; }
-        .btn-option.correct { background: #d1e7dd; border-color: #0f5132; color: #0f5132; font-weight: bold; }
-        .btn-option.wrong { background: #f8d7da; border-color: #842029; color: #842029; }
+        .opt-btn.selected { border-color: #3b82f6; background: #dbeafe; }
+        .opt-btn.correct  { border-color: #22c55e; background: #dcfce7; color: #15803d; }
+        .opt-btn.wrong    { border-color: #ef4444; background: #fee2e2; color: #b91c1c; }
 
-        .submit-btn {
-            background: #000;
-            color: #fff;
-            padding: 10px 20px;
+        .btn-hantar {
+            width: 100%;
+            padding: 15px;
+            background: #22c55e;
+            color: white;
             border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 800;
             cursor: pointer;
-            font-size: 16px;
             margin-top: 15px;
-        }
-
-        .footer-link {
-            margin-top: 40px;
-            border-top: 1px solid #ddd;
-            padding-top: 15px;
-            font-size: 14px;
         }
     </style>
 </head>
 <body>
 
-    <!-- MENU UTAMA -->
-    <div id="menuSection">
-        <h1 class="main-title">PORTAL YEAR 4 ENGLISH</h1>
-        <p class="sub-title">Enter your details and choose a learning module to begin.</p>
+    <div class="portal-card">
+        
+        <!-- MENU UTAMA -->
+        <div id="menuSection">
+            <h1 class="main-title">PORTAL YEAR 4 ENGLISH</h1>
+            <p class="sub-title">Enter your details and choose a learning module to begin.</p>
 
-        <!-- INPUT NAMA & KELAS -->
-        <div class="field-group">
-            <i class="fa-solid fa-user"></i>
-            <label for="namaMurid">Student Name</label>
-            <input type="text" id="namaMurid" placeholder="Type your name..." required>
+            <!-- BARIS NAMA & KELAS -->
+            <div class="info-container">
+                <div class="info-field">
+                    <i class="fa-solid fa-user"></i>
+                    <div class="info-box">
+                        <label for="namaMurid">Student Name</label>
+                        <input type="text" id="namaMurid" placeholder="Type your name..." required>
+                    </div>
+                </div>
+
+                <div class="info-field">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <div class="info-box">
+                        <label for="kelasMurid">Class</label>
+                        <select id="kelasMurid" required>
+                            <option value="">Select Class</option>
+                            <option value="4 ARIF">4 ARIF</option>
+                            <option value="4 BESTARI">4 BESTARI</option>
+                            <option value="4 CERDIK">4 CERDIK</option>
+                            <option value="4 DEDIKASI">4 DEDIKASI</option>
+                            <option value="4 ELIT">4 ELIT</option>
+                            <option value="4 FIRDAUS">4 FIRDAUS</option>
+                            <option value="4 GIGIH">4 GIGIH</option>
+                            <option value="4 HARMONI">4 HARMONI</option>
+                            <option value="4 INOVATIF">4 INOVATIF</option>
+                            <option value="4 JUARA">4 JUARA</option>
+                            <option value="4 KREATIF">4 KREATIF</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MAIN MODULES -->
+            <div class="section-header">
+                <i class="fa-solid fa-star"></i> MAIN MODULES <i class="fa-solid fa-star"></i>
+            </div>
+
+            <div class="main-modules-grid">
+                <!-- GET SMART -->
+                <div class="mod-card card-getsmart">
+                    <div class="mod-header">
+                        <div class="mod-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                        <div class="mod-info">
+                            <h2>GET SMART</h2>
+                            <span class="badge-count">30 Questions</span>
+                            <p>Improve your English skills with fun and challenging questions.</p>
+                        </div>
+                    </div>
+                    <button class="btn-start" onclick="bukaModalTopik('getsmart')">
+                        START MODULE <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- REMEDIAL SET -->
+                <div class="mod-card card-remedial">
+                    <div class="mod-header">
+                        <div class="mod-icon"><i class="fa-solid fa-bullseye"></i></div>
+                        <div class="mod-info">
+                            <h2>REMEDIAL SET</h2>
+                            <span class="badge-count">30 Questions</span>
+                            <p>Practice and strengthen your understanding step by step.</p>
+                        </div>
+                    </div>
+                    <button class="btn-start" onclick="bukaModalTopik('remedial')">
+                        START MODULE <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- EXPLORATION -->
+            <div class="section-header">
+                🐚 EXPLORATION
+            </div>
+
+            <div class="color-grid">
+                <div class="act-card bg-green" onclick="bukaAktiviti('reading.html')">
+                    <div class="act-left">
+                        <div class="act-icon"><i class="fa-solid fa-book-open"></i></div>
+                        <div class="act-text">
+                            <h3>READING</h3>
+                            <p>Comprehension</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+
+                <div class="act-card bg-purple" onclick="bukaAktiviti('grammar.html')">
+                    <div class="act-left">
+                        <div class="act-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+                        <div class="act-text">
+                            <h3>GRAMMAR</h3>
+                            <p>Language Rules</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+
+                <div class="act-card bg-pink" onclick="bukaAktiviti('sentence.html')">
+                    <div class="act-left">
+                        <div class="act-icon"><i class="fa-solid fa-align-left"></i></div>
+                        <div class="act-text">
+                            <h3>SENTENCES</h3>
+                            <p>Structure</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+
+            <!-- PERMATA ACTIVITIES -->
+            <div class="section-header">
+                💎 PERMATA ACTIVITIES
+            </div>
+
+            <div class="color-grid">
+                <div class="act-card bg-cyan" onclick="bukaAktiviti('wordpower.html')">
+                    <div class="act-left">
+                        <div class="act-icon"><i class="fa-solid fa-font"></i></div>
+                        <div class="act-text">
+                            <h3>WORD POWER</h3>
+                            <p>Vocabulary</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+
+                <div class="act-card bg-amber" onclick="bukaAktiviti('readrepeat.html')">
+                    <div class="act-left">
+                        <div class="act-icon"><i class="fa-solid fa-microphone"></i></div>
+                        <div class="act-text">
+                            <h3>READ & REPEAT</h3>
+                            <p>Pronunciation</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+
+                <div class="act-card bg-indigo" onclick="bukaAktiviti('buildsentence.html')">
+                    <div class="act-left">
+                        <div class="act-icon"><i class="fa-solid fa-cubes"></i></div>
+                        <div class="act-text">
+                            <h3>BUILD SENTENCE</h3>
+                            <p>Interactive Game</p>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+
+            <div class="footer-bar">
+                <span style="font-size: 0.85rem; color: #64748b;">© Portal Bahasa Inggeris Tahun 4</span>
+                <a href="dashboard.html" class="link-guru">
+                    <i class="fa-solid fa-lock"></i> Dashboard / Rekod Guru
+                </a>
+            </div>
         </div>
 
-        <div class="field-group">
-            <i class="fa-solid fa-graduation-cap"></i>
-            <label for="kelasMurid">Class</label>
-            <select id="kelasMurid" required>
-                <option value="">Select Class</option>
-                <option value="4 ARIF">4 ARIF</option>
-                <option value="4 BESTARI">4 BESTARI</option>
-                <option value="4 CERDIK">4 CERDIK</option>
-                <option value="4 DEDIKASI">4 DEDIKASI</option>
-                <option value="4 ELIT">4 ELIT</option>
-                <option value="4 FIRDAUS">4 FIRDAUS</option>
-                <option value="4 GIGIH">4 GIGIH</option>
-                <option value="4 HARMONI">4 HARMONI</option>
-                <option value="4 INOVATIF">4 INOVATIF</option>
-                <option value="4 JUARA">4 JUARA</option>
-                <option value="4 KREATIF">4 KREATIF</option>
-            </select>
-        </div>
+        <!-- PAPARAN KUIZ -->
+        <div id="quizSection" style="display: none;">
+            <div class="quiz-topbar">
+                <button class="btn-modal-close" onclick="kembaliKeMenu()"><i class="fa-solid fa-house"></i> Home</button>
+                <span id="displayModuleName" style="font-weight: 800;">Module</span>
+                <span id="displayStudentInfo" style="font-weight: 700;">Student</span>
+            </div>
 
-        <!-- MAIN MODULES -->
-        <div class="section-header">
-            <i class="fa-solid fa-star" style="color: #d4af37;"></i> MAIN MODULES <i class="fa-solid fa-star" style="color: #d4af37;"></i>
-        </div>
+            <div class="score-box" id="scoreBanner" style="display: none;">
+                <h2 id="scoreText">Your Score: 0</h2>
+                <p id="feedbackText">Well done!</p>
+                <div style="font-size: 0.85rem; margin-top: 8px; color: #64748b;" id="syncStatus">🔄 Menghantar keputusan ke rekod guru...</div>
+            </div>
 
-        <div class="module-block">
-            <i class="fa-solid fa-lightbulb"></i>
-            <h2>GET SMART</h2>
-            <p>30 Questions</p>
-            <p>Improve your English skills with fun and challenging questions.</p>
-            <button class="btn-start" onclick="bukaModalTopik('getsmart')">
-                START MODULE <i class="fa-solid fa-arrow-right"></i>
+            <div id="questionsContainer"></div>
+
+            <button class="btn-hantar" id="submitBtn" onclick="hantarJawapan()" style="display: none;">
+                <i class="fa-solid fa-paper-plane"></i> Hantar Jawapan
             </button>
         </div>
 
-        <div class="module-block">
-            <i class="fa-solid fa-bullseye"></i>
-            <h2>REMEDIAL SET</h2>
-            <p>30 Questions</p>
-            <p>Practice and strengthen your understanding step by step.</p>
-            <button class="btn-start" onclick="bukaModalTopik('remedial')">
-                START MODULE <i class="fa-solid fa-arrow-right"></i>
-            </button>
-        </div>
-
-        <!-- EXPLORATION -->
-        <div class="section-header">
-            <i class="fa-solid fa-shell"></i> EXPLORATION
-        </div>
-
-        <div class="sub-item" onclick="bukaAktiviti('reading.html')">
-            <h3><i class="fa-solid fa-book-open"></i> READING</h3>
-            <p>Comprehension</p>
-        </div>
-
-        <div class="sub-item" onclick="bukaAktiviti('grammar.html')">
-            <h3><i class="fa-solid fa-pen-ruler"></i> GRAMMAR</h3>
-            <p>Language Rules</p>
-        </div>
-
-        <div class="sub-item" onclick="bukaAktiviti('sentence.html')">
-            <h3><i class="fa-solid fa-align-left"></i> SENTENCES</h3>
-            <p>Structure</p>
-        </div>
-
-        <!-- PERMATA ACTIVITIES -->
-        <div class="section-header">
-            <i class="fa-solid fa-gem"></i> PERMATA ACTIVITIES
-        </div>
-
-        <div class="sub-item" onclick="bukaAktiviti('wordpower.html')">
-            <h3><i class="fa-solid fa-font"></i> WORD POWER</h3>
-            <p>Vocabulary</p>
-        </div>
-
-        <div class="sub-item" onclick="bukaAktiviti('readrepeat.html')">
-            <h3><i class="fa-solid fa-microphone"></i> READ & REPEAT</h3>
-            <p>Pronunciation</p>
-        </div>
-
-        <div class="sub-item" onclick="bukaAktiviti('buildsentence.html')">
-            <h3><i class="fa-solid fa-cubes"></i> BUILD SENTENCE</h3>
-            <p>Interactive Game</p>
-        </div>
-
-        <div class="footer-link">
-            <a href="dashboard.html" style="color: #000;"><i class="fa-solid fa-lock"></i> Dashboard / Rekod Guru</a>
-        </div>
     </div>
 
-    <!-- PAPARAN KUIZ -->
-    <div id="quizSection" style="display: none;">
-        <div class="quiz-header">
-            <button class="btn-start" onclick="kembaliKeMenu()"><i class="fa-solid fa-house"></i> Home</button>
-            <span id="displayModuleName" style="font-weight: bold;">Module</span>
-            <span id="displayStudentInfo">Student</span>
-        </div>
-
-        <div id="scoreBanner" style="display: none; border: 1px solid #000; padding: 15px; margin-bottom: 20px; background: #f9f9f9;">
-            <h2 id="scoreText">Your Score: 0</h2>
-            <p id="feedbackText">Well done!</p>
-            <p id="syncStatus" style="font-size: 13px; color: #555; margin-top: 5px;">🔄 Menghantar keputusan...</p>
-        </div>
-
-        <div id="questionsContainer"></div>
-
-        <button class="submit-btn" id="submitBtn" onclick="hantarJawapan()" style="display: none;">
-            Hantar Jawapan
-        </button>
-    </div>
-
-    <!-- MODAL PILIHAN TOPIK -->
+    <!-- MODAL POPUP PILIHAN TOPIK -->
     <div id="topicModal" class="modal-overlay" style="display: none;">
         <div class="modal-card">
             <h3 id="modalTitle">Select Topic</h3>
             <select id="topicSelect"></select>
             <div class="modal-actions">
-                <button class="btn-start" onclick="mulaDariModal()">Start Quiz</button>
-                <button class="btn-start" onclick="tutupModal()">Cancel</button>
+                <button class="btn-modal-start" onclick="mulaDariModal()"><i class="fa-solid fa-play"></i> Start</button>
+                <button class="btn-modal-close" onclick="tutupModal()">Cancel</button>
             </div>
         </div>
     </div>
 
+    <!-- JAVASCRIPT UTAMA -->
     <script>
         const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxHX4PNriq3p4DoicXnryv27u_TxOyx7HXO7IN0G2emgiGmVoU5kOVo_YY1MBsv5hR90A/exec";
         
@@ -459,7 +750,7 @@
             document.getElementById('displayStudentInfo').textContent = `${info.nama} (${info.kelas})`;
             document.getElementById('displayModuleName').textContent = currentModuleName;
 
-            document.getElementById('questionsContainer').innerHTML = `<p style="padding: 20px;">Sila tunggu, memuatkan soalan...</p>`;
+            document.getElementById('questionsContainer').innerHTML = `<p style="padding: 20px; text-align: center;">Memuatkan soalan...</p>`;
             document.getElementById('scoreBanner').style.display = 'none';
             document.getElementById('submitBtn').style.display = 'none';
 
@@ -523,7 +814,7 @@
 
             activeQuestions.forEach((qObj, idx) => {
                 const qCard = document.createElement('div');
-                qCard.className = 'question-box';
+                qCard.className = 'q-card';
 
                 const textSoalan = qObj.q || qObj.question || `Soalan ${idx + 1}`;
 
@@ -533,7 +824,7 @@
                     if (typeof imgVal === 'string' && imgVal.includes('<img')) {
                         imageHTML = imgVal;
                     } else {
-                        imageHTML = `<div style="margin: 10px 0;"><img src="${imgVal}" style="max-width: 100%; max-height: 250px;" onerror="this.style.display='none'"></div>`;
+                        imageHTML = `<div style="text-align:center; margin: 10px 0;"><img src="${imgVal}" style="max-width: 100%; max-height: 250px; border-radius:10px;" onerror="this.style.display='none'"></div>`;
                     }
                 }
 
@@ -541,15 +832,15 @@
                 if (qObj.options && Array.isArray(qObj.options)) {
                     qObj.options.forEach((opt, optIdx) => {
                         optionsHTML += `
-                            <button class="btn-option" id="opt_${idx}_${optIdx}" onclick="pilihJawapan(${idx}, ${optIdx})">
+                            <button class="opt-btn" id="opt_${idx}_${optIdx}" onclick="pilihJawapan(${idx}, ${optIdx})">
                                 ${opt}
                             </button>`;
                     });
                 }
 
                 qCard.innerHTML = `
-                    <div style="font-size: 13px; color: #666; font-weight: bold;">Question ${idx + 1} / ${activeQuestions.length}</div>
-                    <div style="font-size: 16px; font-weight: bold; margin: 8px 0;">${textSoalan}</div>
+                    <div style="font-size: 0.8rem; color: #64748b; font-weight: 800;">Question ${idx + 1} / ${activeQuestions.length}</div>
+                    <div style="font-size: 1.1rem; font-weight: 700; color:#1e293b; margin: 8px 0;">${textSoalan}</div>
                     ${imageHTML}
                     <div>${optionsHTML}</div>
                 `;
