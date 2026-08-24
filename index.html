@@ -845,10 +845,7 @@
             window.quizBank["REMEDIAL SET"] = window.quizBank["REMEDIAL SET"] || {};
             window.quizQuestions = null;
 
-            loadModule(skripModul, currentModuleName, currentCategory);
-        }
-
-       function loadModule(skripModul, moduleName, categoryName) {
+          function loadModule(skripModul, moduleName, categoryName) {
     currentCategory = categoryName; 
     currentModuleName = moduleName;
     window.quizQuestions = null;
@@ -863,31 +860,38 @@
     script.onload = () => {
         let rawData = null;
 
-        if (window.quizBank && window.quizBank[currentCategory]) {
-            const cat = window.quizBank[currentCategory];
-            const keys = Object.keys(cat);
+        // 1. Semak padanan tepat category & moduleName
+        if (window.quizBank && window.quizBank[currentCategory] && window.quizBank[currentCategory][currentModuleName]) {
+            rawData = window.quizBank[currentCategory][currentModuleName];
+        }
 
-            // 1. Cari nama padanan tepat
-            if (cat[currentModuleName]) {
-                rawData = cat[currentModuleName];
-            } 
-            // 2. Jika tidak jumpa, ambil senarai soalan pertama yang ada dalam fail tersebut
-            else if (keys.length > 0) {
-                rawData = cat[keys[0]];
+        // 2. Semak mana-mana kunci dalam window.quizBank secara automatik
+        if (!rawData && window.quizBank) {
+            for (let cat in window.quizBank) {
+                if (window.quizBank[cat] && typeof window.quizBank[cat] === 'object') {
+                    for (let mod in window.quizBank[cat]) {
+                        if (Array.isArray(window.quizBank[cat][mod]) && window.quizBank[cat][mod].length > 0) {
+                            rawData = window.quizBank[cat][mod];
+                            break;
+                        }
+                    }
+                }
+                if (rawData) break;
             }
-        } 
+        }
 
-        // 3. Fallback jika guna format window.quizQuestions
+        // 3. Semak jika guna pembolehubah standard window.quizQuestions
         if (!rawData && Array.isArray(window.quizQuestions) && window.quizQuestions.length > 0) {
             rawData = window.quizQuestions;
         }
 
+        // 4. Paparkan soalan jika dijumpai
         if (rawData && rawData.length > 0) {
             activeQuestions = rawData;
             paparSoalan();
             document.getElementById('submitBtn').style.display = 'block';
         } else {
-            alert("Soalan tidak dijumpai dalam fail skrip ini.");
+            alert("Soalan tidak dijumpai dalam " + skripModul + ". Sila semak kandungan fail JS tersebut.");
         }
     };
 
