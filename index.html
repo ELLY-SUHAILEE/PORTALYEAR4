@@ -1140,25 +1140,31 @@ function hantarKeGoogleSheet(score, total, percent) {
     const kelas = localStorage.getItem('studentClass') || "Tiga";
     const syncStatus = document.getElementById('syncStatus');
 
+    // Kemaskini status sementara semasa proses menghantar
+    if (syncStatus) syncStatus.textContent = "⏳ Sedang menyimpan keputusan...";
+
     const payload = {
         nama: nama,
         kelas: kelas,
-        modul: currentModuleName,
+        modul: typeof currentModuleName !== 'undefined' ? currentModuleName : "Modul Year 4",
+        kategori: typeof currentCategory !== 'undefined' ? currentCategory : "", // Opsional jika ada
         markah: `${score}/${total}`,
         peratus: `${percent}%`
     };
 
     fetch(SCRIPT_URL, {
         method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
+        mode: 'no-cors', // Penting untuk Google Apps Script
+        headers: { 
+            'Content-Type': 'text/plain;charset=utf-8' // Guna text/plain supaya elak isu ralat CORS preflight
+        },
         body: JSON.stringify(payload)
     })
     .then(() => {
-        syncStatus.textContent = "✅ Keputusan berjaya disimpan ke rekod guru!";
+        if (syncStatus) syncStatus.textContent = "✅ Keputusan berjaya disimpan ke rekod guru!";
     })
     .catch(err => {
-        syncStatus.textContent = "⚠️ Ralat semasa menyimpan rekod. Sila beritahu guru anda.";
+        if (syncStatus) syncStatus.textContent = "⚠️ Ralat semasa menyimpan rekod. Sila beritahu guru anda.";
         console.error(err);
     });
 }
@@ -1167,6 +1173,3 @@ function kembaliKeMenu() {
     document.getElementById('quizSection').style.display = 'none';
     document.getElementById('menuSection').style.display = 'block';
 }
-</script>
-</body>
-</html>
