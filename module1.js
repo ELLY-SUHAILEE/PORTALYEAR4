@@ -10,7 +10,16 @@ if (typeof window.wrapCenterImage !== 'function') {
     return `<div style="text-align: center; margin: 15px 0;"><img src="${imagePath}" style="display: block; margin: 0 auto; max-width: 100%; max-height: 250px; border-radius: 10px; border: 1px solid #ddd;" onerror="this.style.display='none'"></div>`;
   };
 }
-
+// 2. KEMASKINI NAMA PEMBOLEH UBAH SOALAN KEPADA window.quizQuestions
+window.quizQuestions = [
+  // --- KEKALKAN SEMUA SOALAN KANDUNGAN ANDA DI SINI ---
+  {
+    question: "Where are you from?",
+    options: ["Malaysia", "Brazil", "UK", "Korea"],
+    answer: 0
+  }
+  // ... soalan-soalan anda yang lain
+];
 // ==========================================
 // 1. GET SMART SET (30 SOALAN - YEAR 4 MODULE 1)
 // ==========================================
