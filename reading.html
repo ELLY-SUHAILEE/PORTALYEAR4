@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="ms">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exploration - Reading & Activities</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- WEB FONT GOOGLE SEBAGAI SANDARAN CENTURY GOTHIC -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Plus+Jakarta+Sans:wght@500;700;800&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <style>
     body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f0f9ff; margin: 0; padding: 20px; color: #1e293b; }
     .container { max-width: 850px; margin: 0 auto; }
@@ -13,48 +14,52 @@
     .btn-home { background: #0284c7; color: white; border: none; padding: 10px 16px; border-radius: 8px; font-weight: 700; text-decoration: none; }
     
     .module-picker-box { background: white; padding: 15px 20px; border-radius: 12px; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.04); }
-    .module-picker-box select { padding: 10px; font-size: 13pt; font-weight: bold; border-radius: 8px; border: 2px solid #0284c7; flex-grow: 1; cursor: pointer; color: #0369a1; }
+    .module-picker-box select { padding: 10px; font-size: 20px; font-weight: bold; border-radius: 8px; border: 2px solid #0284c7; flex-grow: 1; cursor: pointer; color: #0369a1; }
 
     .passage-box { background: white; padding: 25px; border-radius: 16px; border-left: 6px solid #0284c7; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 25px; }
-    .passage-title { color: #0369a1; font-family: 'Fredoka', sans-serif; font-size: 18pt; margin-top: 0; }
+    .passage-title { color: #0369a1; font-family: 'Fredoka', sans-serif; font-size: 22px; margin-top: 0; }
     
-    /* KARANGAN / PETIKAN (CENTURY GOTHIC 16PX) */
+    /* 1. TEKS PETIKAN BACAAN (CENTURY GOTHIC 20PX) */
     .passage-text { 
-        font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif !important;
-        font-size: 16px !important; 
-        line-height: 1.8; 
+        font-family: 'Century Gothic', CenturyGothic, AppleGothic, 'Poppins', sans-serif !important;
+        font-size: 20px !important; 
+        line-height: 1.8 !important; 
         color: #334155; 
         background: #f8fafc; 
-        padding: 15px; 
+        padding: 18px; 
         border-radius: 10px; 
         border: 1px dashed #cbd5e1; 
     }
 
-    .section-title { font-size: 16pt; font-weight: 800; color: #0f172a; margin: 30px 0 15px 0; background: #e0f2fe; padding: 10px 15px; border-radius: 8px; border-left: 5px solid #0284c7; }
+    .section-title { font-size: 20px; font-weight: 800; color: #0f172a; margin: 30px 0 15px 0; background: #e0f2fe; padding: 10px 15px; border-radius: 8px; border-left: 5px solid #0284c7; }
     .card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.04); }
     
-    /* TEKS SOALAN (CENTURY GOTHIC 16PX) */
+    /* 2. TEKS SOALAN & PILIHAN (CENTURY GOTHIC 20PX) */
     .card p, 
     .card label, 
-    .card span {
-        font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif !important;
-        font-size: 16px !important;
+    .card span,
+    .opt-btn,
+    .tf-btn,
+    .spelling-input,
+    .word-chip {
+        font-family: 'Century Gothic', CenturyGothic, AppleGothic, 'Poppins', sans-serif !important;
+        font-size: 20px !important;
     }
-    
+
     .opt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
-    .opt-btn { width: 100%; padding: 12px; border: 2px solid #cbd5e1; border-radius: 8px; background: #f8fafc; font-size: 12pt; text-align: left; cursor: pointer; transition: 0.2s; }
+    .opt-btn { width: 100%; padding: 12px; border: 2px solid #cbd5e1; border-radius: 8px; background: #f8fafc; text-align: left; cursor: pointer; transition: 0.2s; }
     .opt-btn.selected { background: #e0f2fe !important; border-color: #0284c7 !important; color: #0369a1 !important; font-weight: bold; }
     .tf-btn { padding: 10px 25px; font-weight: bold; border-radius: 8px; border: 2px solid #cbd5e1; cursor: pointer; background: #f8fafc; }
     .tf-btn.selected { background: #0284c7; color: white; border-color: #0284c7; }
     
-    .spelling-input { width: 100%; padding: 10px; font-size: 13pt; border: 2px solid #cbd5e1; border-radius: 8px; box-sizing: border-box; }
+    .spelling-input { width: 100%; padding: 12px; border: 2px solid #cbd5e1; border-radius: 8px; box-sizing: border-box; }
     
     .word-pool, .sentence-target { display: flex; flex-wrap: wrap; gap: 8px; min-height: 45px; padding: 10px; border-radius: 8px; }
     .word-pool { background: #f1f5f9; margin-bottom: 8px; }
     .sentence-target { background: #fff; border: 2px dashed #0284c7; }
-    .word-chip { background: #0284c7; color: white; padding: 6px 14px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12pt; }
+    .word-chip { background: #0284c7; color: white; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; }
     
-    .btn-submit { width: 100%; background: #16a34a; color: white; border: none; padding: 18px; border-radius: 12px; font-size: 16pt; font-weight: 800; cursor: pointer; margin-top: 20px; }
+    .btn-submit { width: 100%; background: #16a34a; color: white; border: none; padding: 18px; border-radius: 12px; font-size: 22px; font-weight: 800; cursor: pointer; margin-top: 20px; }
     .score-box { background: #dcfce7; border: 2px solid #16a34a; padding: 20px; border-radius: 12px; text-align: center; margin-bottom: 20px; display: none; }
 </style>
 </head>
