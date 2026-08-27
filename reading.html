@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploration - Reading & Activities</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f0f9ff; margin: 0; padding: 20px; color: #1e293b; }
+        .container { max-width: 850px; margin: 0 auto; }
+        .topbar { display: flex; justify-content: space-between; align-items: center; background: white; padding: 15px 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .btn-home { background: #0284c7; color: white; border: none; padding: 10px 16px; border-radius: 8px; font-weight: 700; text-decoration: none; }
+        
+        .module-picker-box { background: white; padding: 15px 20px; border-radius: 12px; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.04); }
+        .module-picker-box select { padding: 10px; font-size: 13pt; font-weight: bold; border-radius: 8px; border: 2px solid #0284c7; flex-grow: 1; cursor: pointer; color: #0369a1; }
+
+        .passage-box { background: white; padding: 25px; border-radius: 16px; border-left: 6px solid #0284c7; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 25px; }
+        .passage-title { color: #0369a1; font-family: 'Fredoka', sans-serif; font-size: 18pt; margin-top: 0; }
+        .passage-text { font-size: 14pt; line-height: 1.8; color: #334155; background: #f8fafc; padding: 15px; border-radius: 10px; border: 1px dashed #cbd5e1; }
+
+        .section-title { font-size: 16pt; font-weight: 800; color: #0f172a; margin: 30px 0 15px 0; background: #e0f2fe; padding: 10px 15px; border-radius: 8px; border-left: 5px solid #0284c7; }
+        .card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.04); }
+        
+        .opt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+        .opt-btn { width: 100%; padding: 12px; border: 2px solid #cbd5e1; border-radius: 8px; background: #f8fafc; font-size: 12pt; text-align: left; cursor: pointer; transition: 0.2s; }
+        .opt-btn.selected { background: #e0f2fe !important; border-color: #0284c7 !important; color: #0369a1 !important; font-weight: bold; }
+        .tf-btn { padding: 10px 25px; font-weight: bold; border-radius: 8px; border: 2px solid #cbd5e1; cursor: pointer; background: #f8fafc; }
+        .tf-btn.selected { background: #0284c7; color: white; border-color: #0284c7; }
+        
+        .spelling-input { width: 100%; padding: 10px; font-size: 13pt; border: 2px solid #cbd5e1; border-radius: 8px; box-sizing: border-box; }
+        
+        .word-pool, .sentence-target { display: flex; flex-wrap: wrap; gap: 8px; min-height: 45px; padding: 10px; border-radius: 8px; }
+        .word-pool { background: #f1f5f9; margin-bottom: 8px; }
+        .sentence-target { background: #fff; border: 2px dashed #0284c7; }
+        .word-chip { background: #0284c7; color: white; padding: 6px 14px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 12pt; }
+        
+        .btn-submit { width: 100%; background: #16a34a; color: white; border: none; padding: 18px; border-radius: 12px; font-size: 16pt; font-weight: 800; cursor: pointer; margin-top: 20px; }
+        .score-box { background: #dcfce7; border: 2px solid #16a34a; padding: 20px; border-radius: 12px; text-align: center; margin-bottom: 20px; display: none; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="topbar">
+            <a href="index.html" class="btn-home"><i class="fa-solid fa-house"></i> Home</a>
+            <span style="font-size: 14pt; font-weight: 800; color: #0284c7;">READING EXPLORATION</span>
+            <span id="studentDisplay" style="font-weight: 700; color: #64748b;">Murid</span>
+        </div>
+
+        <!-- DROP-DOWN PILIH MODUL -->
+        <div class="module-picker-box">
+            <label for="moduleSelect" style="font-weight: 800; color: #0f172a;"><i class="fa-solid fa-list-check"></i> SELECT MODULE:</label>
+            <select id="moduleSelect" onchange="changeModule(this.value)">
+                <option value="1">Module 1: Where are you from?</option>
+                <option value="2">Module 2: My week</option>
+                <option value="3">Module 3: In the past</option>
+                <option value="4">Module 4: Celebrations</option>
+                <option value="5">Module 5: Eating right</option>
+                <option value="6">Module 6: Getting around</option>
+                <option value="7">Module 7: Helping out</option>
+                <option value="8">Module 8: Amazing animals</option>
+                <option value="9">Module 9: Get active!</option>
+                <option value="10">Module 10: What's the matter?</option>
+            </select>
+        </div>
+
+        <div class="score-box" id="scoreBox">
+            <h2 id="scoreTitle" style="color: #15803d; margin: 0;">Your Score: 0/30</h2>
+            <p id="scoreMsg" style="margin: 5px 0 0 0; color: #166534;"></p>
+        </div>
+
+        <!-- KOTAK PETIKAN -->
+        <div class="passage-box">
+            <h2 class="passage-title" id="passageTitle"><i class="fa-solid fa-book-open"></i> Loading...</h2>
+            <p class="passage-text" id="passageText"></p>
+        </div>
+
+        <!-- SOALAN-SOALAN -->
+        <div class="section-title">PART 1: OBJECTIVE QUESTIONS (5 Questions)</div>
+        <div id="mcqContainer"></div>
+
+        <div class="section-title">PART 2: TRUE OR FALSE (5 Questions)</div>
+        <div id="tfContainer"></div>
+
+        <div class="section-title">PART 3: SPELLING (10 Words)</div>
+        <div id="spellingContainer"></div>
+
+        <div class="section-title">PART 4: REORDER THE WORDS (10 Sentences)</div>
+        <div id="dragContainer"></div>
+
+        <button class="btn-submit" id="submitBtn" onclick="checkAllAnswers()">
+            <i class="fa-solid fa-paper-plane"></i> SUBMIT ALL ANSWERS (30 ITEMS)
+        </button>
+    </div>
+
+    <script>
+        document.getElementById('studentDisplay').textContent = `${localStorage.getItem('studentName') || 'Student'} (${localStorage.getItem('studentClass') || ''})`;
+
+        // PENGUMPULAN DATA SOALAN UNTUK SEMUA MODUL (MODULE 1 HINGGA 10)
+        const readingData = {
+            "1": {
+                title: "Hannah's Daily Routine",
+                passage: "Hi, my name is Hannah. I am ten years old and I am from Malaysia. Every morning, I wake up at six o'clock. I always brush my teeth and comb my hair before breakfast. At eight o'clock, I go to school by bus. In the evening, I usually play ice-skating or ride my bicycle with my friends at the park.",
+                mcq: [
+                    { q: "1. How old is Hannah?", opts: ["A. Nine years old", "B. Ten years old", "C. Eleven years old", "D. Twelve years old"], ans: 1 },
+                    { q: "2. Where is Hannah from?", opts: ["A. Korea", "B. The UK", "C. Malaysia", "D. Mexico"], ans: 2 },
+                    { q: "3. What time does Hannah wake up?", opts: ["A. 5:00 a.m.", "B. 6:00 a.m.", "C. 7:00 a.m.", "D. 8:00 a.m."], ans: 1 },
+                    { q: "4. How does she go to school?", opts: ["A. By car", "B. By bus", "C. On foot", "D. By bicycle"], ans: 1 },
+                    { q: "5. Where does she play in the evening?", opts: ["A. At the park", "B. At school", "C. At home", "D. At the beach"], ans: 0 }
+                ],
+                tf: [
+                    { q: "1. Hannah wakes up at seven o'clock every morning.", ans: "FALSE" },
+                    { q: "2. Hannah combs her hair before breakfast.", ans: "TRUE" },
+                    { q: "3. Hannah goes to school by car.", ans: "FALSE" },
+                    { q: "4. Hannah rides her bicycle with her friends.", ans: "TRUE" },
+                    { q: "5. Hannah is from the United Kingdom.", ans: "FALSE" }
+                ],
+                spelling: [
+                    { hint: "1. Moving on ice with special shoes", ans: "ice-skating" },
+                    { hint: "2. A martial art from Japan", ans: "karate" },
+                    { hint: "3. Physical exercises done indoors", ans: "gymnastics" },
+                    { hint: "4. The first meal of the day", ans: "breakfast" },
+                    { hint: "5. A vehicle with two wheels", ans: "bicycle" },
+                    { hint: "6. Warm bag used for sleeping in a tent", ans: "sleeping bag" },
+                    { hint: "7. A large hairy spider", ans: "tarantula" },
+                    { hint: "8. Good for your body and health", ans: "healthy" },
+                    { hint: "9. Physical activity to stay fit", ans: "exercise" },
+                    { hint: "10. Having a strong unpleasant odour", ans: "smelly" }
+                ],
+                drag: [
+                    { words: ["She", "is", "from", "Malaysia."], correct: "She is from Malaysia." },
+                    { words: ["I", "wake", "up", "at", "six", "o'clock."], correct: "I wake up at six o'clock." },
+                    { words: ["He", "plays", "football", "every", "Sunday."], correct: "He plays football every Sunday." },
+                    { words: ["Do", "you", "like", "ice-skating?"], correct: "Do you like ice-skating?" },
+                    { words: ["She", "always", "combs", "her", "hair."], correct: "She always combs her hair." },
+                    { words: ["We", "go", "to", "school", "by", "bus."], correct: "We go to school by bus." },
+                    { words: ["They", "are", "playing", "badminton", "now."], correct: "They are playing badminton now." },
+                    { words: ["You", "should", "eat", "healthy", "food."], correct: "You should eat healthy food." },
+                    { words: ["What", "time", "do", "you", "get", "up?"], correct: "What time do you get up?" },
+                    { words: ["I", "ride", "my", "bicycle", "at", "the", "park."], correct: "I ride my bicycle at the park." }
+                ]
+            },
+            "2": {
+                title: "My Busy Week",
+                passage: "My brother Imran has a busy week. On Mondays, he has Art lessons after school. On Wednesdays, he plays football at the school field. He loves Science because he likes learning about nature. Every Thursday, he helps my mother water the plants. On weekends, Imran relaxes and watches television with our family.",
+                mcq: [
+                    { q: "1. What lesson does Imran have on Mondays?", opts: ["A. Music", "B. Art", "C. Maths", "D. Science"], ans: 1 },
+                    { q: "2. When does Imran play football?", opts: ["A. On Mondays", "B. On Tuesdays", "C. On Wednesdays", "D. On Fridays"], ans: 2 },
+                    { q: "3. Why does he like Science?", opts: ["A. It is easy", "B. He likes numbers", "C. He likes nature", "D. His friend likes it"], ans: 2 },
+                    { q: "4. Who does Imran help on Thursdays?", opts: ["A. His father", "B. His teacher", "C. His brother", "D. His mother"], ans: 3 },
+                    { q: "5. What does Imran do on weekends?", opts: ["A. Plays football", "B. Watches television", "C. Has Art lessons", "D. Waters plants"], ans: 1 }
+                ],
+                tf: [
+                    { q: "1. Imran has Art lessons on Tuesdays.", ans: "FALSE" },
+                    { q: "2. Imran plays football at the school field.", ans: "TRUE" },
+                    { q: "3. Imran dislikes Science.", ans: "FALSE" },
+                    { q: "4. Imran waters plants on Thursdays.", ans: "TRUE" },
+                    { q: "5. Imran relaxes on weekends.", ans: "TRUE" }
+                ],
+                spelling: [
+                    { hint: "1. Day after Sunday", ans: "monday" },
+                    { hint: "2. Subject about numbers", ans: "maths" },
+                    { hint: "3. Subject about living things and nature", ans: "science" },
+                    { hint: "4. Day after Wednesday", ans: "thursday" },
+                    { hint: "5. Activity of drawing and painting", ans: "art" },
+                    { hint: "6. Subject about singing and instruments", ans: "music" },
+                    { hint: "7. Seventh day of the week", ans: "sunday" },
+                    { hint: "8. Electronic box for watching shows", ans: "television" },
+                    { hint: "9. Work done after school at home", ans: "homework" },
+                    { hint: "10. Period of rest after work", ans: "relax" }
+                ],
+                drag: [
+                    { words: ["I", "have", "Art", "on", "Mondays."], correct: "I have Art on Mondays." },
+                    { words: ["He", "likes", "Science", "very", "much."], correct: "He likes Science very much." },
+                    { words: ["She", "plays", "the", "piano", "well."], correct: "She plays the piano well." },
+                    { words: ["Do", "you", "have", "Maths", "today?"], correct: "Do you have Maths today?" },
+                    { words: ["We", "play", "football", "on", "Wednesdays."], correct: "We play football on Wednesdays." },
+                    { words: ["He", "helps", "his", "mother", "daily."], correct: "He helps his mother daily." },
+                    { words: ["They", "watch", "television", "at", "night."], correct: "They watch television at night." },
+                    { words: ["What", "is", "your", "favourite", "subject?"], correct: "What is your favourite subject?" },
+                    { words: ["She", "does", "her", "homework", "early."], correct: "She does her homework early." },
+                    { words: ["It", "is", "a", "busy", "week."], correct: "It is a busy week." }
+                ]
+            }
+            // MODUL 3 HINGGA 10 BOLEH DITAMBAH DI SINI DENGAN FORMAT YANG SAMA
+        };
+
+        let currentModuleKey = "1";
+        let mcqAns = {}, tfAns = {}, userDragState = {};
+
+        function changeModule(modNum) {
+            currentModuleKey = modNum;
+            document.getElementById('scoreBox').style.display = 'none';
+            document.getElementById('submitBtn').style.display = 'block';
+            renderCurrentModule();
+        }
+
+        function renderCurrentModule() {
+            const data = readingData[currentModuleKey] || readingData["1"];
+
+            document.getElementById('passageTitle').innerHTML = `<i class="fa-solid fa-book-open"></i> ${data.title}`;
+            document.getElementById('passageText').textContent = data.passage;
+
+            mcqAns = {}; tfAns = {}; userDragState = {};
+
+            // Render MCQ
+            const mcqDiv = document.getElementById('mcqContainer');
+            mcqDiv.innerHTML = '';
+            data.mcq.forEach((item, idx) => {
+                let html = `<div class="card"><p style="font-weight:700; margin-top:0;">${item.q}</p><div class="opt-grid">`;
+                item.opts.forEach((o, oIdx) => {
+                    html += `<button class="opt-btn" id="mcq_${idx}_${oIdx}" onclick="selectMCQ(${idx}, ${oIdx})">${o}</button>`;
+                });
+                html += `</div></div>`;
+                mcqDiv.innerHTML += html;
+            });
+
+            // Render TF
+            const tfDiv = document.getElementById('tfContainer');
+            tfDiv.innerHTML = '';
+            data.tf.forEach((item, idx) => {
+                tfDiv.innerHTML += `
+                    <div class="card" style="display:flex; justify-content:space-between; align-items:center;">
+                        <span style="font-weight:700;">${item.q}</span>
+                        <div>
+                            <button class="tf-btn" id="tf_${idx}_TRUE" onclick="selectTF(${idx}, 'TRUE')">TRUE</button>
+                            <button class="tf-btn" id="tf_${idx}_FALSE" onclick="selectTF(${idx}, 'FALSE')">FALSE</button>
+                        </div>
+                    </div>`;
+            });
+
+            // Render Spelling
+            const spDiv = document.getElementById('spellingContainer');
+            spDiv.innerHTML = '';
+            data.spelling.forEach((item, idx) => {
+                spDiv.innerHTML += `
+                    <div class="card">
+                        <label style="font-weight:700; display:block; margin-bottom:6px;">${item.hint}</label>
+                        <input type="text" class="spelling-input" id="spell_${idx}" placeholder="Type full correct spelling...">
+                    </div>`;
+            });
+
+            // Render Drag
+            const dragDiv = document.getElementById('dragContainer');
+            dragDiv.innerHTML = '';
+            data.drag.forEach((item, idx) => {
+                userDragState[idx] = [];
+                let shuffled = [...item.words].sort(() => Math.random() - 0.5);
+                
+                let html = `
+                    <div class="card">
+                        <p style="font-weight:700; margin-top:0;">Sentence ${idx + 1}: Click words to build the sentence</p>
+                        <div class="sentence-target" id="target_${idx}"></div>
+                        <div class="word-pool" id="pool_${idx}">`;
+                
+                shuffled.forEach((w, wIdx) => {
+                    html += `<span class="word-chip" id="chip_${idx}_${wIdx}" onclick="moveWord(${idx}, '${w.replace(/'/g, "\\'")}', 'chip_${idx}_${wIdx}')">${w}</span>`;
+                });
+
+                html += `</div></div>`;
+                dragDiv.innerHTML += html;
+            });
+        }
+
+        function selectMCQ(qIdx, oIdx) {
+            mcqAns[qIdx] = oIdx;
+            const data = readingData[currentModuleKey] || readingData["1"];
+            data.mcq[qIdx].opts.forEach((_, i) => {
+                document.getElementById(`mcq_${qIdx}_${i}`).classList.toggle('selected', i === oIdx);
+            });
+        }
+
+        function selectTF(idx, val) {
+            tfAns[idx] = val;
+            document.getElementById(`tf_${idx}_TRUE`).classList.toggle('selected', val === 'TRUE');
+            document.getElementById(`tf_${idx}_FALSE`).classList.toggle('selected', val === 'FALSE');
+        }
+
+        function moveWord(qIdx, word, chipId) {
+            const chip = document.getElementById(chipId);
+            const target = document.getElementById(`target_${qIdx}`);
+            const pool = document.getElementById(`pool_${qIdx}`);
+
+            if (chip.parentElement.id === `pool_${qIdx}`) {
+                target.appendChild(chip);
+            } else {
+                pool.appendChild(chip);
+            }
+        }
+
+        function checkAllAnswers() {
+            const data = readingData[currentModuleKey] || readingData["1"];
+            let score = 0;
+
+            // MCQ
+            data.mcq.forEach((item, i) => { if (mcqAns[i] === item.ans) score++; });
+
+            // TF
+            data.tf.forEach((item, i) => { if (tfAns[i] === item.ans) score++; });
+
+            // Spelling
+            data.spelling.forEach((item, i) => {
+                const input = document.getElementById(`spell_${i}`).value.trim().toLowerCase();
+                if (input === item.ans.toLowerCase()) score++;
+            });
+
+            // Drag
+            data.drag.forEach((item, i) => {
+                const target = document.getElementById(`target_${i}`);
+                const builtSentence = Array.from(target.children).map(c => c.textContent).join(' ');
+                if (builtSentence === item.correct) score++;
+            });
+
+            const percent = Math.round((score / 30) * 100);
+            document.getElementById('scoreTitle').textContent = `Your Score: ${score} / 30 (${percent}%)`;
+            document.getElementById('scoreMsg').textContent = percent >= 80 ? "🌟 Excellent work! You mastered this module!" : "👍 Good effort! Keep practicing!";
+            document.getElementById('scoreBox').style.display = 'block';
+            document.getElementById('submitBtn').style.display = 'none';
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        renderCurrentModule();
+    </script>
+</body>
+</html>
