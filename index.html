@@ -914,57 +914,85 @@
             document.head.appendChild(script);
         }
 
-        function paparSoalan() {
-            const container = document.getElementById('questionsContainer');
-            if (!container) return;
-            container.innerHTML = '';
+       function paparSoalan() {
+    const container = document.getElementById('questionsContainer');
+    if (!container) return;
+    container.innerHTML = '';
 
-            activeQuestions.forEach((q, idx) => {
-                const qCard = document.createElement('div');
-                qCard.className = 'question-card';
-                qCard.style.cssText = "background: white; padding: 20px; margin-bottom: 20px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);";
+    activeQuestions.forEach((q, idx) => {
+        const qCard = document.createElement('div');
+        qCard.className = 'question-card';
+        qCard.style.cssText = "background: white; padding: 20px; margin-bottom: 20px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);";
 
-                let html = `<h4 style="margin-top:0; color:#475569; font-size:14pt;">Question ${idx + 1}</h4>`;
-                
-                const soalanTeks = q.question || q.text || q.stem || "";
-                if (soalanTeks) {
-                    html += `<p style="font-size:16pt; font-weight:700; color:#1e293b; margin-bottom:15px;">${soalanTeks}</p>`;
-                }
+        let html = `<h4 style="margin-top:0; color:#475569; font-size:14pt;">Question ${idx + 1}</h4>`;
+        
+        // Gambar Petikan khas untuk Soalan 1 (idx === 0) dan Soalan 6 (idx === 5)
+        const isPassageQuestion = (idx === 0 || idx === 5);
+        const imgUrl = q.image || q.passageImage;
 
-                if (q.image) {
-                    html += `<img src="${q.image}" style="max-width:100%; max-height:250px; border-radius:8px; margin-bottom:15px; display:block;">`;
-                }
+        if (isPassageQuestion && imgUrl) {
+            html += `
+                <div style="background: #f1f5f9; padding: 15px; border-radius: 10px; margin-bottom: 15px; border-left: 5px solid #0284c7;">
+                    <p style="font-weight: bold; color: #0369a1; margin-top: 0; font-size: 13pt;">
+                        <i class="fa-solid fa-book-open"></i> READ THE PASSAGE BELOW:
+                    </p>
+                    <img src="${imgUrl}" style="max-width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                </div>
+            `;
+        } else if (imgUrl) {
+            html += `<img src="${imgUrl}" style="max-width:100%; max-height:250px; border-radius:8px; margin-bottom:15px; display:block;">`;
+        }
 
-                if (q.options && Array.isArray(q.options)) {
-                    html += `<div style="display:flex; flex-direction:column; gap:10px;">`;
-                    q.options.forEach((opt, optIdx) => {
-                        html += `
-                            <button type="button" class="opt-btn" id="opt_${idx}_${optIdx}" onclick="pilihJawapan(${idx}, ${optIdx})" style="padding: 12px 16px; border: 2px solid #e2e8f0; border-radius: 8px; background: #f8fafc; text-align: left; font-size: 14pt; cursor: pointer; transition: all 0.2s;">
-                                ${opt}
-                            </button>
-                        `;
-                    });
-                    html += `</div>`;
-                }
+        const soalanTeks = q.question || q.text || q.stem || "";
+        if (soalanTeks) {
+            html += `<p style="font-size:16pt; font-weight:700; color:#1e293b; margin-bottom:15px;">${soalanTeks}</p>`;
+        }
 
-                qCard.innerHTML = html;
-                container.appendChild(qCard);
+        if (q.options && Array.isArray(q.options)) {
+            html += `<div style="display:flex; flex-direction:column; gap:10px;">`;
+            q.options.forEach((opt, optIdx) => {
+                html += `
+                    <button type="button" class="opt-btn" id="opt_${idx}_${optIdx}" onclick="pilihJawapan(${idx}, ${optIdx})" style="padding: 14px 18px; border: 2px solid #cbd5e1; border-radius: 10px; background: #f8fafc; color: #1e293b; text-align: left; font-size: 14pt; cursor: pointer; transition: all 0.2s ease;">
+                        ${opt}
+                    </button>
+                `;
             });
+            html += `</div>`;
         }
 
-        function pilihJawapan(qIdx, optIdx) {
-            userAnswers[qIdx] = optIdx;
-            const q = activeQuestions[qIdx];
-            if (q && q.options) {
-                q.options.forEach((_, i) => {
-                    const btn = document.getElementById(`opt_${qIdx}_${i}`);
-                    if (btn) {
-                        if (i === optIdx) btn.classList.add('selected');
-                        else btn.classList.remove('selected');
-                    }
-                });
+        qCard.innerHTML = html;
+        container.appendChild(qCard);
+    });
+}
+
+function pilihJawapan(qIdx, optIdx) {
+    // Simpan pilihan murid
+    userAnswers[qIdx] = optIdx;
+    
+    const q = activeQuestions[qIdx];
+    if (q && q.options) {
+        q.options.forEach((_, i) => {
+            const btn = document.getElementById(`opt_${qIdx}_${i}`);
+            if (btn) {
+                if (i === optIdx) {
+                    // Warna apabila dipilih (Biru Terang & Teks Tebal)
+                    btn.style.backgroundColor = "#e0f2fe";
+                    btn.style.borderColor = "#0284c7";
+                    btn.style.color = "#0369a1";
+                    btn.style.fontWeight = "bold";
+                    btn.style.transform = "scale(1.01)";
+                } else {
+                    // Warna asal (Kelabu Asal)
+                    btn.style.backgroundColor = "#f8fafc";
+                    btn.style.borderColor = "#cbd5e1";
+                    btn.style.color = "#1e293b";
+                    btn.style.fontWeight = "normal";
+                    btn.style.transform = "scale(1)";
+                }
             }
-        }
+        });
+    }
+}
 
         function dapatkanIndeksJawapanBetul(soalanObj) {
             const jawapan = soalanObj.ans !== undefined ? soalanObj.ans : soalanObj.answer;
