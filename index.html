@@ -16,16 +16,23 @@
             font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
         }
 
-        /* 2. KHAS UNTUK PAPARAN KARANGAN & SOALAN (CENTURY GOTHIC 16PX) */
+        /* 2. KHAS UNTUK PAPARAN KARANGAN, SOALAN & ELEMEN KUIZ (CENTURY GOTHIC 20PX) */
         .passage-text, 
         .card p, 
         .card label, 
         .card span, 
         .question-card p,
         .question-card h4,
-        .opt-btn {
+        .opt-btn,
+        .quiz-topbar,
+        .quiz-topbar button,
+        .score-box,
+        .q-card,
+        .btn-hantar,
+        .btn-modal-start,
+        .btn-modal-close {
             font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif !important;
-            font-size: 16px !important;
+            font-size: 20px !important;
             line-height: 1.6;
         }
 
@@ -317,9 +324,7 @@
         .bg-cyan   { background: linear-gradient(135deg, #06b6d4, #0e7490); }
         .bg-amber  { background: linear-gradient(135deg, #f59e0b, #b45309); }
         .bg-indigo { background: linear-gradient(135deg, #6366f1, #4338ca); }
-    </style>
-</head>
-<body>
+
         /* FOOTER */
         .footer-bar {
             margin-top: 35px;
@@ -389,7 +394,7 @@
             border-radius: 16px;
             border: 3.5px solid #0f172a;
             margin-bottom: 30px;
-            font-size: 1.2rem;
+            font-size: 20px !important;
             font-weight: 800;
             color: #0f172a;
             background-color: #f8fafc;
@@ -411,8 +416,6 @@
             border-radius: 14px;
             cursor: pointer;
             font-weight: 900;
-            font-size: 16pt !important;
-            font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif !important;
             box-shadow: 0 6px 15px rgba(0,0,0,0.2);
             transition: transform 0.2s, background 0.2s;
         }
@@ -430,8 +433,6 @@
             border-radius: 14px;
             cursor: pointer;
             font-weight: 900;
-            font-size: 16pt !important;
-            font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif !important;
             box-shadow: 0 6px 15px rgba(0,0,0,0.2);
             transition: transform 0.2s, background 0.2s;
         }
@@ -441,11 +442,11 @@
             transform: scale(1.03);
         }
 
-        /* PAPARAN KUIZ MURID - CENTURY GOTHIC SAIS 16 UNTUK SEMUA ELEMEN & BUTANG */
+        /* PAPARAN KUIZ MURID (CENTURY GOTHIC 20PX) */
         #quizSection, 
         #quizSection * {
             font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif !important;
-            font-size: 16pt;
+            font-size: 20px !important;
         }
 
         #quizSection {
@@ -464,11 +465,9 @@
             background: #e2e8f0;
             padding: 12px 16px;
             border-radius: 12px;
-            font-size: 16pt !important;
         }
 
         .quiz-topbar button {
-            font-size: 16pt !important;
             padding: 8px 20px !important;
         }
 
@@ -481,11 +480,10 @@
             margin-bottom: 20px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             border: 2px solid #cbd5e1;
-            font-size: 16pt !important;
         }
 
         .score-box h2 {
-            font-size: 20pt !important;
+            font-size: 24px !important;
         }
 
         .q-card {
@@ -495,7 +493,6 @@
             margin-bottom: 15px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.06);
             border: 2px solid #e2e8f0;
-            font-size: 16pt !important;
         }
 
         .opt-btn {
@@ -508,7 +505,6 @@
             border-radius: 12px;
             background: #f8fafc;
             cursor: pointer;
-            font-size: 16pt !important; /* SAIS 16 CENTURY GOTHIC */
             font-weight: 700;
             transition: all 0.2s;
         }
@@ -524,7 +520,6 @@
             color: white;
             border: none;
             border-radius: 12px;
-            font-size: 16pt !important; /* SAIS 16 CENTURY GOTHIC */
             font-weight: 900;
             cursor: pointer;
             margin-top: 15px;
@@ -533,6 +528,151 @@
     </style>
 </head>
 <body>
+
+    <div class="portal-card">
+        <!-- TAJUK UTAMA -->
+        <h1 class="main-title">PORTAL YEAR 4 ENGLISH</h1>
+        <p class="sub-title">Enter your details and choose a learning module to begin.</p>
+
+        <!-- BORANG INPUT NAMA & KELAS -->
+        <div class="info-container">
+            <div class="info-field">
+                <i class="fa-solid fa-user"></i>
+                <div class="info-box">
+                    <label for="studentName">Student Name</label>
+                    <input type="text" id="studentName" placeholder="Type your name...">
+                </div>
+            </div>
+            <div class="info-field">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <div class="info-box">
+                    <label for="studentClass">Class</label>
+                    <select id="studentClass">
+                        <option value="">Select Class</option>
+                        <option value="4 Cemerlang">4 Cemerlang</option>
+                        <option value="4 Gemilang">4 Gemilang</option>
+                        <option value="4 Terbilang">4 Terbilang</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- MAIN MODULES -->
+        <div class="section-header">
+            <i class="fa-solid fa-star"></i> MAIN MODULES <i class="fa-solid fa-star"></i>
+        </div>
+
+        <div class="main-modules-grid">
+            <div class="mod-card card-getsmart">
+                <div class="mod-header">
+                    <div class="mod-icon"><i class="fa-regular fa-lightbulb"></i></div>
+                    <div class="mod-info">
+                        <h2>GET SMART</h2>
+                        <span class="badge-count">30 Questions</span>
+                        <p>Improve your English skills with fun and challenging questions.</p>
+                    </div>
+                </div>
+                <button class="btn-start">START MODULE <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <div class="mod-card card-remedial">
+                <div class="mod-header">
+                    <div class="mod-icon"><i class="fa-solid fa-bullseye"></i></div>
+                    <div class="mod-info">
+                        <h2>REMEDIAL SET</h2>
+                        <span class="badge-count">30 Questions</span>
+                        <p>Practice and strengthen your understanding step by step.</p>
+                    </div>
+                </div>
+                <button class="btn-start">START MODULE <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+        <!-- EXPLORATION ACTIVITIES -->
+        <div class="section-header">
+            <i class="fa-solid fa-shell-fish"></i> EXPLORATION
+        </div>
+
+        <div class="color-grid">
+            <div class="act-card bg-green">
+                <div class="act-left">
+                    <div class="act-icon"><i class="fa-solid fa-book-open"></i></div>
+                    <div class="act-text">
+                        <h3>READING</h3>
+                        <p>Comprehension</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <div class="act-card bg-purple">
+                <div class="act-left">
+                    <div class="act-icon"><i class="fa-solid fa-sliders"></i></div>
+                    <div class="act-text">
+                        <h3>GRAMMAR</h3>
+                        <p>Language Rules</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <div class="act-card bg-pink">
+                <div class="act-left">
+                    <div class="act-icon"><i class="fa-solid fa-align-left"></i></div>
+                    <div class="act-text">
+                        <h3>SENTENCES</h3>
+                        <p>Structure</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+        </div>
+
+        <!-- PERMATA ACTIVITIES -->
+        <div class="section-header">
+            <i class="fa-solid fa-gem"></i> PERMATA ACTIVITIES
+        </div>
+
+        <div class="color-grid">
+            <div class="act-card bg-cyan">
+                <div class="act-left">
+                    <div class="act-icon"><i class="fa-solid fa-font"></i></div>
+                    <div class="act-text">
+                        <h3>WORD POWER</h3>
+                        <p>Vocabulary</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <div class="act-card bg-amber">
+                <div class="act-left">
+                    <div class="act-icon"><i class="fa-solid fa-microphone"></i></div>
+                    <div class="act-text">
+                        <h3>READ & REPEAT</h3>
+                        <p>Pronunciation</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+            <div class="act-card bg-indigo">
+                <div class="act-left">
+                    <div class="act-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+                    <div class="act-text">
+                        <h3>BUILD SENTENCE</h3>
+                        <p>Interactive Game</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right"></i>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer-bar">
+            <span class="footer-text">Portal Year 4 English</span>
+            <a href="#" class="link-guru">Mod Guru</a>
+        </div>
+    </div>
+
+</body>
+</html>
 
 <div class="portal-card">
         
