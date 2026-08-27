@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="ms">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +19,7 @@
     .module-picker-box select { padding: 10px; font-size: 20px; font-weight: bold; border-radius: 8px; border: 2px solid #0284c7; flex-grow: 1; cursor: pointer; color: #0369a1; }
 
     .passage-box { background: white; padding: 25px; border-radius: 16px; border-left: 6px solid #0284c7; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 25px; }
-    .passage-title { color: #0369a1; font-family: 'Fredoka', sans-serif; font-size: 22px; margin-top: 0; }
+    .passage-title { color: #0369a1; font-family: 'Fredoka', sans-serif; font-size: 24px; margin-top: 0; }
     
     /* 1. TEKS PETIKAN BACAAN (CENTURY GOTHIC 20PX) */
     .passage-text { 
@@ -121,7 +123,6 @@
     <script>
         document.getElementById('studentDisplay').textContent = `${localStorage.getItem('studentName') || 'Student'} (${localStorage.getItem('studentClass') || ''})`;
 
-        // PENGUMPULAN DATA SOALAN UNTUK SEMUA MODUL (MODULE 1 HINGGA 10)
         const readingData = {
             "1": {
                 title: "Hannah's Daily Routine",
@@ -206,8 +207,343 @@
                     { words: ["She", "does", "her", "homework", "early."], correct: "She does her homework early." },
                     { words: ["It", "is", "a", "busy", "week."], correct: "It is a busy week." }
                 ]
+            },
+            "3": {
+                title: "Ancient Egypt",
+                passage: "Thousands of years ago, ancient Egyptians lived near the River Nile. King Tutankhamun was a famous Pharaoh. When he died, people wrapped his body in linen bandages to make a mummy. They placed his tomb inside giant pyramids made of heavy stones.",
+                mcq: [
+                    { q: "1. Where did ancient Egyptians live?", opts: ["A. Near the River Nile", "B. In the desert", "C. On islands", "D. Near a lake"], ans: 0 },
+                    { q: "2. Who was Tutankhamun?", opts: ["A. A farmer", "B. A Pharaoh", "C. A builder", "D. A soldier"], ans: 1 },
+                    { q: "3. What was wrapped around a mummy's body?", opts: ["A. Paper", "B. Cotton clothes", "C. Linen bandages", "D. Silk sheets"], ans: 2 },
+                    { q: "4. Where were tombs placed?", opts: ["A. Under trees", "B. Inside pyramids", "C. In wooden boxes", "D. Under rivers"], ans: 1 },
+                    { q: "5. Pyramids were made of what material?", opts: ["A. Wood", "B. Heavy stones", "C. Mud bricks", "D. Gold"], ans: 1 }
+                ],
+                tf: [
+                    { q: "1. Tutankhamun was an ancient king.", ans: "TRUE" },
+                    { q: "2. Mummies were wrapped in plastic.", ans: "FALSE" },
+                    { q: "3. The River Nile was important to Egyptians.", ans: "TRUE" },
+                    { q: "4. Pyramids are made of lightweight wood.", ans: "FALSE" },
+                    { q: "5. Egyptians buried kings inside pyramids.", ans: "TRUE" }
+                ],
+                spelling: [
+                    { hint: "1. Wrapped dead body from ancient Egypt", ans: "mummy" },
+                    { hint: "2. Giant stone structure with triangular sides", ans: "pyramid" },
+                    { hint: "3. An ancient king of Egypt", ans: "pharaoh" },
+                    { hint: "4. Cloth material used for wrapping mummies", ans: "linen" },
+                    { hint: "5. A place where a dead person is buried", ans: "tomb" },
+                    { hint: "6. Very old or from long ago", ans: "ancient" },
+                    { hint: "7. Yellow precious metal", ans: "gold" },
+                    { hint: "8. Long body of flowing water", ans: "river" },
+                    { hint: "9. Hard solid mineral material", ans: "stone" },
+                    { hint: "10. Strips of cloth used to wrap wounds or mummies", ans: "bandage" }
+                ],
+                drag: [
+                    { words: ["Tutankhamun", "was", "an", "Egyptian", "king."], correct: "Tutankhamun was an Egyptian king." },
+                    { words: ["They", "built", "pyramids", "with", "stones."], correct: "They built pyramids with stones." },
+                    { words: ["The", "mummy", "was", "wrapped", "in", "linen."], correct: "The mummy was wrapped in linen." },
+                    { words: ["They", "lived", "near", "the", "Nile."], correct: "They lived near the Nile." },
+                    { words: ["The", "tomb", "was", "filled", "with", "gold."], correct: "The tomb was filled with gold." },
+                    { words: ["Pharaohs", "were", "very", "powerful", "rulers."], correct: "Pharaohs were very powerful rulers." },
+                    { words: ["Pyramids", "are", "very", "tall", "structures."], correct: "Pyramids are very tall structures." },
+                    { words: ["He", "died", "at", "a", "young", "age."], correct: "He died at a young age." },
+                    { words: ["They", "made", "mummies", "in", "the", "past."], correct: "They made mummies in the past." },
+                    { words: ["Ancient", "Egypt", "has", "a", "rich", "history."], correct: "Ancient Egypt has a rich history." }
+                ]
+            },
+            "4": {
+                title: "Lunar New Year Celebration",
+                passage: "Mei Ling loves celebrating Lunar New Year with her family. Before the festival, they clean their house to sweep away bad luck. On New Year's Eve, they enjoy a delicious reunion dinner. Elders give children money wrapped in red envelopes called ang pow for good fortune.",
+                mcq: [
+                    { q: "1. What festival does Mei Ling celebrate?", opts: ["A. Hari Raya", "B. Lunar New Year", "C. Deepavali", "D. Christmas"], ans: 1 },
+                    { q: "2. Why do they clean their house before the festival?", opts: ["A. To find gold", "B. To welcome guests", "C. To sweep away bad luck", "D. To paint walls"], ans: 2 },
+                    { q: "3. What meal do they eat on New Year's Eve?", opts: ["A. Reunion dinner", "B. Breakfast", "C. Picnic lunch", "D. High tea"], ans: 0 },
+                    { q: "4. Who gives red envelopes to children?", opts: ["A. Teachers", "B. Friends", "C. Elders", "D. Neighbours"], ans: 2 },
+                    { q: "5. What are the red envelopes called?", opts: ["A. Sampul", "B. Ang pow", "C. Gifts", "D. Packets"], ans: 1 }
+                ],
+                tf: [
+                    { q: "1. Mei Ling cleans her house after the festival.", ans: "FALSE" },
+                    { q: "2. Ang pows contain money.", ans: "TRUE" },
+                    { q: "3. Reunion dinner is eaten on New Year's Eve.", ans: "TRUE" },
+                    { q: "4. Red envelopes represent bad luck.", ans: "FALSE" },
+                    { q: "5. Mei Ling celebrates with her family.", ans: "TRUE" }
+                ],
+                spelling: [
+                    { hint: "1. A special event or holiday celebration", ans: "festival" },
+                    { hint: "2. Red paper envelope given during New Year", ans: "envelope" },
+                    { hint: "3. Gathering meal with family members", ans: "reunion" },
+                    { hint: "4. Good luck or success in life", ans: "fortune" },
+                    { hint: "5. Older people or senior family members", ans: "elders" },
+                    { hint: "6. Tasty and pleasant to eat", ans: "delicious" },
+                    { hint: "7. Bright color symbolizing good fortune", ans: "red" },
+                    { hint: "8. The day before an important event", ans: "eve" },
+                    { hint: "9. To tidy up or remove dirt", ans: "clean" },
+                    { hint: "10. Main evening meal", ans: "dinner" }
+                ],
+                drag: [
+                    { words: ["We", "celebrate", "Lunar", "New", "Year."], correct: "We celebrate Lunar New Year." },
+                    { words: ["Elders", "give", "ang", "pows", "to", "children."], correct: "Elders give ang pows to children." },
+                    { words: ["They", "eat", "a", "delicious", "dinner."], correct: "They eat a delicious dinner." },
+                    { words: ["Red", "envelopes", "bring", "good", "fortune."], correct: "Red envelopes bring good fortune." },
+                    { words: ["We", "clean", "our", "house", "together."], correct: "We clean our house together." },
+                    { words: ["Family", "members", "gather", "on", "New", "Year's", "Eve."], correct: "Family members gather on New Year's Eve." },
+                    { words: ["Children", "wear", "new", "clothes", "for", "festivals."], correct: "Children wear new clothes for festivals." },
+                    { words: ["They", "watch", "dragon", "dances", "in", "town."], correct: "They watch dragon dances in town." },
+                    { words: ["Everyone", "wishes", "each", "other", "good", "health."], correct: "Everyone wishes each other good health." },
+                    { words: ["Festivals", "are", "full", "of", "joy."], correct: "Festivals are full of joy." }
+                ]
+            },
+            "5": {
+                title: "Eating Healthy Food",
+                passage: "To stay strong and healthy, we should eat balanced meals every day. Fruits and vegetables contain vitamins that protect us from illnesses. We must drink plenty of water and avoid eating too many sweets or fast food like burgers and chips.",
+                mcq: [
+                    { q: "1. What should we eat every day?", opts: ["A. Fast food only", "B. Balanced meals", "C. Sweets and chocolates", "D. Fried chicken only"], ans: 1 },
+                    { q: "2. What do fruits and vegetables contain?", opts: ["A. Too much sugar", "B. Vitamins", "C. Bad fats", "D. Salt"], ans: 1 },
+                    { q: "3. What do vitamins protect us from?", opts: ["A. Illnesses", "B. Feeling happy", "C. Exercise", "D. Good health"], ans: 0 },
+                    { q: "4. What liquid should we drink plenty of?", opts: ["A. Soda", "B. Water", "C. Tea", "D. Coffee"], ans: 1 },
+                    { q: "5. Which food should we avoid eating too much?", opts: ["A. Apples", "B. Carrots", "C. Fast food", "D. Fish"], ans: 2 }
+                ],
+                tf: [
+                    { q: "1. We should eat sweets for breakfast every day.", ans: "FALSE" },
+                    { q: "2. Fruits contain vitamins.", ans: "TRUE" },
+                    { q: "3. Drinking water helps keep our body healthy.", ans: "TRUE" },
+                    { q: "4. Fast food is good for daily meals.", ans: "FALSE" },
+                    { q: "5. Balanced meals keep us strong.", ans: "TRUE" }
+                ],
+                spelling: [
+                    { hint: "1. Food items like apples, oranges, and bananas", ans: "fruit" },
+                    { hint: "2. Plant foods like carrots, spinach, and broccoli", ans: "vegetable" },
+                    { hint: "3. Nutrients essential for healthy body function", ans: "vitamin" },
+                    { hint: "4. Clear liquid essential for life", ans: "water" },
+                    { hint: "5. Food high in sugar like candy", ans: "sweets" },
+                    { hint: "6. Meal containing all essential food groups", ans: "balanced" },
+                    { hint: "7. Sickness or disease affecting the body", ans: "illness" },
+                    { hint: "8. Having good physical shape and strength", ans: "healthy" },
+                    { hint: "9. Having great physical power", ans: "strong" },
+                    { hint: "10. Quick prepared meals like burgers", ans: "fast food" }
+                ],
+                drag: [
+                    { words: ["We", "should", "eat", "balanced", "meals."], correct: "We should eat balanced meals." },
+                    { words: ["Fruits", "and", "vegetables", "have", "vitamins."], correct: "Fruits and vegetables have vitamins." },
+                    { words: ["Drink", "eight", "glasses", "of", "water."], correct: "Drink eight glasses of water." },
+                    { words: ["Avoid", "eating", "too", "much", "junk", "food."], correct: "Avoid eating too much junk food." },
+                    { words: ["Vegetables", "keep", "our", "body", "healthy."], correct: "Vegetables keep our body healthy." },
+                    { words: ["Apples", "are", "good", "for", "you."], correct: "Apples are good for you." },
+                    { words: ["Sweets", "can", "damage", "your", "teeth."], correct: "Sweets can damage your teeth." },
+                    { words: ["Eating", "well", "gives", "you", "energy."], correct: "Eating well gives you energy." },
+                    { words: ["Breakfast", "is", "an", "important", "meal."], correct: "Breakfast is an important meal." },
+                    { words: ["Stay", "healthy", "by", "exercising", "daily."], correct: "Stay healthy by exercising daily." }
+                ]
+            },
+            "6": {
+                title: "Getting Around Town",
+                passage: "There are many ways to travel around town. Encik Kamal takes the train to work because it is fast and safe. His daughter uses the zebra crossing when walking across busy roads. Always remember to wear a helmet when riding a bicycle or motorcycle.",
+                mcq: [
+                    { q: "1. How does Encik Kamal travel to work?", opts: ["A. By bicycle", "B. By train", "C. By boat", "D. On foot"], ans: 1 },
+                    { q: "2. Why does Encik Kamal use the train?", opts: ["A. It is slow", "B. It is fast and safe", "C. It is cheap only", "D. It is noisy"], ans: 1 },
+                    { q: "3. What does his daughter use to cross the road?", opts: ["A. Bridge", "B. Zebra crossing", "C. Tunnel", "D. Traffic lights"], ans: 1 },
+                    { q: "4. What safety gear should be worn on a bicycle?", opts: ["A. Jacket", "B. Helmet", "C. Gloves", "D. Boots"], ans: 1 },
+                    { q: "5. Roads with many vehicles are called?", opts: ["A. Quiet roads", "B. Busy roads", "C. Empty roads", "D. Dirt tracks"], ans: 1 }
+                ],
+                tf: [
+                    { q: "1. Encik Kamal goes to work by plane.", ans: "FALSE" },
+                    { q: "2. Trains are fast and safe.", ans: "TRUE" },
+                    { q: "3. Pedestrians should use zebra crossings.", ans: "TRUE" },
+                    { q: "4. Helmets protect your head when cycling.", ans: "TRUE" },
+                    { q: "5. It is safe to run across busy roads without looking.", ans: "FALSE" }
+                ],
+                spelling: [
+                    { hint: "1. Protective headgear for cycling", ans: "helmet" },
+                    { hint: "2. Black and white stripes for crossing streets", ans: "zebra crossing" },
+                    { hint: "3. Vehicle running on tracks", ans: "train" },
+                    { hint: "4. Moving from one place to another", ans: "travel" },
+                    { hint: "5. Free from danger or risk", ans: "safe" },
+                    { hint: "6. Moving with high speed", ans: "fast" },
+                    { hint: "7. Large four-wheeled motor vehicle", ans: "car" },
+                    { hint: "8. Two-wheeled vehicle with motor", ans: "motorcycle" },
+                    { hint: "9. Person walking along a road", ans: "pedestrian" },
+                    { hint: "10. Street with cars and vehicles", ans: "road" }
+                ],
+                drag: [
+                    { words: ["Always", "wear", "a", "helmet", "when", "cycling."], correct: "Always wear a helmet when cycling." },
+                    { words: ["Use", "the", "zebra", "crossing", "safely."], correct: "Use the zebra crossing safely." },
+                    { words: ["The", "train", "is", "fast", "and", "clean."], correct: "The train is fast and clean." },
+                    { words: ["Look", "both", "ways", "before", "crossing."], correct: "Look both ways before crossing." },
+                    { words: ["Fasten", "your", "seatbelt", "in", "cars."], correct: "Fasten your seatbelt in cars." },
+                    { words: ["He", "goes", "to", "work", "by", "bus."], correct: "He goes to work by bus." },
+                    { words: ["Bicycles", "are", "good", "for", "health."], correct: "Bicycles are good for health." },
+                    { words: ["Be", "careful", "on", "busy", "roads."], correct: "Be careful on busy roads." },
+                    { words: ["Stop", "when", "the", "light", "is", "red."], correct: "Stop when the light is red." },
+                    { words: ["Pedestrians", "must", "walk", "on", "pavements."], correct: "Pedestrians must walk on pavements." }
+                ]
+            },
+            "7": {
+                title: "Helping Our Planet",
+                passage: "Our Earth needs our help. We can protect the environment by recycling plastic bottles, glass jars, and paper boxes. Do not throw rubbish into rivers because it harms sea creatures. Planting trees helps keep the air clean and fresh.",
+                mcq: [
+                    { q: "1. How can we protect the environment?", opts: ["A. Burning trash", "B. Recycling items", "C. Cutting trees", "D. Wasting water"], ans: 1 },
+                    { q: "2. Which item can be recycled?", opts: ["A. Plastic bottles", "B. Food waste", "C. Dirty tissues", "D. Broken bricks"], ans: 0 },
+                    { q: "3. What happens if we throw rubbish in rivers?", opts: ["A. Plants grow faster", "B. It harms sea creatures", "C. Rivers become wider", "D. Nothing happens"], ans: 1 },
+                    { q: "4. Planting trees helps keep what clean?", opts: ["A. Soil", "B. Air", "C. Houses", "D. Roads"], ans: 1 },
+                    { q: "5. What planet do we live on?", opts: ["A. Mars", "B. Earth", "C. Venus", "D. Jupiter"], ans: 1 }
+                ],
+                tf: [
+                    { q: "1. Throwing rubbish in rivers is good for fish.", ans: "FALSE" },
+                    { q: "2. Trees help make the air clean.", ans: "TRUE" },
+                    { q: "3. Recycling helps reduce waste on Earth.", ans: "TRUE" },
+                    { q: "4. Paper boxes cannot be recycled.", ans: "FALSE" },
+                    { q: "5. We should protect our planet.", ans: "TRUE" }
+                ],
+                spelling: [
+                    { hint: "1. Process of turning waste into reusable material", ans: "recycle" },
+                    { hint: "2. Synthetic material used for bottles and bags", ans: "plastic" },
+                    { hint: "3. The natural world around us", ans: "environment" },
+                    { hint: "4. Waste material or garbage thrown away", ans: "rubbish" },
+                    { hint: "5. Tall plant with wooden trunk and leaves", ans: "tree" },
+                    { hint: "6. Animals living in oceans and seas", ans: "creatures" },
+                    { hint: "7. Third planet from the Sun", ans: "earth" },
+                    { hint: "8. Mixture of gases we breathe", ans: "air" },
+                    { hint: "9. Clear hard material used for jars", ans: "glass" },
+                    { hint: "10. Material made from wood pulp used for writing", ans: "paper" }
+                ],
+                drag: [
+                    { words: ["We", "must", "protect", "our", "environment."], correct: "We must protect our environment." },
+                    { words: ["Recycle", "plastic", "bottles", "and", "paper."], correct: "Recycle plastic bottles and paper." },
+                    { words: ["Do", "not", "throw", "rubbish", "here."], correct: "Do not throw rubbish here." },
+                    { words: ["Trees", "make", "the", "air", "clean."], correct: "Trees make the air clean." },
+                    { words: ["Save", "water", "and", "turn", "off", "taps."], correct: "Save water and turn off taps." },
+                    { words: ["Keep", "our", "rivers", "free", "from", "trash."], correct: "Keep our rivers free from trash." },
+                    { words: ["Clean", "environment", "is", "good", "for", "all."], correct: "Clean environment is good for all." },
+                    { words: ["Plant", "more", "flowers", "in", "gardens."], correct: "Plant more flowers in gardens." },
+                    { words: ["Save", "electricity", "by", "turning", "off", "lights."], correct: "Save electricity by turning off lights." },
+                    { words: ["Protect", "animals", "and", "their", "homes."], correct: "Protect animals and their homes." }
+                ]
+            },
+            "8": {
+                title: "Amazing Wildlife",
+                passage: "Cheetahs are the fastest land animals in the world. They can run very quickly to catch their prey. Blue whales are the largest animals living in the ocean. Giraffes have long necks that help them reach green leaves on high trees.",
+                mcq: [
+                    { q: "1. What is the fastest land animal?", opts: ["A. Lion", "B. Cheetah", "C. Tiger", "D. Leopard"], ans: 1 },
+                    { q: "2. Which animal is the largest in the ocean?", opts: ["A. Shark", "B. Dolphin", "C. Blue whale", "D. Octopus"], ans: 2 },
+                    { q: "3. Why do giraffes have long necks?", opts: ["A. To swim easily", "B. To reach high leaves", "C. To run fast", "D. To sleep standing"], ans: 1 },
+                    { q: "4. Where do blue whales live?", opts: ["A. In forests", "B. In the ocean", "C. On mountains", "D. In rivers"], ans: 1 },
+                    { q: "5. What do giraffes eat from high trees?", opts: ["A. Fruits", "B. Green leaves", "C. Insects", "D. Bark"], ans: 1 }
+                ],
+                tf: [
+                    { q: "1. Cheetahs are very slow animals.", ans: "FALSE" },
+                    { q: "2. Blue whales live in the ocean.", ans: "TRUE" },
+                    { q: "3. Giraffes eat leaves from tall trees.", ans: "TRUE" },
+                    { q: "4. The cheetah is a sea animal.", ans: "FALSE" },
+                    { q: "5. Blue whales are small creatures.", ans: "FALSE" }
+                ],
+                spelling: [
+                    { hint: "1. Wild spotted big cat that runs fast", ans: "cheetah" },
+                    { hint: "2. Giant marine mammal of the ocean", ans: "whale" },
+                    { hint: "3. Tall African animal with long neck", ans: "giraffe" },
+                    { hint: "4. Huge body of salt water", ans: "ocean" },
+                    { hint: "5. An animal hunted for food", ans: "prey" },
+                    { hint: "6. Part of plant attached to stem", ans: "leaf" },
+                    { hint: "7. Moving with high speed", ans: "fast" },
+                    { hint: "8. Biggest in size", ans: "largest" },
+                    { hint: "9. Wild animals and natural life", ans: "wildlife" },
+                    { hint: "10. Area of land covered with trees", ans: "forest" }
+                ],
+                drag: [
+                    { words: ["Cheetahs", "are", "the", "fastest", "land", "animals."], correct: "Cheetahs are the fastest land animals." },
+                    { words: ["Blue", "whales", "live", "in", "oceans."], correct: "Blue whales live in oceans." },
+                    { words: ["Giraffes", "have", "very", "long", "necks."], correct: "Giraffes have very long necks." },
+                    { words: ["Elephants", "are", "big", "and", "strong."], correct: "Elephants are big and strong." },
+                    { words: ["Dolphins", "are", "smart", "sea", "creatures."], correct: "Dolphins are smart sea creatures." },
+                    { words: ["Lions", "live", "in", "grassy", "plains."], correct: "Lions live in grassy plains." },
+                    { words: ["Monkeys", "like", "to", "climb", "trees."], correct: "Monkeys like to climb trees." },
+                    { words: ["Protect", "wild", "animals", "from", "danger."], correct: "Protect wild animals from danger." },
+                    { words: ["Snakes", "crawl", "quietly", "on", "ground."], correct: "Snakes crawl quietly on ground." },
+                    { words: ["Bears", "sleep", "during", "cold", "winter."], correct: "Bears sleep during cold winter." }
+                ]
+            },
+            "9": {
+                title: "Sports and Fitness",
+                passage: "Playing sports keeps our bodies active and fit. Badminton is a popular sport played with rackets and a shuttlecock. Football players score goals by kicking the ball into the net. Swimming is also a great activity that strengthens your whole body.",
+                mcq: [
+                    { q: "1. What equipment is used in badminton?", opts: ["A. Bat and ball", "B. Rackets and shuttlecock", "C. Net and hoop", "D. Stick and puck"], ans: 1 },
+                    { q: "2. How do football players score points?", opts: ["A. By throwing the ball", "B. By kicking into net", "C. By carrying the ball", "D. By hitting with bat"], ans: 1 },
+                    { q: "3. What does sports keep our body?", opts: ["A. Tired and weak", "B. Active and fit", "C. Lazy and heavy", "D. Sick and sleepy"], ans: 1 },
+                    { q: "4. Swimming strengthens what part of body?", opts: ["A. Hands only", "B. Legs only", "C. Whole body", "D. Head only"], ans: 2 },
+                    { q: "5. What object is kicked in football?", opts: ["A. Shuttlecock", "B. Ball", "C. Racket", "D. Puck"], ans: 1 }
+                ],
+                tf: [
+                    { q: "1. Badminton uses rackets and a shuttlecock.", ans: "TRUE" },
+                    { q: "2. Playing sports makes people lazy.", ans: "FALSE" },
+                    { q: "3. Football players use their hands to kick goals.", ans: "FALSE" },
+                    { q: "4. Swimming is good exercise.", ans: "TRUE" },
+                    { q: "5. Being active helps you stay healthy.", ans: "TRUE" }
+                ],
+                spelling: [
+                    { hint: "1. Sport played with rackets and shuttlecock", ans: "badminton" },
+                    { hint: "2. Light cone object used in badminton", ans: "shuttlecock" },
+                    { hint: "3. Sport played by kicking a spherical ball", ans: "football" },
+                    { hint: "4. Moving through water using arms and legs", ans: "swimming" },
+                    { hint: "5. Light handled frame with mesh net", ans: "racket" },
+                    { hint: "6. Frame with net where points are scored", ans: "goal" },
+                    { hint: "7. Physical activity to stay fit", ans: "exercise" },
+                    { hint: "8. Physically energetic and lively", ans: "active" },
+                    { hint: "9. Mesh barrier used in sports", ans: "net" },
+                    { hint: "10. In good physical health condition", ans: "fit" }
+                ],
+                drag: [
+                    { words: ["Badminton", "is", "played", "with", "rackets."], correct: "Badminton is played with rackets." },
+                    { words: ["They", "play", "football", "every", "evening."], correct: "They play football every evening." },
+                    { words: ["Swimming", "is", "good", "for", "health."], correct: "Swimming is good for health." },
+                    { words: ["He", "scored", "a", "great", "goal."], correct: "He scored a great goal." },
+                    { words: ["Sports", "keep", "us", "fit", "and", "strong."], correct: "Sports keep us fit and strong." },
+                    { words: ["Wear", "sports", "shoes", "when", "running."], correct: "Wear sports shoes when running." },
+                    { words: ["She", "wins", "the", "swimming", "race."], correct: "She wins the swimming race." },
+                    { words: ["Drink", "water", "after", "playing", "games."], correct: "Drink water after playing games." },
+                    { words: ["We", "enjoy", "playing", "basketball", "together."], correct: "We enjoy playing basketball together." },
+                    { words: ["Exercise", "daily", "to", "feel", "energetic."], correct: "Exercise daily to feel energetic." }
+                ]
+            },
+            "10": {
+                title: "Taking Care of Health",
+                passage: "When you feel sick, you should tell your parents immediately. A headache means your head hurts, while a sore throat makes swallowing food difficult. If you have a high fever, rest in bed and drink plenty of warm water or take medicine prescribed by a doctor.",
+                mcq: [
+                    { q: "1. What should you do when feeling sick?", opts: ["A. Hide in room", "B. Tell your parents", "C. Play outside", "D. Eat ice cream"], ans: 1 },
+                    { q: "2. What hurts when you have a headache?", opts: ["A. Stomach", "B. Head", "C. Leg", "D. Ear"], ans: 1 },
+                    { q: "3. A sore throat makes what action difficult?", opts: ["A. Walking", "B. Swallowing food", "C. Running", "D. Writing"], ans: 1 },
+                    { q: "4. What should you do if you have a fever?", opts: ["A. Exercise hard", "B. Rest in bed", "C. Swim in cold water", "D. Stay up late"], ans: 1 },
+                    { q: "5. Who prescribes medicine when you are ill?", opts: ["A. Teacher", "B. Doctor", "C. Driver", "D. Shopkeeper"], ans: 1 }
+                ],
+                tf: [
+                    { q: "1. Tell your parents when you feel unwell.", ans: "TRUE" },
+                    { q: "2. A headache is a pain in your stomach.", ans: "FALSE" },
+                    { q: "3. Rest in bed when you have a fever.", ans: "TRUE" },
+                    { q: "4. Drink cold sodas when you have a throat pain.", ans: "FALSE" },
+                    { q: "5. Doctors help us get better when sick.", ans: "TRUE" }
+                ],
+                spelling: [
+                    { hint: "1. Continuous pain in the head", ans: "headache" },
+                    { hint: "2. High body temperature from illness", ans: "fever" },
+                    { hint: "3. Pain in the throat area", ans: "sore throat" },
+                    { hint: "4. Substance used to treat illness", ans: "medicine" },
+                    { hint: "5. Medical professional who treats sick people", ans: "doctor" },
+                    { hint: "6. Pain in the stomach region", ans: "stomachache" },
+                    { hint: "7. Sudden expulsion of air from lungs", ans: "cough" },
+                    { hint: "8. State of sleep or relaxation", ans: "rest" },
+                    { hint: "9. Affected by illness or disease", ans: "sick" },
+                    { hint: "10. Feeling unwell or poor health", ans: "illness" }
+                ],
+                drag: [
+                    { words: ["Tell", "your", "parents", "if", "you", "feel", "sick."], correct: "Tell your parents if you feel sick." },
+                    { words: ["Rest", "in", "bed", "when", "having", "fever."], correct: "Rest in bed when having fever." },
+                    { words: ["Drink", "warm", "water", "for", "sore", "throat."], correct: "Drink warm water for sore throat." },
+                    { words: ["The", "doctor", "gave", "me", "some", "medicine."], correct: "The doctor gave me some medicine." },
+                    { words: ["He", "has", "a", "bad", "headache", "today."], correct: "He has a bad headache today." },
+                    { words: ["Wash", "hands", "to", "prevent", "getting", "sick."], correct: "Wash hands to prevent getting sick." },
+                    { words: ["Cover", "your", "mouth", "when", "you", "cough."], correct: "Cover your mouth when you cough." },
+                    { words: ["Get", "enough", "sleep", "every", "single", "night."], correct: "Get enough sleep every single night." },
+                    { words: ["Stay", "at", "home", "when", "unwell."], correct: "Stay at home when unwell." },
+                    { words: ["Healthy", "habits", "keep", "illnesses", "away."], correct: "Healthy habits keep illnesses away." }
+                ]
             }
-            // MODUL 3 HINGGA 10 BOLEH DITAMBAH DI SINI DENGAN FORMAT YANG SAMA
         };
 
         let currentModuleKey = "1";
