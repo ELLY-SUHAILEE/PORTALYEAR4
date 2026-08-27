@@ -16,16 +16,20 @@
             padding: 0;
         }
 
-        body {
-            font-family: 'Century Gothic', 'Fredoka', 'Poppins', sans-serif !important;
-            background: linear-gradient(135deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px 15px;
-            color: #1e293b;
-        }
+       body {
+    font-family: 'Century Gothic', 'Fredoka', 'Poppins', sans-serif !important;
+    background-image: url('poster.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 15px;
+    color: #1e293b;
+}
 
         .portal-card {
             background: #ffffff;
@@ -67,6 +71,34 @@
             border-radius: 16px;
             border: 2px dashed #cbd5e1;
             margin-bottom: 25px;
+        }
+
+       /* Buang kotak putih utama */
+.container, .card, .main-card, .portal-container, .wrapper { 
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+/* Sembunyikan borang nama & kelas (jika belum dipadam dari HTML) */
+.info-container {
+    display: none !important;
+}
+
+        /* 2. TAJUK HURUF BESAR & OUTLINE TEBAL */
+        h1, .main-title {
+            text-transform: uppercase; /* Paksa huruf besar */
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #ffffff; /* Warna dalam teks (contoh: Putih) */
+            -webkit-text-stroke: 2.5px #000000; /* Outline hitam tebal */
+            text-shadow: 
+                3px 3px 0 #000,
+               -3px -3px 0 #000, 
+                3px -3px 0 #000,
+               -3px 3px 0 #000; /* Memastikan outline nampak tajam */
+            text-align: center;
         }
 
         .info-field {
