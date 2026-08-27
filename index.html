@@ -7,26 +7,82 @@
     <!-- FontAwesome Icon Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-  <style>
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
-    }
+    <style>
+        /* 1. TETAPAN ASAS & FONT UTAMA */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+        }
 
-    /* KHAS UNTUK PAPARAN KARANGAN & SOALAN (16PX) */
-    .passage-text, 
-    .card p, 
-    .card label, 
-    .card span, 
-    .question-card p,
-    .question-card h4 {
-        font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif !important;
-        font-size: 16px !important;
-        line-height: 1.6;
-    }
-</style>
+        /* 2. KHAS UNTUK PAPARAN KARANGAN & SOALAN (CENTURY GOTHIC 16PX) */
+        .passage-text, 
+        .card p, 
+        .card label, 
+        .card span, 
+        .question-card p,
+        .question-card h4,
+        .opt-btn {
+            font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif !important;
+            font-size: 16px !important;
+            line-height: 1.6;
+        }
+
+        /* 3. KOD CSS PORTAL ANDA (DILETAKKAN DI DALAM STYLE YANG SAMA) */
+        body { 
+            /* LATAR BELAKANG POSTER.PNG */ 
+            background: url('poster.png') no-repeat center center fixed; 
+            background-size: cover; 
+            min-height: 100vh; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            padding: 20px; 
+        }
+
+        .portal-card { 
+            background: transparent; 
+            border-radius: 0; 
+            padding: 10px; 
+            width: 100%; 
+            max-width: 850px; 
+            box-shadow: none; 
+            border: none; 
+        }
+
+        .main-title { 
+            text-align: center; 
+            font-size: 2.8rem; 
+            font-weight: 900; 
+            color: #881337; 
+            letter-spacing: 2px; 
+            margin-bottom: 5px; 
+            text-transform: uppercase; 
+            -webkit-text-stroke: 2px #ffffff; 
+            text-shadow: 3px 4px 0px #0f172a, 0px 8px 15px rgba(0,0,0,0.6); 
+        }
+
+        .sub-title { 
+            text-align: center; 
+            font-size: 1.1rem; 
+            color: #ffffff; 
+            margin-bottom: 25px; 
+            font-weight: 800; 
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, 0 4px 10px rgba(0,0,0,0.7); 
+        }
+
+        .info-container { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 15px; 
+            margin-bottom: 30px; 
+        }
+
+        /* SUSUN KOD CSS ANDA SEHINGGA SELESAI DI SINI */
+
+    </style> <!-- TAG PENUTUP STYLE HANYA DILETAKKAN DI SINI (SELEPAS SEMUA KOD CSS SELESAI) -->
+</head>
 
         body {
             /* LATAR BELAKANG POSTER.PNG */
